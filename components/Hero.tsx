@@ -2,7 +2,6 @@ import React, { useState, useEffect, memo } from 'react';
 import { ArrowRight, Sparkles, ShieldCheck, Zap } from 'lucide-react';
 import { Button } from './Button';
 import { MockupFacebookGroup, MockupWhatsappGroup } from './ProfileMockup';
-import { LandlordFox } from './Mascot';
 import { Role } from '../types';
 
 const TypewriterText = memo(({ words }: { words: string[] }) => {
@@ -85,10 +84,6 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
           </div>
 
           <div className="lg:col-span-5 relative">
-            <div className="absolute -top-12 -right-12 z-20 hidden lg:block">
-              <LandlordFox pose="pointing" size={180} />
-            </div>
-            
             <div className="relative z-10 flex flex-col items-center">
               <div className="flex p-1.5 bg-slate-100 rounded-2xl mb-8 w-fit mx-auto shadow-inner border border-slate-200">
                 <button 
