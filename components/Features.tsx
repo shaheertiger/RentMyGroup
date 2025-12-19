@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Zap, MapPin, MessageCircle, TrendingUp, Users } from 'lucide-react';
+import { ShieldCheck, Zap, MapPin, MessageCircle } from 'lucide-react';
 
 export const Features: React.FC = () => {
   return (
