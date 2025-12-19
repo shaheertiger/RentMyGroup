@@ -1,0 +1,66 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-slate-900 bg-white;
+    /* Prevent accidental refreshes and double-tap zoom delay */
+    touch-action: manipulation;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .mesh-bg {
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(252,100%,98%,1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(189,100%,98%,1) 0, transparent 50%), 
+      radial-gradient(at 50% 100%, hsla(341,100%,99%,1) 0, transparent 50%);
+  }
+}
+
+/* Senior Dev Tip: Optimize range slider for actual human thumbs */
+input[type=range].custom-range {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range].custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 32px; 
+  width: 32px;
+  border-radius: 50%;
+  background: #4f46e5;
+  cursor: pointer;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-top: -12px;
+  transition: transform 0.1s ease;
+}
+
+input[type=range].custom-range::-webkit-slider-thumb:active {
+  transform: scale(1.15);
+}
+
+input[type=range].custom-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+}
