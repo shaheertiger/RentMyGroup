@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
@@ -85,7 +86,9 @@ const App: React.FC = () => {
     setModal(prev => ({ ...prev, isOpen: false }));
   };
 
-  const isGuidePage = currentPath === '/guide';
+  // SEO Friendly Guide Path
+  const GUIDE_PATH = '/how-to-make-money-from-facebook-groups-2026';
+  const isGuidePage = currentPath === GUIDE_PATH;
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-indigo-500 selection:text-white relative">

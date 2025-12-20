@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Users, Facebook, Twitter, Instagram, Linkedin, ArrowRight, MousePointerClick, MapPin, Tag } from 'lucide-react';
+import { Users, Facebook, Twitter, Instagram, Linkedin, ArrowRight, MousePointerClick, MapPin, Tag, Sparkles } from 'lucide-react';
 import { Role } from '../types';
 
 interface FooterProps {
@@ -9,12 +10,38 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
   const currentYear = new Date().getFullYear();
+  const GUIDE_PATH = '/how-to-make-money-from-facebook-groups-2026';
 
   return (
     <footer className="bg-slate-50 pt-24 pb-32 md:pb-16 border-t border-slate-200 overflow-hidden relative">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Featured Guide Section - Visual Style inspired by user's provided image */}
+        <div className="mb-20">
+           <div 
+             className="bg-indigo-600 rounded-[4rem] p-8 md:p-12 border-[12px] md:border-[20px] border-indigo-500/30 shadow-2xl shadow-indigo-600/20 cursor-pointer group transition-all hover:scale-[1.01] active:scale-[0.99]"
+             onClick={() => onNavigate(GUIDE_PATH)}
+           >
+              <div className="bg-white rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                 <div className="flex-1">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 rounded-full text-indigo-600 text-[10px] font-black uppercase tracking-widest mb-4">
+                       <Sparkles size={12} /> Featured Strategy
+                    </div>
+                    <h3 className="text-2xl md:text-4xl font-display font-black text-slate-900 tracking-tight leading-tight">
+                       How to Make Money From Facebook Groups in 2026 <span className="text-indigo-600">(Without Killing Trust)</span>
+                    </h3>
+                 </div>
+                 <div className="shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg group-hover:translate-x-2 transition-transform duration-300">
+                       <ArrowRight size={32} />
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
           <div className="lg:col-span-4 space-y-8">
@@ -62,7 +89,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/guide')} className="text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                <button onClick={() => onNavigate(GUIDE_PATH)} className="text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
                   <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   Monetization Guide
                 </button>
