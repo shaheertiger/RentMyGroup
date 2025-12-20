@@ -1,8 +1,9 @@
 import React, { useState, useEffect, memo } from 'react';
 import { ArrowRight, Sparkles, ShieldCheck, Zap } from 'lucide-react';
-import { Button } from './Button';
-import { MockupFacebookGroup, MockupWhatsappGroup } from './ProfileMockup';
-import { Role } from '../types';
+import { Button } from './Button.tsx';
+import { MockupFacebookGroup, MockupWhatsappGroup } from './ProfileMockup.tsx';
+import { Role } from '../types.ts';
+import { LandlordFox } from './Mascot.tsx';
 
 const TypewriterText = memo(({ words }: { words: string[] }) => {
   const [index, setIndex] = useState(0);
@@ -26,7 +27,7 @@ const TypewriterText = memo(({ words }: { words: string[] }) => {
   }, [subIndex, index, reverse, words]);
 
   return (
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600 inline-block min-w-[200px]">
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600 inline-block min-w-[200px] py-2">
       {words[index].substring(0, subIndex)}<span className="text-indigo-600 animate-pulse">|</span>
     </span>
   );
@@ -41,6 +42,11 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
       <div className="absolute top-20 left-10 w-96 h-96 bg-indigo-100/40 rounded-full blur-[120px] -z-10 animate-float"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-100/40 rounded-full blur-[120px] -z-10 animate-float" style={{animationDelay: '-3s'}}></div>
 
+      {/* Subtle Mascot Integration */}
+      <div className="absolute top-1/4 -right-20 hidden xl:block opacity-20 hover:opacity-100 transition-opacity duration-700 -rotate-12 pointer-events-none">
+        <LandlordFox size={300} />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
@@ -50,7 +56,7 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
               <span className="text-[11px] font-black text-slate-600 uppercase tracking-widest">Global #1 Local Ad Network</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 tracking-tight leading-[1] animate-slide-up">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 tracking-tight leading-[1.1] animate-slide-up">
               Own Your <br />
               <TypewriterText words={['Local Group', 'Neighborhood', 'WhatsApp']} />
             </h1>

@@ -1,7 +1,8 @@
+
 import React, { useState, useMemo } from 'react';
 import { Calculator, ArrowRight, Sparkles, Trophy, CheckCircle2 } from 'lucide-react';
-import { Button } from './Button';
-import { Role } from '../types';
+import { Button } from './Button.tsx';
+import { Role } from '../types.ts';
 
 export const IncomeCalculator: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenModal }) => {
   const [members, setMembers] = useState(25000);

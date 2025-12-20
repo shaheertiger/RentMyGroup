@@ -1,20 +1,26 @@
+
 import React from 'react';
 import { Users, Facebook, Twitter, Instagram, Linkedin, ArrowRight, MousePointerClick } from 'lucide-react';
 import { Role } from '../types';
 
 interface FooterProps {
   onOpenModal?: (role: Role) => void;
+  onNavigate: (path: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
   const currentYear = new Date().getFullYear();
 
-  const handleNav = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+  const handleNavToSection = (id: string) => {
+    if (window.location.pathname !== '/') {
+      onNavigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -26,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
           <div className="lg:col-span-4 space-y-8">
-            <div className="flex items-center gap-2 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div className="flex items-center gap-2 cursor-pointer group" onClick={() => onNavigate('/')}>
               <div className="bg-indigo-600 rounded-lg p-1.5 shadow-indigo-500/20 shadow-lg group-hover:scale-110 transition-transform duration-200">
                 <Users size={20} className="text-white" />
               </div>
@@ -58,27 +64,27 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
             <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Explore Platform</h4>
             <ul className="space-y-4">
               <li>
-                <button onClick={() => onOpenModal?.('advertiser')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group">
-                  <MousePointerClick size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                <button onClick={() => onOpenModal?.('advertiser')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   For Advertisers
                 </button>
               </li>
               <li>
-                <button onClick={() => onOpenModal?.('admin')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group">
-                  <MousePointerClick size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                <button onClick={() => onOpenModal?.('admin')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   For Group Admins
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('how-it-works')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group">
-                  <MousePointerClick size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                <button onClick={() => handleNavToSection('how-it-works')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   How it Works
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('calculator')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group">
-                  <MousePointerClick size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  Earnings Calculator
+                <button onClick={() => onNavigate('/guide')} className="text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Monetization Guide
                 </button>
               </li>
             </ul>
@@ -88,17 +94,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
             <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Support & Docs</h4>
             <ul className="space-y-4">
               <li>
-                <button onClick={() => handleNav('faq')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
+                <button onClick={() => handleNavToSection('faq')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
                   Common Questions
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('comparison')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
+                <button onClick={() => handleNavToSection('comparison')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
                   Platform Comparison
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('testimonials')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
+                <button onClick={() => handleNavToSection('testimonials')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
                   Success Stories
                 </button>
               </li>
@@ -149,13 +155,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
               All Systems Operational
             </div>
-          </div>
-
-          <div className="mt-12 p-6 bg-slate-100/50 rounded-2xl border border-slate-200/50">
-            <p className="text-[10px] md:text-[11px] text-slate-400 leading-relaxed font-medium">
-              <span className="font-black text-slate-500 uppercase mr-2 tracking-widest">Legal Notice:</span>
-              RentMyGroup is an independent advertising marketplace. We are not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc., WhatsApp LLC, Telegram FZ-LLC, or any other social media platform. All logos and trademarks are the property of their respective owners.
-            </p>
           </div>
         </div>
       </div>

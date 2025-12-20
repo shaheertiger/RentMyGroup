@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, ArrowRight, Check, ArrowLeft, Loader2, TrendingUp, Sparkles, Mail, Shield } from 'lucide-react';
-import { ModalState } from '../types';
-import { Button } from './Button';
+import { ModalState } from '../types.ts';
+import { Button } from './Button.tsx';
 
 interface WaitlistModalProps extends ModalState {
   onClose: () => void;

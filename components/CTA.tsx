@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Button } from './Button';
-import { Role } from '../types';
+import { Button } from './Button.tsx';
+import { Role } from '../types.ts';
 
 interface CTAProps {
   onOpenModal: (role: Role) => void;

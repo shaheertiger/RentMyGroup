@@ -40,9 +40,9 @@ export const Features: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
                 <BarChart3 size={12} /> Beat the System
               </div>
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 mb-8 tracking-tighter leading-[0.95]">
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 mb-8 tracking-tighter leading-[1.05]">
                 Stop Fighting the <br />
-                <span className={`${viewMode === 'control' ? 'text-indigo-600' : 'text-red-500'} transition-colors duration-500 relative inline-block`}>
+                <span className={`${viewMode === 'control' ? 'text-indigo-600' : 'text-red-500'} transition-colors duration-500 relative inline-block py-1`}>
                   Algorithm.
                   <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 358 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 9C118.5 3 239.5 3 355 9" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
