@@ -10,7 +10,10 @@ import {
   MessageSquare,
   Zap,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Lock,
+  BarChart3,
+  Search
 } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
@@ -19,17 +22,23 @@ interface GuideSectionProps {
   title: string;
   children: React.ReactNode;
   icon: React.ReactNode;
+  step: string;
 }
 
-const GuideSection: React.FC<GuideSectionProps> = ({ title, children, icon }) => (
-  <div className="space-y-6 animate-slide-up">
-    <div className="flex items-center gap-4">
-      <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-200 shrink-0">
-        {icon}
+const GuideSection: React.FC<GuideSectionProps> = ({ title, children, icon, step }) => (
+  <div className="space-y-8 animate-slide-up group">
+    <div className="flex items-center gap-6">
+      <div className="relative shrink-0">
+        <div className="w-16 h-16 rounded-[1.5rem] bg-indigo-600 text-white flex items-center justify-center shadow-2xl shadow-indigo-200 transition-transform group-hover:scale-110 duration-500">
+          {icon}
+        </div>
+        <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-slate-900 text-white text-[10px] font-black flex items-center justify-center border-2 border-white">
+          {step}
+        </div>
       </div>
-      <h3 className="text-2xl md:text-3xl font-display font-black text-slate-900 tracking-tight leading-tight">{title}</h3>
+      <h3 className="text-3xl md:text-4xl font-display font-black text-slate-900 tracking-tight leading-none">{title}</h3>
     </div>
-    <div className="pl-0 md:pl-16 text-slate-600 text-lg leading-relaxed space-y-4">
+    <div className="pl-0 md:pl-20 text-slate-600 text-lg md:text-xl leading-relaxed space-y-6">
       {children}
     </div>
   </div>
@@ -37,131 +46,152 @@ const GuideSection: React.FC<GuideSectionProps> = ({ title, children, icon }) =>
 
 export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenModal }) => {
   useEffect(() => {
-    // Dynamic SEO Management
     const originalTitle = document.title;
-    const originalMeta = document.querySelector('meta[name="description"]')?.getAttribute('content');
-    
-    document.title = "The 2024 Monetization Blueprint | RentMyGroup";
-    document.querySelector('meta[name="description"]')?.setAttribute('content', 'Learn the exact strategies used by top Facebook and WhatsApp group admins to earn passive income while keeping member trust high.');
-    
-    return () => {
-      document.title = originalTitle;
-      if (originalMeta) {
-        document.querySelector('meta[name="description"]')?.setAttribute('content', originalMeta);
-      }
-    };
+    document.title = "Earn Money From Facebook Groups: The 2026 Guide | RMG";
+    return () => { document.title = originalTitle; };
   }, []);
 
   return (
-    <div className="min-h-screen">
-      {/* Standalone Page Hero */}
-      <section className="bg-slate-950 text-white py-24 md:py-40 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 0)', backgroundSize: '30px 30px' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div className="min-h-screen bg-white">
+      {/* Dynamic Page Hero */}
+      <section className="bg-slate-950 text-white pt-32 pb-24 md:pt-48 md:pb-40 relative overflow-hidden">
+        {/* Animated Background Mesh */}
+        <div className="absolute inset-0 opacity-[0.1] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/30 rounded-full blur-[160px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1 text-center md:text-left">
-            <nav className="flex items-center gap-2 text-slate-400 text-xs font-black uppercase tracking-widest mb-8 justify-center md:justify-start">
-              <a href="/" onClick={(e) => { e.preventDefault(); window.history.pushState({}, '', '/'); window.dispatchEvent(new PopStateEvent('popstate')); }} className="hover:text-white transition-colors">Home</a>
-              <ChevronRight size={14} />
-              <span className="text-indigo-400">Guide</span>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <nav className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 text-slate-400 text-[10px] font-black uppercase tracking-[0.25em] mb-12 animate-fade-in">
+              <a href="/" className="hover:text-white transition-colors">Home</a>
+              <ChevronRight size={12} className="text-white/20" />
+              <span className="text-indigo-400">2026 Strategy Guide</span>
             </nav>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-indigo-300 text-[10px] font-black uppercase tracking-[0.2em] mb-6">
-              <Sparkles size={12} /> The 2024 Blueprint
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tight leading-[0.95] mb-8">
-              The Admin's <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">Blueprint.</span>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-black tracking-tight leading-[0.9] mb-12 animate-slide-up">
+              Earn Money From <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-300">Facebook Groups.</span>
             </h1>
-            <p className="text-slate-400 text-xl md:text-2xl font-medium leading-relaxed max-w-xl mx-auto md:mx-0">
-              Stop moderating for free. Learn how to transform your local community into a sustainable business without losing member trust.
+            
+            <p className="text-slate-400 text-xl md:text-3xl font-medium leading-relaxed max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              The 2026 Blueprint for Admins who want to turn community trust into sustainable passive income.
             </p>
+
+            <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
+                <ShieldCheck className="text-indigo-400" size={20} />
+                <span className="text-sm font-bold tracking-tight">Verified Strategies</span>
+              </div>
+              <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
+                <Zap className="text-yellow-400" size={20} />
+                <span className="text-sm font-bold tracking-tight">2026 Algorithm-Proof</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Main Guide Content */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="space-y-24">
-            <GuideSection title="01. Build a 'High-Trust' Environment" icon={<Users size={24} />}>
+      {/* Strategy Content */}
+      <section className="py-24 md:py-40 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="space-y-32">
+            
+            <GuideSection step="01" title="The Death of the Feed Ad" icon={<Lock size={28} />}>
               <p>
-                The value of your group isn't just the member count—it's the <strong>Trust Quotient</strong>. Brands don't pay for eyes; they pay for influence.
+                In 2026, user attention is the scarcest resource. Traditional Facebook Feed ads are now ignored by 92% of users. The only real estate left with 100% engagement is the <strong>Gated Community.</strong>
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={20} className="text-green-500 shrink-0 mt-1" />
-                  <span><strong>Vet New Members:</strong> Use entry questions to filter bots and low-quality accounts.</span>
+              <div className="grid md:grid-cols-2 gap-8 mt-12">
+                <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 relative overflow-hidden">
+                   <BarChart3 className="text-slate-200 absolute -bottom-4 -right-4" size={120} />
+                   <h4 className="font-black text-slate-900 text-xl mb-4">Engagement Decay</h4>
+                   <p className="text-sm text-slate-500 font-medium">Standard posts only reach 2-5% of your members naturally. The algorithm penalizes external links and business promotion.</p>
+                </div>
+                <div className="p-10 rounded-[2.5rem] bg-indigo-50 border border-indigo-100 relative overflow-hidden">
+                   <Sparkles className="text-indigo-200 absolute -bottom-4 -right-4" size={120} />
+                   <h4 className="font-black text-indigo-900 text-xl mb-4">The Pinned Premium</h4>
+                   <p className="text-sm text-indigo-600/70 font-medium">Pinned announcements and cover photos are "Native UI"—they are viewed every time a user visits your group to post or comment.</p>
+                </div>
+              </div>
+            </GuideSection>
+
+            <GuideSection step="02" title="Monetize Without the Spam" icon={<Users size={28} />}>
+              <p>
+                Your members joined for value, not to be sold to. The 2026 strategy is <strong>Curated Sponsorships</strong>. Treat your group like a premium magazine, not a flea market.
+              </p>
+              <ul className="space-y-6 pt-4">
+                <li className="flex items-start gap-5">
+                  <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0 mt-1 shadow-sm">
+                    <CheckCircle2 size={18} />
+                  </div>
+                  <div className="flex-1">
+                    <span className="block font-black text-slate-900 mb-1">Fixed-Rent Cover Photos</span>
+                    <span className="text-base text-slate-500">Rent your group header to a vetted local brand. It’s passive, non-intrusive, and extremely high-value for real estate or local services.</span>
+                  </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 size={20} className="text-green-500 shrink-0 mt-1" />
-                  <span><strong>Active Moderation:</strong> A clean, useful feed makes your premium ad slots significantly more valuable to high-end brands.</span>
+                <li className="flex items-start gap-5">
+                  <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0 mt-1 shadow-sm">
+                    <CheckCircle2 size={18} />
+                  </div>
+                  <div className="flex-1">
+                    <span className="block font-black text-slate-900 mb-1">Weekly Pinned Highlights</span>
+                    <span className="text-base text-slate-500">Feature one "Sponsor of the Week" at the top of the feed. This keeps the group clean while providing guaranteed reach.</span>
+                  </div>
                 </li>
               </ul>
             </GuideSection>
 
-            <GuideSection title="02. Skip the 'Spammy' Methods" icon={<Zap size={24} />}>
+            <GuideSection step="03" title="Automate Your Earnings" icon={<Zap size={28} />}>
               <p>
-                Most admins fail because they try to sell generic affiliate products. This burns your audience and kills engagement.
-              </p>
-              <div className="bg-slate-50 border border-slate-100 rounded-[2rem] p-8 mt-6">
-                <h4 className="font-black text-slate-900 mb-4 flex items-center gap-2 text-xl">
-                  <ShieldCheck size={20} className="text-indigo-600" /> Why Direct Sponsorships Win:
-                </h4>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-2">
-                    <div className="text-[10px] font-black uppercase text-red-400 tracking-widest">The Problem</div>
-                    <p className="text-sm font-medium leading-relaxed">Algorithm-based ads are irrelevant and pay you $0.</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-[10px] font-black uppercase text-green-500 tracking-widest">The RMG Solution</div>
-                    <p className="text-sm font-medium leading-relaxed">Direct sponsors pay for high-visibility real estate you already own.</p>
-                  </div>
-                </div>
-              </div>
-            </GuideSection>
-
-            <GuideSection title="03. Use RentMyGroup for Passive Income" icon={<DollarSign size={24} />}>
-              <p>
-                The most efficient way to earn is through <strong>Passive Leasing</strong>. Rent your cover photos or pinned messages for 30 days at a time.
+                Don't spend your time chasing $20 from local businesses. Use a marketplace like <strong>RentMyGroup</strong> to handle the administrative overhead.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-4 mt-8">
-                <div className="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-xl transition-all group/card">
-                  <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-6">
-                    <ImageIcon size={28} />
-                  </div>
-                  <h5 className="font-black text-slate-900 text-xl mb-3">Cover Photo Leasing</h5>
-                  <p className="text-sm text-slate-500 leading-relaxed">Rent out your group header. It's the first thing every member sees.</p>
+              <div className="mt-12 bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-12 opacity-5">
+                   <DollarSign size={200} />
                 </div>
-                <div className="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-xl transition-all group/card">
-                  <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-6">
-                    <MessageSquare size={28} />
-                  </div>
-                  <h5 className="font-black text-slate-900 text-xl mb-3">Pinned Message Slot</h5>
-                  <p className="text-sm text-slate-500 leading-relaxed">Place a helpful local offer at the top. 100% reach guaranteed.</p>
-                </div>
-              </div>
-
-              <div className="mt-12 p-10 rounded-[3rem] bg-indigo-600 text-white relative overflow-hidden group/cta">
-                <div className="relative z-10">
-                  <h4 className="text-3xl font-display font-black mb-6 leading-tight">Let us do the heavy lifting.</h4>
-                  <p className="text-indigo-100 text-lg mb-10 max-w-lg leading-relaxed font-medium">
-                    We find the brands, handle the Stripe payments, and manage creative approvals so you can focus on your community.
-                  </p>
-                  <Button 
-                    onClick={() => onOpenModal('admin')} 
-                    variant="secondary" 
-                    className="w-full sm:w-auto px-10 h-16 text-lg"
-                  >
-                    Start Monetizing Now <ArrowRight size={20} />
-                  </Button>
-                </div>
-                <div className="absolute -right-20 -bottom-20 opacity-10 group-hover/cta:rotate-12 transition-transform duration-700">
-                  <Trophy size={400} />
+                <div className="max-w-2xl relative z-10">
+                   <h4 className="text-3xl font-display font-black mb-8 leading-tight">The RMG Advantage:</h4>
+                   <div className="space-y-6">
+                      <div className="flex items-center gap-4 text-slate-300">
+                        <Search className="text-indigo-400" size={24} />
+                        <span className="font-bold">We find the brands looking for your niche.</span>
+                      </div>
+                      <div className="flex items-center gap-4 text-slate-300">
+                        <ImageIcon className="text-indigo-400" size={24} />
+                        <span className="font-bold">We provide the high-conversion ad templates.</span>
+                      </div>
+                      <div className="flex items-center gap-4 text-slate-300">
+                        <DollarSign className="text-indigo-400" size={24} />
+                        <span className="font-bold">Payments are automated via Stripe instantly.</span>
+                      </div>
+                   </div>
+                   
+                   <div className="pt-12">
+                      <Button 
+                        onClick={() => onOpenModal('admin')} 
+                        className="w-full sm:w-auto h-20 px-12 text-xl bg-indigo-600 shadow-2xl shadow-indigo-500/30"
+                      >
+                         Secure Your Group Spot <ArrowRight size={24} className="ml-2" />
+                      </Button>
+                      <p className="mt-6 text-slate-500 text-sm font-bold uppercase tracking-widest text-center sm:text-left">
+                        Joining is 100% Free for Admins
+                      </p>
+                   </div>
                 </div>
               </div>
             </GuideSection>
+
+          </div>
+          
+          <div className="mt-32 pt-24 border-t border-slate-100 text-center">
+             <Trophy size={48} className="mx-auto text-yellow-400 mb-8" />
+             <h2 className="text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight mb-6">Start Your Legacy.</h2>
+             <p className="text-slate-500 text-xl font-medium max-w-xl mx-auto mb-12 leading-relaxed">
+                2026 is the year of the Private Community. Don't leave your monetization to chance. Join the network leading the change.
+             </p>
+             <Button onClick={() => onOpenModal('admin')} variant="secondary" className="px-12 h-16 text-lg border-2 border-slate-200">
+                Register as a Group Admin
+             </Button>
           </div>
         </div>
       </section>

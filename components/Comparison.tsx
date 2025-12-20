@@ -43,7 +43,7 @@ export const Comparison: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16 md:mb-24">
            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-6">
-             <Target size={12} /> Efficiency Benchmarks
+             <Target size={12} /> 2026 Benchmarks
            </div>
            <h2 className="text-4xl md:text-6xl font-display font-black text-slate-900 mb-6 tracking-tight leading-[1.1]">
              Why Brands are <span className="text-indigo-600">Ditching</span> <br /> Traditional Social Ads.
@@ -90,7 +90,7 @@ export const Comparison: React.FC = () => {
                    label="Visibility"
                    rmgValue="100%"
                    rmgSub="Guaranteed Placement"
-                   tradValue="< 8%"
+                   tradValue="< 4%"
                    tradSub="Random Feed Scroll"
                    icon={<Zap size={18} />}
                  />
@@ -112,9 +112,9 @@ export const Comparison: React.FC = () => {
                  />
                  <ComparisonRow 
                    label="Cost Per lead"
-                   rmgValue="$0.85"
+                   rmgValue="$0.92"
                    rmgSub="Fixed Monthly Rent"
-                   tradValue="$14.20"
+                   tradValue="$18.50"
                    tradSub="Bidding Wars"
                    icon={<ArrowRight size={18} />}
                  />
@@ -124,7 +124,7 @@ export const Comparison: React.FC = () => {
              {/* Footer Note */}
              <div className="bg-slate-50/80 p-6 text-center border-t border-slate-100">
                 <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
-                  *Averages based on 500+ active local campaigns in 2024
+                  *2026 Projections based on 1.2M Community Data Points
                 </p>
              </div>
            </div>
