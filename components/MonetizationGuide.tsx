@@ -26,7 +26,7 @@ interface GuideSectionProps {
 }
 
 const GuideSection: React.FC<GuideSectionProps> = ({ title, children, icon, step }) => (
-  <div className="space-y-8 animate-slide-up group">
+  <article className="space-y-8 animate-slide-up group">
     <div className="flex items-center gap-6">
       <div className="relative shrink-0">
         <div className="w-16 h-16 rounded-[1.5rem] bg-indigo-600 text-white flex items-center justify-center shadow-2xl shadow-indigo-200 transition-transform group-hover:scale-110 duration-500">
@@ -36,19 +36,37 @@ const GuideSection: React.FC<GuideSectionProps> = ({ title, children, icon, step
           {step}
         </div>
       </div>
-      <h3 className="text-3xl md:text-4xl font-display font-black text-slate-900 tracking-tight leading-none">{title}</h3>
+      <h2 className="text-3xl md:text-4xl font-display font-black text-slate-900 tracking-tight leading-none">{title}</h2>
     </div>
     <div className="pl-0 md:pl-20 text-slate-600 text-lg md:text-xl leading-relaxed space-y-6">
       {children}
     </div>
-  </div>
+  </article>
 );
 
 export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenModal }) => {
   useEffect(() => {
     const originalTitle = document.title;
-    document.title = "Earn Money From Facebook Groups: The 2026 Guide | RMG";
-    return () => { document.title = originalTitle; };
+    const originalDesc = document.querySelector('meta[name="description"]')?.getAttribute('content');
+    
+    document.title = "How to Monetize Facebook Groups 2026: The Ultimate Guide | RMG";
+    document.querySelector('meta[name="description"]')?.setAttribute('content', 'Master Facebook group monetization in 2026. Learn how to secure sponsorships, rent cover photos, and earn passive income from WhatsApp communities.');
+    
+    // Add canonical link for the guide
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', 'https://rentmygroup.com/guide');
+    }
+
+    return () => { 
+      document.title = originalTitle;
+      if (originalDesc) {
+        document.querySelector('meta[name="description"]')?.setAttribute('content', originalDesc);
+      }
+      if (canonical) {
+        canonical.setAttribute('href', 'https://rentmygroup.com/');
+      }
+    };
   }, []);
 
   return (
@@ -69,12 +87,12 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
             </nav>
             
             <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-black tracking-tight leading-[0.9] mb-12 animate-slide-up">
-              Earn Money From <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-300">Facebook Groups.</span>
+              Monetize Your <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-300">Facebook Group.</span>
             </h1>
             
             <p className="text-slate-400 text-xl md:text-3xl font-medium leading-relaxed max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              The 2026 Blueprint for Admins who want to turn community trust into sustainable passive income.
+              The 2026 Blueprint for Admins: Turn community trust into sustainable passive income with verified sponsorship strategies.
             </p>
 
             <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -96,27 +114,27 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
         <div className="max-w-5xl mx-auto px-6">
           <div className="space-y-32">
             
-            <GuideSection step="01" title="The Death of the Feed Ad" icon={<Lock size={28} />}>
+            <GuideSection step="01" title="The Future of Community Monetization" icon={<Lock size={28} />}>
               <p>
-                In 2026, user attention is the scarcest resource. Traditional Facebook Feed ads are now ignored by 92% of users. The only real estate left with 100% engagement is the <strong>Gated Community.</strong>
+                In 2026, user attention is the scarcest resource. Traditional Facebook Feed ads are now ignored by 92% of users. The only real estate left with 100% engagement is the <strong>Gated Community.</strong> This is why learning <strong>how to monetize Facebook groups</strong> is the most valuable skill for community leaders today.
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-12">
                 <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 relative overflow-hidden">
                    <BarChart3 className="text-slate-200 absolute -bottom-4 -right-4" size={120} />
-                   <h4 className="font-black text-slate-900 text-xl mb-4">Engagement Decay</h4>
+                   <h3 className="font-black text-slate-900 text-xl mb-4">Engagement Decay</h3>
                    <p className="text-sm text-slate-500 font-medium">Standard posts only reach 2-5% of your members naturally. The algorithm penalizes external links and business promotion.</p>
                 </div>
                 <div className="p-10 rounded-[2.5rem] bg-indigo-50 border border-indigo-100 relative overflow-hidden">
                    <Sparkles className="text-indigo-200 absolute -bottom-4 -right-4" size={120} />
-                   <h4 className="font-black text-indigo-900 text-xl mb-4">The Pinned Premium</h4>
+                   <h3 className="font-black text-indigo-900 text-xl mb-4">The Pinned Premium</h3>
                    <p className="text-sm text-indigo-600/70 font-medium">Pinned announcements and cover photos are "Native UI"—they are viewed every time a user visits your group to post or comment.</p>
                 </div>
               </div>
             </GuideSection>
 
-            <GuideSection step="02" title="Monetize Without the Spam" icon={<Users size={28} />}>
+            <GuideSection step="02" title="Monetize Facebook Groups Without Spam" icon={<Users size={28} />}>
               <p>
-                Your members joined for value, not to be sold to. The 2026 strategy is <strong>Curated Sponsorships</strong>. Treat your group like a premium magazine, not a flea market.
+                Your members joined for value, not to be sold to. The 2026 strategy for <strong>earning money from Facebook groups</strong> is <strong>Curated Sponsorships</strong>. Treat your group like a premium magazine, not a flea market.
               </p>
               <ul className="space-y-6 pt-4">
                 <li className="flex items-start gap-5">
@@ -124,8 +142,8 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
                     <CheckCircle2 size={18} />
                   </div>
                   <div className="flex-1">
-                    <span className="block font-black text-slate-900 mb-1">Fixed-Rent Cover Photos</span>
-                    <span className="text-base text-slate-500">Rent your group header to a vetted local brand. It’s passive, non-intrusive, and extremely high-value for real estate or local services.</span>
+                    <h3 className="block font-black text-slate-900 mb-1">Fixed-Rent Cover Photo Ads</h3>
+                    <p className="text-base text-slate-500">Rent your group header to a vetted local brand. It’s passive, non-intrusive, and extremely high-value for real estate or local services.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-5">
@@ -133,16 +151,16 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
                     <CheckCircle2 size={18} />
                   </div>
                   <div className="flex-1">
-                    <span className="block font-black text-slate-900 mb-1">Weekly Pinned Highlights</span>
-                    <span className="text-base text-slate-500">Feature one "Sponsor of the Week" at the top of the feed. This keeps the group clean while providing guaranteed reach.</span>
+                    <h3 className="block font-black text-slate-900 mb-1">Weekly Pinned Group Highlights</h3>
+                    <p className="text-base text-slate-500">Feature one "Sponsor of the Week" at the top of the feed. This keeps the group clean while providing guaranteed reach to all members.</p>
                   </div>
                 </li>
               </ul>
             </GuideSection>
 
-            <GuideSection step="03" title="Automate Your Earnings" icon={<Zap size={28} />}>
+            <GuideSection step="03" title="Automate Passive Income from WhatsApp" icon={<Zap size={28} />}>
               <p>
-                Don't spend your time chasing $20 from local businesses. Use a marketplace like <strong>RentMyGroup</strong> to handle the administrative overhead.
+                Don't spend your time chasing $20 from local businesses. Use a specialized marketplace like <strong>RentMyGroup</strong> to handle the administrative overhead and secure high-paying <strong>WhatsApp group sponsorships</strong>.
               </p>
               
               <div className="mt-12 bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden">
@@ -150,19 +168,19 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
                    <DollarSign size={200} />
                 </div>
                 <div className="max-w-2xl relative z-10">
-                   <h4 className="text-3xl font-display font-black mb-8 leading-tight">The RMG Advantage:</h4>
+                   <h3 className="text-3xl font-display font-black mb-8 leading-tight">The RMG Advantage for Admins:</h3>
                    <div className="space-y-6">
                       <div className="flex items-center gap-4 text-slate-300">
                         <Search className="text-indigo-400" size={24} />
-                        <span className="font-bold">We find the brands looking for your niche.</span>
+                        <span className="font-bold">We find brands specifically looking for your community niche.</span>
                       </div>
                       <div className="flex items-center gap-4 text-slate-300">
                         <ImageIcon className="text-indigo-400" size={24} />
-                        <span className="font-bold">We provide the high-conversion ad templates.</span>
+                        <span className="font-bold">We provide high-conversion ad templates for your group.</span>
                       </div>
                       <div className="flex items-center gap-4 text-slate-300">
                         <DollarSign className="text-indigo-400" size={24} />
-                        <span className="font-bold">Payments are automated via Stripe instantly.</span>
+                        <span className="font-bold">Secure payouts automated via Stripe to your bank account.</span>
                       </div>
                    </div>
                    
@@ -174,7 +192,7 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
                          Secure Your Group Spot <ArrowRight size={24} className="ml-2" />
                       </Button>
                       <p className="mt-6 text-slate-500 text-sm font-bold uppercase tracking-widest text-center sm:text-left">
-                        Joining is 100% Free for Admins
+                        Joining the network is 100% Free for Group Admins
                       </p>
                    </div>
                 </div>
@@ -183,16 +201,16 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
 
           </div>
           
-          <div className="mt-32 pt-24 border-t border-slate-100 text-center">
+          <section className="mt-32 pt-24 border-t border-slate-100 text-center">
              <Trophy size={48} className="mx-auto text-yellow-400 mb-8" />
-             <h2 className="text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight mb-6">Start Your Legacy.</h2>
+             <h2 className="text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight mb-6">Start Your Community Legacy.</h2>
              <p className="text-slate-500 text-xl font-medium max-w-xl mx-auto mb-12 leading-relaxed">
-                2026 is the year of the Private Community. Don't leave your monetization to chance. Join the network leading the change.
+                2026 is the year of the Private Community. Don't leave your monetization to chance. Join the network leading the change in <strong>Facebook group marketing.</strong>
              </p>
              <Button onClick={() => onOpenModal('admin')} variant="secondary" className="px-12 h-16 text-lg border-2 border-slate-200">
                 Register as a Group Admin
              </Button>
-          </div>
+          </section>
         </div>
       </section>
     </div>
