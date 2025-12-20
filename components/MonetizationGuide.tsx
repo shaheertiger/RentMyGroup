@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -11,232 +11,332 @@ import {
   ChevronRight,
   Sparkles,
   Lock,
-  BarChart3,
-  Search
+  AlertTriangle,
+  Heart,
+  MousePointer2,
+  TrendingUp,
+  Landmark,
+  X
 } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
 
-interface GuideSectionProps {
+interface MethodCardProps {
   title: string;
-  children: React.ReactNode;
+  description: string;
+  whyItWorks: string;
+  bestPractice: string;
   icon: React.ReactNode;
-  step: string;
+  color: string;
 }
 
-const GuideSection: React.FC<GuideSectionProps> = ({ title, children, icon, step }) => (
-  <article className="space-y-8 animate-slide-up group">
-    <div className="flex items-center gap-6">
-      <div className="relative shrink-0">
-        <div className="w-16 h-16 rounded-[1.5rem] bg-indigo-600 text-white flex items-center justify-center shadow-2xl shadow-indigo-200 transition-transform group-hover:scale-110 duration-500">
-          {icon}
-        </div>
-        <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-slate-900 text-white text-[10px] font-black flex items-center justify-center border-2 border-white">
-          {step}
-        </div>
+const MethodCard: React.FC<MethodCardProps> = ({ title, description, whyItWorks, bestPractice, icon, color }) => (
+  <div className="bg-white rounded-[2.5rem] p-8 md:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-indigo-500/10 transition-all duration-500 group">
+    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${color} text-white shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+      {icon}
+    </div>
+    <h3 className="text-2xl font-display font-black text-slate-900 mb-4 tracking-tight">{title}</h3>
+    <p className="text-slate-600 mb-6 leading-relaxed font-medium">{description}</p>
+    
+    <div className="space-y-4 pt-6 border-t border-slate-50">
+      <div>
+        <span className="text-[10px] font-black uppercase tracking-widest text-indigo-600 block mb-1">Why it works</span>
+        <p className="text-sm text-slate-500 font-bold">{whyItWorks}</p>
       </div>
-      <h2 className="text-3xl md:text-4xl font-display font-black text-slate-900 tracking-tight leading-none">{title}</h2>
+      <div>
+        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1">Best Practice</span>
+        <p className="text-sm text-slate-500 italic">"{bestPractice}"</p>
+      </div>
     </div>
-    <div className="pl-0 md:pl-20 text-slate-600 text-lg md:text-xl leading-relaxed space-y-6">
-      {children}
-    </div>
-  </article>
+  </div>
 );
 
 export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenModal }) => {
-  const breadcrumbJsonLd = useMemo(() => ({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://rentmygroup.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Monetization Guide 2026",
-        "item": "https://rentmygroup.com/guide"
-      }
-    ]
-  }), []);
-
   useEffect(() => {
-    const originalTitle = document.title;
-    const originalDesc = document.querySelector('meta[name="description"]')?.getAttribute('content');
-    
-    document.title = "How to Monetize Facebook Groups 2026: The Ultimate Guide | RentMyGroup";
-    document.querySelector('meta[name="description"]')?.setAttribute('content', 'Unlock sustainable passive income from your Facebook and WhatsApp groups. Our 2026 guide covers cover photo rentals, pinned messages, and community sponsorship strategies.');
-    
-    // Add canonical link for the guide
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', 'https://rentmygroup.com/guide');
-    }
-
-    // Add Breadcrumb JSON-LD
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(breadcrumbJsonLd);
-    document.head.appendChild(script);
-
-    return () => { 
-      document.title = originalTitle;
-      if (originalDesc) {
-        document.querySelector('meta[name="description"]')?.setAttribute('content', originalDesc);
-      }
-      if (canonical) {
-        canonical.setAttribute('href', 'https://rentmygroup.com/');
-      }
-      document.head.removeChild(script);
-    };
-  }, [breadcrumbJsonLd]);
+    document.title = "How to Make Money From Facebook Groups in 2026 (Without Killing Trust)";
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Dynamic Page Hero */}
+    <div className="min-h-screen bg-white pb-32">
+      {/* Hero Section */}
       <section className="bg-slate-950 text-white pt-32 pb-24 md:pt-48 md:pb-40 relative overflow-hidden">
-        {/* Animated Background Mesh */}
-        <div className="absolute inset-0 opacity-[0.1] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/30 rounded-full blur-[160px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[160px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+          <nav className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 text-slate-400 text-[10px] font-black uppercase tracking-[0.25em] mb-12" aria-label="Breadcrumb">
+            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <ChevronRight size={12} className="text-white/20" />
+            <span className="text-indigo-400 uppercase tracking-widest font-black">Admin Blueprint</span>
+          </nav>
+          
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-black tracking-tight leading-[1.05] mb-12 max-w-5xl mx-auto">
+            How to Make Money From Facebook Groups in 2026 <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-300 italic">(Without Killing Trust)</span>
+          </h1>
+          
+          <p className="text-slate-400 text-xl md:text-2xl font-medium leading-relaxed max-w-2xl mx-auto mb-16">
+            Algorithms change, reach fluctuates, and ads get ignored. But members trust their group admins more than any platform.
+          </p>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <nav className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 text-slate-400 text-[10px] font-black uppercase tracking-[0.25em] mb-12 animate-fade-in" aria-label="Breadcrumb">
-              <a href="/" className="hover:text-white transition-colors">Home</a>
-              <ChevronRight size={12} className="text-white/20" />
-              <span className="text-indigo-400">2026 Strategy Guide</span>
-            </nav>
-            
-            <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-black tracking-tight leading-[0.9] mb-12 animate-slide-up">
-              Monetize Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-300">Facebook Group.</span>
-            </h1>
-            
-            <p className="text-slate-400 text-xl md:text-3xl font-medium leading-relaxed max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              The 2026 Blueprint for Admins: Turn community trust into sustainable passive income with verified sponsorship strategies.
-            </p>
-
-            <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
-                <ShieldCheck className="text-indigo-400" size={20} aria-hidden="true" />
-                <span className="text-sm font-bold tracking-tight">Verified Strategies</span>
-              </div>
-              <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
-                <Zap className="text-yellow-400" size={20} aria-hidden="true" />
-                <span className="text-sm font-bold tracking-tight">2026 Algorithm-Proof</span>
-              </div>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
+              <ShieldCheck className="text-indigo-400" size={20} />
+              <span className="text-sm font-bold">100% Policy Compliant</span>
+            </div>
+            <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
+              <Sparkles className="text-yellow-400" size={20} />
+              <span className="text-sm font-bold">Safe for All Groups</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Strategy Content */}
-      <section className="py-24 md:py-40 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="space-y-32">
+      {/* Intro Manifesto */}
+      <section className="py-24 max-w-4xl mx-auto px-6">
+        <div className="prose prose-slate lg:prose-xl max-w-none">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-px flex-1 bg-slate-100"></div>
+            <Heart size={24} className="text-red-500 fill-red-500/10" />
+            <div className="h-px flex-1 bg-slate-100"></div>
+          </div>
+
+          <p className="text-3xl md:text-4xl font-display font-black text-slate-900 text-center mb-12 leading-tight">
+            Facebook Groups don’t make money. <br />
+            <span className="text-indigo-600 underline underline-offset-8 decoration-indigo-100">Group admins do.</span>
+          </p>
+
+          <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
+            <p>
+              In 2026, the most profitable Facebook groups aren’t the biggest — they’re the most trusted. 
+              This guide explains how Facebook group admins actually make money in 2026, what still works, what no longer does, and how to monetize without annoying members or risking your group.
+            </p>
+            <blockquote className="border-l-4 border-indigo-600 pl-8 py-4 bg-indigo-50/50 rounded-r-3xl text-slate-900 font-bold italic">
+              "Members trust their group admins more than any ad platform."
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* Traits Section */}
+      <section className="py-24 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-display font-black text-slate-900 mb-8 tracking-tight">Can You Really Make Money?</h2>
+              <p className="text-lg text-slate-600 mb-10 font-medium">
+                Yes — but not the way most people try. Facebook does not pay group admins directly. Monetization happens when admins responsibly rent or leverage attention inside the group.
+              </p>
+              <div className="space-y-6">
+                {[
+                  { label: "Active, real members (not bots)", icon: <Users size={20} /> },
+                  { label: "Clear moderation and rules", icon: <Lock size={20} /> },
+                  { label: "High trust in the admin team", icon: <ShieldCheck size={20} /> }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                    <div className="text-indigo-600">{item.icon}</div>
+                    <span className="font-bold text-slate-800">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
             
-            <GuideSection step="01" title="The Future of Community Monetization" icon={<Lock size={28} />}>
-              <p>
-                In 2026, user attention is the scarcest resource. Traditional Facebook Feed ads are now ignored by 92% of users. The only real estate left with 100% engagement is the <strong>Private Community.</strong> This is why learning <strong>how to monetize Facebook groups</strong> is the most valuable skill for community leaders today.
-              </p>
-              <div className="grid md:grid-cols-2 gap-8 mt-12">
-                <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 relative overflow-hidden">
-                   <BarChart3 className="text-slate-200 absolute -bottom-4 -right-4" size={120} aria-hidden="true" />
-                   <h3 className="font-black text-slate-900 text-xl mb-4">Engagement Decay</h3>
-                   <p className="text-sm text-slate-500 font-medium">Standard posts only reach 2-5% of your members naturally. The algorithm penalizes external links and business promotion.</p>
-                </div>
-                <div className="p-10 rounded-[2.5rem] bg-indigo-50 border border-indigo-100 relative overflow-hidden">
-                   <Sparkles className="text-indigo-200 absolute -bottom-4 -right-4" size={120} aria-hidden="true" />
-                   <h3 className="font-black text-indigo-900 text-xl mb-4">The Pinned Premium</h3>
-                   <p className="text-sm text-indigo-600/70 font-medium">Pinned announcements and cover photos are "Native UI"—they are viewed every time a user visits your group to post or comment.</p>
-                </div>
+            <div className="bg-red-50 p-10 md:p-14 rounded-[3rem] border border-red-100">
+              <div className="flex items-center gap-3 mb-8 text-red-600">
+                <AlertTriangle size={32} />
+                <h3 className="text-2xl font-black font-display tracking-tight">Why Most Monetization Fails</h3>
               </div>
-            </GuideSection>
-
-            <GuideSection step="02" title="Monetize Facebook Groups Without Spam" icon={<Users size={28} />}>
-              <p>
-                Your members joined for value, not to be sold to. The 2026 strategy for <strong>earning money from Facebook groups</strong> is <strong>Curated Sponsorships</strong>. Treat your group like a premium magazine, not a flea market.
-              </p>
-              <ul className="space-y-6 pt-4">
-                <li className="flex items-start gap-5">
-                  <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0 mt-1 shadow-sm">
-                    <CheckCircle2 size={18} aria-hidden="true" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="block font-black text-slate-900 mb-1">Fixed-Rent Cover Photo Ads</h3>
-                    <p className="text-base text-slate-500">Rent your group header to a vetted local brand. It’s passive, non-intrusive, and extremely high-value for real estate or local services.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-5">
-                  <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0 mt-1 shadow-sm">
-                    <CheckCircle2 size={18} aria-hidden="true" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="block font-black text-slate-900 mb-1">Weekly Pinned Group Highlights</h3>
-                    <p className="text-base text-slate-500">Feature one "Sponsor of the Week" at the top of the feed. This keeps the group clean while providing guaranteed reach to all members.</p>
-                  </div>
-                </li>
+              <ul className="space-y-6">
+                {[
+                  "Allowing unlimited self-promotion",
+                  "Posting affiliate links randomly",
+                  "Accepting irrelevant sponsors",
+                  "Monetizing too often"
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <div className="w-6 h-6 rounded-full bg-white border border-red-100 flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                    </div>
+                    <span className="text-red-900 font-bold">{text}</span>
+                  </li>
+                ))}
               </ul>
-            </GuideSection>
-
-            <GuideSection step="03" title="Automate Passive Income from WhatsApp" icon={<Zap size={28} />}>
-              <p>
-                Don't spend your time chasing $20 from local businesses. Use a specialized marketplace like <strong>RentMyGroup</strong> to handle the administrative overhead and secure high-paying <strong>WhatsApp group sponsorships</strong>.
+              <p className="mt-10 text-red-600/70 font-bold italic text-sm">
+                In 2026, scarcity and relevance outperform volume.
               </p>
-              
-              <div className="mt-12 bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-12 opacity-5">
-                   <DollarSign size={200} aria-hidden="true" />
-                </div>
-                <div className="max-w-2xl relative z-10">
-                   <h3 className="text-3xl font-display font-black mb-8 leading-tight">The RMG Advantage for Admins:</h3>
-                   <div className="space-y-6">
-                      <div className="flex items-center gap-4 text-slate-300">
-                        <Search className="text-indigo-400" size={24} aria-hidden="true" />
-                        <span className="font-bold">We find brands specifically looking for your community niche.</span>
-                      </div>
-                      <div className="flex items-center gap-4 text-slate-300">
-                        <ImageIcon className="text-indigo-400" size={24} aria-hidden="true" />
-                        <span className="font-bold">We provide high-conversion ad templates for your group.</span>
-                      </div>
-                      <div className="flex items-center gap-4 text-slate-300">
-                        <DollarSign className="text-indigo-400" size={24} aria-hidden="true" />
-                        <span className="font-bold">Secure payouts automated via Stripe to your bank account.</span>
-                      </div>
-                   </div>
-                   
-                   <div className="pt-12">
-                      <Button 
-                        onClick={() => onOpenModal('admin')} 
-                        className="w-full sm:w-auto h-20 px-12 text-xl bg-indigo-600 shadow-2xl shadow-indigo-500/30"
-                      >
-                         Secure Your Group Spot <ArrowRight size={24} className="ml-2" aria-hidden="true" />
-                      </Button>
-                      <p className="mt-6 text-slate-500 text-sm font-bold uppercase tracking-widest text-center sm:text-left">
-                        Joining the network is 100% Free for Group Admins
-                      </p>
-                   </div>
-                </div>
-              </div>
-            </GuideSection>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* The 6 Methods Grid */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-24">
+            <span className="text-indigo-600 font-black uppercase tracking-[0.3em] text-xs mb-4 block">Proven Methods</span>
+            <h2 className="text-5xl md:text-6xl font-display font-black text-slate-900 tracking-tight">The 6 Ways to Earn in 2026</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <MethodCard 
+              title="Pinned Post Sponsorships"
+              description="A pinned post is the most valuable placement. Seen by nearly 100% of members regardless of feed updates."
+              whyItWorks="Highest ROI, bypasses algorithms, feels like an endorsement."
+              bestPractice="One sponsor at a time with fixed monthly pricing."
+              icon={<TrendingUp size={28} />}
+              color="bg-indigo-600"
+            />
+            <MethodCard 
+              title="Cover Photo Rentals"
+              description="Your group’s cover photo is prime real estate. Rent this monthly to featured local businesses."
+              whyItWorks="Non-intrusive, constant visibility, high premium value."
+              bestPractice="Feature only one local brand (Realtors, Gyms, Dentists) per month."
+              icon={<ImageIcon size={28} />}
+              color="bg-blue-600"
+            />
+            <MethodCard 
+              title="Local Business Partnerships"
+              description="Local businesses outperform national brands because trust transfers naturally from you to them."
+              whyItWorks="Shared geography increases member trust and relevance."
+              bestPractice="Define 'Official neighborhood partners' to increase prestige."
+              icon={<Landmark size={28} />}
+              color="bg-slate-900"
+            />
+            <MethodCard 
+              title="Exclusive Deals & Giveaways"
+              description="This is monetization disguised as value. Partner with brands to offer member-only discounts."
+              whyItWorks="Members feel rewarded, engagement spikes, brands get leads."
+              bestPractice="The business pays for exposure; members get the win."
+              icon={<Sparkles size={28} />}
+              color="bg-purple-600"
+            />
+            <MethodCard 
+              title="Paid Memberships"
+              description="Works only for niche expertise, professional, or education-based groups. Neighborhood groups should stick to sponsorships."
+              whyItWorks="Predictable recurring revenue for high-value content."
+              bestPractice="Charge for access to professional training or networking."
+              icon={<Zap size={28} />}
+              color="bg-amber-500"
+            />
+            <MethodCard 
+              title="Lead Referrals"
+              description="Directly referral leads to businesses. Manual and less scalable but highly personal."
+              whyItWorks="Direct ROI for the business, highly personal."
+              bestPractice="Tag sponsors in relevant comment threads (e.g. plumbing requests)."
+              icon={<MousePointer2 size={28} />}
+              color="bg-emerald-600"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Income Table */}
+      <section className="py-24 bg-slate-900 text-white rounded-[3rem] md:rounded-[5rem] mx-4 overflow-hidden relative">
+        <div className="absolute top-0 left-0 p-20 opacity-10 pointer-events-none">
+          <DollarSign size={300} />
+        </div>
+        
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-display font-black tracking-tight mb-4">Typical Monthly Earnings</h2>
+            <p className="text-slate-400 font-medium text-lg">Based on one pinned sponsor and one cover placement with local relevance.</p>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 overflow-hidden">
+            <div className="grid grid-cols-2 border-b border-white/10 bg-white/5">
+              <div className="p-8 font-black text-xs uppercase tracking-[0.2em] text-indigo-400">Group Size</div>
+              <div className="p-8 font-black text-xs uppercase tracking-[0.2em] text-indigo-400">Monthly Income Est.</div>
+            </div>
+            {[
+              { size: "5,000 members", income: "$200 – $500" },
+              { size: "25,000 members", income: "$1,500 – $3,000" },
+              { size: "50,000+ members", income: "$4,000+" }
+            ].map((row, i) => (
+              <div key={i} className="grid grid-cols-2 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
+                <div className="p-8 font-bold text-xl">{row.size}</div>
+                <div className="p-8 font-black text-2xl text-indigo-300">{row.income}</div>
+              </div>
+            ))}
           </div>
           
-          <section className="mt-32 pt-24 border-t border-slate-100 text-center">
-             <Trophy size={48} className="mx-auto text-yellow-400 mb-8" aria-hidden="true" />
-             <h2 className="text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight mb-6">Start Your Community Legacy.</h2>
-             <p className="text-slate-500 text-xl font-medium max-w-xl mx-auto mb-12 leading-relaxed">
-                2026 is the year of the Private Community. Don't leave your monetization to chance. Join the network leading the change in <strong>Facebook group marketing.</strong>
-             </p>
-             <Button onClick={() => onOpenModal('admin')} variant="secondary" className="px-12 h-16 text-lg border-2 border-slate-200">
-                Register as a Group Admin
-             </Button>
-          </section>
+          <div className="mt-12 text-center text-slate-500 text-sm font-bold uppercase tracking-widest italic">
+            More sponsors ≠ more money. Better placement does.
+          </div>
         </div>
+      </section>
+
+      {/* Platform Pitch */}
+      <section className="py-32 max-w-5xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="space-y-8">
+            <h2 className="text-4xl font-display font-black text-slate-900 tracking-tight">The Problem With Monetizing Manually</h2>
+            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+              Most admins quit monetizing because finding sponsors takes time, chasing payments is exhausting, and approving creatives is stressful.
+            </p>
+            <div className="space-y-4">
+              {[
+                "Finding the right local brands",
+                "Administrative overhead and contracts",
+                "Stripe integration and tax forms",
+                "Reporting ROI to advertisers"
+              ].map((text, i) => (
+                <div key={i} className="flex items-center gap-3 text-slate-500 font-bold">
+                  <X className="text-red-400" size={18} />
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="bg-indigo-600 p-12 rounded-[3.5rem] text-white shadow-2xl shadow-indigo-600/30">
+            <h3 className="text-3xl font-display font-black mb-8">RentMyGroup handles it for you.</h3>
+            <div className="space-y-6 mb-12">
+              <div className="flex items-center gap-4">
+                <CheckCircle2 size={24} className="text-indigo-200" />
+                <span className="font-bold">Match brands to your group niche</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <CheckCircle2 size={24} className="text-indigo-200" />
+                <span className="font-bold">Automated secure payouts</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <CheckCircle2 size={24} className="text-indigo-200" />
+                <span className="font-bold">Full admin control over content</span>
+              </div>
+            </div>
+            <Button 
+              onClick={() => onOpenModal('admin')}
+              className="w-full h-18 text-lg bg-white text-indigo-600 shadow-xl"
+            >
+              Secure Your Group Spot <ArrowRight size={20} className="ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Advice Section */}
+      <section className="py-24 text-center max-w-3xl mx-auto px-6">
+        <Trophy size={48} className="text-yellow-400 mx-auto mb-10" />
+        <h2 className="text-4xl md:text-5xl font-display font-black text-slate-900 mb-8 tracking-tight">Final Advice for Admins</h2>
+        <div className="bg-slate-50 border border-slate-100 p-10 rounded-[2.5rem] space-y-6 text-left">
+          {[
+            "Monetize less, not more",
+            "Choose relevance over money",
+            "Protect member trust at all costs",
+            "Think in monthly rent, not one-off posts"
+          ].map((text, i) => (
+            <div key={i} className="flex items-center gap-4">
+              <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-black text-xs shrink-0">
+                {i+1}
+              </div>
+              <p className="text-slate-800 font-bold text-lg">{text}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-12 text-slate-500 font-medium text-xl italic leading-relaxed">
+          "A Facebook group is not an ad feed. It’s a relationship asset. Treat it that way — and it will pay you for years."
+        </p>
       </section>
     </div>
   );

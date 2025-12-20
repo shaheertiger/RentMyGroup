@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Users, ArrowRight, ChevronRight, HelpCircle, BookOpen } from 'lucide-react';
+import { Menu, X, Users, ArrowRight, ChevronRight, HelpCircle } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
 
@@ -27,12 +27,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
     setMobileMenuOpen(false);
   };
 
-  const handleGuideClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    onNavigate('/guide');
-    setMobileMenuOpen(false);
-  };
-
   const handleNavToSection = (id: string) => {
     const isHome = currentPath === '/' || currentPath === '' || currentPath.includes('index.html');
     
@@ -49,8 +43,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
     }
     setMobileMenuOpen(false);
   };
-
-  const isGuideActive = currentPath.includes('/guide');
 
   return (
     <>
@@ -69,13 +61,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
 
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => handleNavToSection('how-it-works')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">How it Works</button>
-              <button 
-                onClick={handleGuideClick} 
-                className={`text-sm font-bold transition-all relative cursor-pointer ${isGuideActive ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-900'}`}
-              >
-                Guide
-                {isGuideActive && <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-600 rounded-full"></span>}
-              </button>
               <button onClick={() => onOpenModal('admin')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">Group Admins</button>
               <button onClick={() => onOpenModal('advertiser')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full cursor-pointer">Businesses</button>
             </div>
@@ -130,22 +115,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
                     <ChevronRight size={14} className="text-slate-300" />
                   </div>
                   <p className="text-[12px] text-slate-500">Learn about our process.</p>
-                </div>
-              </button>
-
-              <button 
-                onClick={handleGuideClick} 
-                className={`w-full text-left p-4 rounded-2xl border shadow-sm transition-all flex items-start gap-4 cursor-pointer ${isGuideActive ? 'bg-indigo-50 border-indigo-600 shadow-indigo-100' : 'bg-white border-slate-100'}`}
-              >
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${isGuideActive ? 'bg-indigo-600 text-white' : 'bg-indigo-50 text-indigo-600'}`}>
-                   <BookOpen size={20} />
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center justify-between mb-0.5">
-                    <span className={`font-bold text-[15px] ${isGuideActive ? 'text-indigo-600' : 'text-slate-900'}`}>Monetization Guide</span>
-                    <ChevronRight size={14} className={isGuideActive ? 'text-indigo-400' : 'text-slate-300'} />
-                  </div>
-                  <p className="text-[12px] text-slate-500">The 2026 Blueprint.</p>
                 </div>
               </button>
 
