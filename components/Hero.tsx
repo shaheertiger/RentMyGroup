@@ -1,5 +1,5 @@
 import React, { useState, useEffect, memo } from 'react';
-import { ArrowRight, Sparkles, ShieldCheck, Zap, Globe } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Zap, Globe } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { MockupFacebookGroup, MockupWhatsappGroup } from './ProfileMockup.tsx';
 import { LandlordFox } from './Mascot.tsx';
@@ -47,15 +47,18 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
           
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
             <div className="flex flex-col items-center lg:items-start gap-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 shadow-sm backdrop-blur-sm animate-fade-in">
-                <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-[11px] font-black text-slate-600 uppercase tracking-widest">Live: 4,200 Groups Monetizing Now</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-xl shadow-indigo-500/5 border border-slate-100 backdrop-blur-sm animate-fade-in group">
+                <span className="flex h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[11px] font-black text-slate-600 uppercase tracking-widest flex items-center gap-1.5">
+                  Live: <span className="text-indigo-600">4,281</span> Groups Active
+                </span>
+                <ChevronRight size={12} className="text-slate-300 group-hover:translate-x-0.5 transition-transform" />
               </div>
               
               <div className="flex items-center gap-4 lg:-ml-4 animate-slide-up" style={{animationDelay: '0.05s'}}>
                  <LandlordFox size={80} pose="pointing" className="hidden lg:block shrink-0 drop-shadow-lg" />
                  <div className="space-y-1">
-                    <p className="text-xs font-black text-indigo-500 uppercase tracking-widest">Powered by RMG Protocol</p>
+                    <p className="text-xs font-black text-indigo-500 uppercase tracking-widest">Global Ad Protocol v4.0</p>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
                       Own Your <br />
                       <TypewriterText words={['Local Group', 'Neighborhood', 'WhatsApp', 'Community']} />
@@ -65,7 +68,7 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
             </div>
             
             <p className="text-lg md:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              The first marketplace to rent cover photos and pin messages in community groups. Reach 100% of neighbors without the algorithm "penalty."
+              The first verified marketplace to rent cover photos and pin messages in community groups. Reach 100% of neighbors without the algorithmic penalty.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -73,7 +76,7 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
                   onClick={() => onOpenModal('advertiser')} 
                   variant="primary"
                   className="w-full sm:w-auto px-10 h-16 text-lg relative group overflow-hidden"
-                  title="Advertise in local groups"
+                  title="Advertise your business in local groups"
                 >
                    <span className="relative z-10 flex items-center gap-2">Grow My Brand <ArrowRight size={20} aria-hidden="true" /></span>
                    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 animate-shimmer" aria-hidden="true"></div>
@@ -82,16 +85,16 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
                   onClick={() => onOpenModal('admin')} 
                   variant="secondary"
                   className="w-full sm:w-auto px-10 h-16 text-lg bg-white border-slate-200"
-                  title="Monetize your group"
+                  title="Monetize your existing community"
                 >
                    Monetize My Group
                 </Button>
             </div>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-6 opacity-60">
-              <div className="flex items-center gap-2 text-sm font-bold"><ShieldCheck size={18} aria-hidden="true" className="text-indigo-600" /> Verified Admins</div>
+              <div className="flex items-center gap-2 text-sm font-bold"><ShieldCheck size={18} aria-hidden="true" className="text-indigo-600" /> Vetted Admins</div>
               <div className="flex items-center gap-2 text-sm font-bold"><Zap size={18} aria-hidden="true" className="text-yellow-600" /> Instant Placement</div>
-              <div className="flex items-center gap-2 text-sm font-bold"><Globe size={18} aria-hidden="true" className="text-blue-600" /> Hyper-Local</div>
+              <div className="flex items-center gap-2 text-sm font-bold"><Globe size={18} aria-hidden="true" className="text-blue-600" /> 100% Privacy-Safe</div>
             </div>
           </div>
 
@@ -112,7 +115,7 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
                 >Facebook</button>
               </div>
 
-              <div className="transform scale-[0.85] sm:scale-100 transition-all duration-700" aria-label="Community Group Mockup">
+              <div className="transform scale-[0.85] sm:scale-100 transition-all duration-700" aria-label="Community Group Display Mockup">
                  {platform === 'whatsapp' ? <MockupWhatsappGroup /> : <MockupFacebookGroup />}
               </div>
               
@@ -127,3 +130,10 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
     </section>
   );
 };
+
+// Internal icon for the badge
+const ChevronRight = ({ size, className }: { size: number, className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="m9 18 6-6-6-6"/>
+  </svg>
+);

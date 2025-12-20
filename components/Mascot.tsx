@@ -8,12 +8,18 @@ interface MascotProps {
 
 export const LandlordFox: React.FC<MascotProps> = ({ className = '', pose = 'neutral', size = 200 }) => {
   return (
-    <div className={`relative flex items-center justify-center ${className}`} style={{ width: size, height: size }}>
+    <div 
+      className={`relative flex items-center justify-center ${className}`} 
+      style={{ width: size, height: size }}
+      role="img"
+      aria-label="RentMyGroup Mascot: Landlord Fox"
+    >
       <svg
         viewBox="0 0 200 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full drop-shadow-2xl animate-float"
+        aria-hidden="true"
       >
         {/* Tail */}
         <path
