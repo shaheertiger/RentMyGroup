@@ -1,12 +1,10 @@
 
 import React, { useEffect } from 'react';
 import { 
-  BookOpen, 
   CheckCircle2, 
   ArrowRight, 
   DollarSign, 
   ShieldCheck, 
-  Star, 
   Trophy,
   Users,
   Image as ImageIcon,

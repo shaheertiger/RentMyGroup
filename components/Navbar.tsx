@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect, useCallback } from 'react';
-import { Menu, X, Users, ArrowRight, ChevronRight, Briefcase, HelpCircle, BookOpen } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Users, ArrowRight, ChevronRight, HelpCircle, BookOpen } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
 

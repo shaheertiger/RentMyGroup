@@ -1,20 +1,12 @@
+
 import React, { useState } from 'react';
 import { 
   ShieldCheck, 
-  Zap, 
   MapPin, 
   MessageCircle, 
   BarChart3, 
-  Fingerprint, 
-  Eye, 
-  MousePointer2, 
   ArrowRight,
-  Layers,
-  Search,
   Target,
-  Sparkles,
-  TrendingUp,
-  LineChart,
   ShieldAlert
 } from 'lucide-react';
 

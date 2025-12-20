@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Search, ImagePlus, Target, ArrowRight, Sparkles, MapPin, MousePointer2, BarChart3, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { Search, ImagePlus, ArrowRight, Sparkles, MapPin, MousePointer2, BarChart3, CheckCircle2 } from 'lucide-react';
 
 const UsersIcon = ({ size, className = "" }: { size: number, className?: string }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
