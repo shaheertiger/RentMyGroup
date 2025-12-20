@@ -3,7 +3,6 @@ import { ArrowRight, Sparkles, ShieldCheck, Zap } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { MockupFacebookGroup, MockupWhatsappGroup } from './ProfileMockup.tsx';
 import { Role } from '../types.ts';
-import { LandlordFox } from './Mascot.tsx';
 
 const TypewriterText = memo(({ words }: { words: string[] }) => {
   const [index, setIndex] = useState(0);
@@ -41,11 +40,6 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
       {/* Dynamic Background Elements */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-indigo-100/40 rounded-full blur-[120px] -z-10 animate-float"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-100/40 rounded-full blur-[120px] -z-10 animate-float" style={{animationDelay: '-3s'}}></div>
-
-      {/* Subtle Mascot Integration */}
-      <div className="absolute top-1/4 -right-20 hidden xl:block opacity-20 hover:opacity-100 transition-opacity duration-700 -rotate-12 pointer-events-none">
-        <LandlordFox size={300} />
-      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">

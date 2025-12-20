@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { 
   CheckCircle2, 
@@ -15,7 +14,6 @@ import {
 } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
-import { LandlordFox } from './Mascot.tsx';
 
 interface GuideSectionProps {
   title: string;
@@ -78,11 +76,6 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
             <p className="text-slate-400 text-xl md:text-2xl font-medium leading-relaxed max-w-xl mx-auto md:mx-0">
               Stop moderating for free. Learn how to transform your local community into a sustainable business without losing member trust.
             </p>
-          </div>
-
-          <div className="shrink-0 relative hidden lg:block">
-            <div className="absolute inset-0 bg-indigo-500/20 rounded-full blur-[80px] animate-pulse"></div>
-            <LandlordFox size={350} pose="pointing" className="relative z-10" />
           </div>
         </div>
       </section>
