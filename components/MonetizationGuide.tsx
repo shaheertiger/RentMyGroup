@@ -141,7 +141,7 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
             
             <GuideSection step="01" title="The Future of Community Monetization" icon={<Lock size={28} />}>
               <p>
-                In 2026, user attention is the scarcest resource. Traditional Facebook Feed ads are now ignored by 92% of users. The only real estate left with 100% engagement is the <strong>Gated Community.</strong> This is why learning <strong>how to monetize Facebook groups</strong> is the most valuable skill for community leaders today.
+                In 2026, user attention is the scarcest resource. Traditional Facebook Feed ads are now ignored by 92% of users. The only real estate left with 100% engagement is the <strong>Private Community.</strong> This is why learning <strong>how to monetize Facebook groups</strong> is the most valuable skill for community leaders today.
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-12">
                 <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 relative overflow-hidden">
