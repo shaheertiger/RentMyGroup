@@ -2,7 +2,6 @@ import React, { useState, useEffect, memo } from 'react';
 import { ArrowRight, ShieldCheck, Zap, Globe } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { MockupFacebookGroup, MockupWhatsappGroup } from './ProfileMockup.tsx';
-import { LandlordFox } from './Mascot.tsx';
 import { Role } from '../types.ts';
 
 const TypewriterText = memo(({ words }: { words: string[] }) => {
@@ -47,23 +46,11 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
           
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
             <div className="flex flex-col items-center lg:items-start gap-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-xl shadow-indigo-500/5 border border-slate-100 backdrop-blur-sm animate-fade-in group">
-                <span className="flex h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-[11px] font-black text-slate-600 uppercase tracking-widest flex items-center gap-1.5">
-                  Live: <span className="text-indigo-600">4,281</span> Groups Active
-                </span>
-                <ChevronRight size={12} className="text-slate-300 group-hover:translate-x-0.5 transition-transform" />
-              </div>
-              
-              <div className="flex items-center gap-4 lg:-ml-4 animate-slide-up" style={{animationDelay: '0.05s'}}>
-                 <LandlordFox size={80} pose="pointing" className="hidden lg:block shrink-0 drop-shadow-lg" />
-                 <div className="space-y-1">
-                    <p className="text-xs font-black text-indigo-500 uppercase tracking-widest">Global Ad Protocol v4.0</p>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
-                      Own Your <br />
-                      <TypewriterText words={['Local Group', 'Neighborhood', 'WhatsApp', 'Community']} />
-                    </h1>
-                 </div>
+              <div className="space-y-1 animate-slide-up">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
+                  Own Your <br />
+                  <TypewriterText words={['Local Group', 'Neighborhood', 'WhatsApp', 'Community']} />
+                </h1>
               </div>
             </div>
             
@@ -118,11 +105,6 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
               <div className="transform scale-[0.85] sm:scale-100 transition-all duration-700" aria-label="Community Group Display Mockup">
                  {platform === 'whatsapp' ? <MockupWhatsappGroup /> : <MockupFacebookGroup />}
               </div>
-              
-              {/* Desktop Decorative Floating Mascot */}
-              <div className="absolute -bottom-12 -left-20 hidden xl:block animate-float" style={{animationDelay: '-2s'}}>
-                 <LandlordFox size={140} pose="holding-sign" />
-              </div>
             </div>
           </div>
         </div>
@@ -130,10 +112,3 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
     </section>
   );
 };
-
-// Internal icon for the badge
-const ChevronRight = ({ size, className }: { size: number, className?: string }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="m9 18 6-6-6-6"/>
-  </svg>
-);
