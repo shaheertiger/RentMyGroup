@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -18,7 +18,10 @@ import {
   Landmark,
   X,
   Share2,
-  ExternalLink
+  ExternalLink,
+  Facebook,
+  Linkedin,
+  Twitter as TwitterIcon
 } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
@@ -54,6 +57,8 @@ const MethodCard: React.FC<MethodCardProps> = ({ title, description, whyItWorks,
 );
 
 export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenModal }) => {
+  const [previewPlatform, setPreviewPlatform] = useState<'facebook' | 'linkedin' | 'twitter'>('facebook');
+
   useEffect(() => {
     document.title = "How to Make Money From Facebook Groups in 2026 (Without Killing Trust)";
     window.scrollTo(0, 0);
@@ -67,7 +72,6 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
         url: window.location.href,
       });
     } else {
-      // Fallback
       navigator.clipboard.writeText(window.location.href);
       alert('Link copied to clipboard!');
     }
@@ -247,91 +251,97 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
         </div>
       </section>
 
-      {/* Income Table */}
-      <section className="py-24 bg-slate-900 text-white rounded-[3rem] md:rounded-[5rem] mx-4 overflow-hidden relative">
-        <div className="absolute top-0 left-0 p-20 opacity-10 pointer-events-none">
-          <DollarSign size={300} />
-        </div>
-        
+      {/* Social Preview Visual Section - DASHBOARD STYLE */}
+      <section className="py-32 bg-slate-50 relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-display font-black tracking-tight mb-4">Typical Monthly Earnings</h2>
-            <p className="text-slate-400 font-medium text-lg">Based on one pinned sponsor and one cover placement with local relevance.</p>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 overflow-hidden">
-            <div className="grid grid-cols-2 border-b border-white/10 bg-white/5">
-              <div className="p-8 font-black text-xs uppercase tracking-[0.2em] text-indigo-400">Group Size</div>
-              <div className="p-8 font-black text-xs uppercase tracking-[0.2em] text-indigo-400">Monthly Income Est.</div>
-            </div>
-            {[
-              { size: "5,000 members", income: "$200 – $500" },
-              { size: "25,000 members", income: "$1,500 – $3,000" },
-              { size: "50,000+ members", income: "$4,000+" }
-            ].map((row, i) => (
-              <div key={i} className="grid grid-cols-2 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
-                <div className="p-8 font-bold text-xl">{row.size}</div>
-                <div className="p-8 font-black text-2xl text-indigo-300">{row.income}</div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div>
+              <div className="flex items-baseline gap-2 mb-4">
+                <span className="text-slate-400 font-medium text-lg">Preview Score</span>
+                <span className="text-5xl font-display font-black text-indigo-600 tracking-tighter">100</span>
+                <span className="text-slate-300 font-bold text-xl">/100</span>
               </div>
-            ))}
+              <h2 className="text-4xl font-display font-black text-slate-900 tracking-tight">Social Preview Dashboard</h2>
+            </div>
+            <div className="flex p-1 bg-white rounded-2xl border border-slate-200 shadow-sm w-fit" role="tablist">
+              <button 
+                onClick={() => setPreviewPlatform('facebook')}
+                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${previewPlatform === 'facebook' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
+              >Facebook</button>
+              <button 
+                onClick={() => setPreviewPlatform('linkedin')}
+                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${previewPlatform === 'linkedin' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
+              >LinkedIn</button>
+              <button 
+                onClick={() => setPreviewPlatform('twitter')}
+                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${previewPlatform === 'twitter' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
+              >X (Twitter)</button>
+            </div>
           </div>
-          
-          <div className="mt-12 text-center text-slate-500 text-sm font-bold uppercase tracking-widest italic">
-            More sponsors ≠ more money. Better placement does.
-          </div>
-        </div>
-      </section>
 
-      {/* Social Preview Visual Section */}
-      <section className="py-32 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-indigo-600 font-black uppercase tracking-[0.3em] text-xs mb-4 block">Viral Preview</span>
-            <h2 className="text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight mb-6">How Your Friends Will See This</h2>
-            <p className="text-slate-500 font-medium">When you share this blueprint, it looks premium in their feed.</p>
-          </div>
-
-          {/* Simulated Social Card */}
-          <div className="bg-white rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl group cursor-pointer hover:scale-[1.02] transition-all duration-500" onClick={handleShare}>
-             <div className="aspect-[1200/630] bg-slate-950 relative overflow-hidden p-12 flex flex-col justify-end border-b border-slate-100">
-                <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 2px, transparent 0)', backgroundSize: '30px 30px' }}></div>
-                <div className="absolute top-12 right-12">
-                   <Users size={80} className="text-indigo-500/20" />
-                </div>
-                <div className="relative z-10 max-w-2xl">
-                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-600 rounded-full text-white text-[10px] font-black uppercase tracking-widest mb-6">
-                      <Sparkles size={12} fill="currentColor" /> Strategy Blueprint
-                   </div>
-                   <h3 className="text-4xl md:text-6xl font-display font-black text-white leading-[1.1] tracking-tight mb-6">
-                      How to Make Money From <br /> <span className="text-indigo-400">Facebook Groups</span> in 2026.
-                   </h3>
-                   <div className="flex items-center gap-4 text-slate-400 font-black text-sm uppercase tracking-widest">
-                      <span>By RentMyGroup</span>
-                      <span className="w-1.5 h-1.5 bg-slate-800 rounded-full"></span>
-                      <span>15 Min Read</span>
+          {/* Social Card Preview Tool UI */}
+          <div className="bg-white rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl relative">
+             <div className="p-8 md:p-12 border-b border-slate-100">
+                <div className="aspect-[1200/630] bg-slate-100 rounded-[2rem] relative overflow-hidden border border-slate-200 shadow-inner group cursor-pointer" onClick={handleShare}>
+                   <img 
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&h=630&q=80" 
+                      alt="OpenGraph Preview" 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                   />
+                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+                         <Share2 size={32} />
+                      </div>
                    </div>
                 </div>
              </div>
-             <div className="p-8 flex items-center justify-between bg-white">
-                <div className="flex items-center gap-4">
-                   <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
-                      <ExternalLink size={20} />
+             
+             <div className="p-8 md:p-12 bg-slate-50/50">
+                <div className="space-y-6">
+                   <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">DOMAIN</span>
+                      <div className="flex items-center gap-2 text-slate-900 font-bold text-lg">
+                        <ExternalLink size={16} className="text-indigo-600" /> rentmygroup.com
+                      </div>
                    </div>
-                   <div className="flex flex-col">
-                      <span className="font-black text-slate-900 text-lg tracking-tight">rentmygroup.com</span>
-                      <span className="text-slate-400 text-sm font-medium">The #1 Private Community Network</span>
+                   <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">PAGE TITLE</span>
+                      <h3 className="text-2xl md:text-3xl font-display font-black text-slate-900 leading-tight tracking-tight">
+                         {previewPlatform === 'twitter' ? 'Monetize & Advertise in Local Groups' : 'RentMyGroup | Monetize & Advertise in Local Groups'}
+                      </h3>
+                   </div>
+                   <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">DESCRIPTION</span>
+                      <p className="text-slate-600 font-medium leading-relaxed">
+                         Discover the ultimate blueprint for monetizing Facebook groups in 2026. Learn 6 proven methods to earn passive income safely.
+                      </p>
                    </div>
                 </div>
-                <div className="px-6 py-3 bg-indigo-600 text-white font-black text-sm rounded-2xl shadow-lg shadow-indigo-600/20">
-                   Open Guide
+                
+                <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
+                   <Button onClick={handleShare} className="w-full sm:w-auto h-16 px-10 rounded-2xl gap-3 shadow-xl shadow-indigo-600/20">
+                      <Share2 size={20} /> Share Blueprint
+                   </Button>
+                   <button className="w-full sm:w-auto h-16 px-10 rounded-2xl bg-white border border-slate-200 text-slate-500 font-black text-sm uppercase tracking-widest hover:bg-slate-50 transition-colors">
+                      Save This Preview
+                   </button>
                 </div>
              </div>
           </div>
 
-          <div className="mt-12 flex justify-center">
-             <Button onClick={handleShare} className="h-16 px-10 rounded-2xl gap-3 shadow-xl">
-                <Share2 size={20} /> Share This Blueprint
-             </Button>
+          <div className="mt-12 flex justify-center items-center gap-8">
+             <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">OG:IMAGE OK</span>
+             </div>
+             <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">TAGS SYNCED</span>
+             </div>
+             <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">MOBILE READY</span>
+             </div>
           </div>
         </div>
       </section>

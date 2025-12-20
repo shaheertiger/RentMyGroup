@@ -60,8 +60,14 @@ const App: React.FC = () => {
     // Social Preview Elements
     const ogTitle = document.getElementById('og-title');
     const ogDesc = document.getElementById('og-desc');
+    const ogImage = document.getElementById('og-image');
+    const ogImageSecure = document.getElementById('og-image-secure');
     const twitterTitle = document.getElementById('twitter-title');
     const twitterDesc = document.getElementById('twitter-desc');
+    const twitterImage = document.getElementById('twitter-image');
+
+    const origin = window.location.origin;
+    const defaultImage = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&h=630&q=80";
 
     if (currentPath === GUIDE_PATH) {
       const title = "How to Make Money From Facebook Groups in 2026 (Without Killing Trust)";
@@ -69,26 +75,35 @@ const App: React.FC = () => {
       
       document.title = title;
       metaDesc?.setAttribute('content', desc);
-      canonicalLink?.setAttribute('href', `https://rentmygroup.com${GUIDE_PATH}`);
+      canonicalLink?.setAttribute('href', `${origin}${GUIDE_PATH}`);
       
       // Update Social Preview Tags
       ogTitle?.setAttribute('content', title);
       ogDesc?.setAttribute('content', desc);
       twitterTitle?.setAttribute('content', title);
       twitterDesc?.setAttribute('content', desc);
+      
+      // Ensure we use absolute URLs for images
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
     } else {
       const title = "RentMyGroup | #1 Marketplace to Monetize & Advertise in Local Groups";
       const desc = "RentMyGroup is the first marketplace for community monetization. Rent cover photos, pin messages, and earn passive income from Facebook and WhatsApp groups safely in 2026.";
       
       document.title = title;
       metaDesc?.setAttribute('content', desc);
-      canonicalLink?.setAttribute('href', 'https://rentmygroup.com/');
+      canonicalLink?.setAttribute('href', `${origin}/`);
       
       // Update Social Preview Tags
       ogTitle?.setAttribute('content', title);
       ogDesc?.setAttribute('content', desc);
       twitterTitle?.setAttribute('content', title);
       twitterDesc?.setAttribute('content', desc);
+
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
     }
   }, [currentPath]);
 
@@ -101,12 +116,9 @@ const App: React.FC = () => {
     const cleanPath = path || '/';
     const normalized = normalizePath(cleanPath);
     
-    // Always push state and update current path to ensure re-renders
     window.history.pushState({}, '', normalized);
     setCurrentPath(normalized);
     window.dispatchEvent(new Event('app-navigate'));
-    
-    // Explicit scroll to top on path change
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
