@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
@@ -27,7 +26,9 @@ const SectionLoader = () => (
 
 // Helper to normalize paths for comparison
 const normalizePath = (path: string) => {
-  let p = path.toLowerCase().replace(/\/index\.html$/, '').replace(/\/$/, '');
+  if (!path) return '/';
+  let p = path.toLowerCase().split(/[?#]/)[0]; // Remove query strings/hashes
+  p = p.replace(/\/index\.html$/, '').replace(/\/+$/, '');
   return p === '' ? '/' : p;
 };
 
@@ -41,7 +42,7 @@ const App: React.FC = () => {
       setCurrentPath(normalizePath(window.location.pathname));
     };
     window.addEventListener('popstate', handleLocationChange);
-    // Custom event for internal navigation
+    // Custom event for internal navigation as a backup
     window.addEventListener('app-navigate', handleLocationChange);
     
     return () => {
@@ -57,9 +58,13 @@ const App: React.FC = () => {
 
   const navigate = (path: string) => {
     const cleanPath = path === '/' ? '/' : (path.startsWith('/') ? path : `/${path}`);
-    window.history.pushState({}, '', cleanPath);
-    // Dispatch custom event to notify App component
-    window.dispatchEvent(new Event('app-navigate'));
+    if (window.location.pathname !== cleanPath) {
+      window.history.pushState({}, '', cleanPath);
+      // Update state immediately for smoother UI response
+      setCurrentPath(normalizePath(cleanPath));
+      // Dispatch custom event for any other listeners
+      window.dispatchEvent(new Event('app-navigate'));
+    }
   };
 
   const openModal = (role: Role) => {
@@ -71,7 +76,7 @@ const App: React.FC = () => {
   };
 
   // Check if we are on the guide page
-  const isGuidePage = currentPath.includes('/guide');
+  const isGuidePage = currentPath === '/guide';
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-indigo-500 selection:text-white relative">
