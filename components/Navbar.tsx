@@ -146,7 +146,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
                     <span className={`font-bold text-[15px] ${isGuideActive ? 'text-indigo-600' : 'text-slate-900'}`}>Monetization Guide</span>
                     <ChevronRight size={14} className={isGuideActive ? 'text-indigo-400' : 'text-slate-300'} />
                   </div>
-                  <p className="text-[12px] text-slate-500">The 2024 Blueprint.</p>
+                  <p className="text-[12px] text-slate-500">The 2026 Blueprint.</p>
                 </div>
               </button>
 

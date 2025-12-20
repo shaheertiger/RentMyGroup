@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { 
   CheckCircle2, 
@@ -7,7 +8,6 @@ import {
   Trophy,
   Users,
   Image as ImageIcon,
-  MessageSquare,
   Zap,
   ChevronRight,
   Sparkles,
