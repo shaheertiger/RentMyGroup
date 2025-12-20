@@ -18,14 +18,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
           <div className="lg:col-span-4 space-y-8">
-            <div className="flex items-center gap-2 cursor-pointer group" onClick={() => onNavigate('/')}>
+            <a href="/" className="flex items-center gap-2 cursor-pointer group" onClick={(e) => { e.preventDefault(); onNavigate('/'); }}>
               <div className="bg-indigo-600 rounded-lg p-1.5 shadow-indigo-500/20 shadow-lg group-hover:scale-110 transition-transform duration-200">
                 <Users size={20} className="text-white" />
               </div>
               <span className="text-xl font-bold tracking-tight text-slate-900 font-display">
                 RentMy<span className="text-indigo-600">Group</span>
               </span>
-            </div>
+            </a>
             
             <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-sm">
               The world's first verified marketplace for community group advertising. We help local businesses reach neighbors through trusted community leaders.

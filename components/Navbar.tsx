@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Users, ArrowRight, ChevronRight, HelpCircle, BookOpen } from 'lucide-react';
 import { Button } from './Button.tsx';
@@ -59,14 +58,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
         <div className="mx-auto max-w-5xl px-4">
           <div className={`flex items-center justify-between rounded-full px-5 py-2.5 transition-all duration-300 ${isScrolled || mobileMenuOpen ? 'bg-white/95 backdrop-blur-xl shadow-lg border border-slate-200/50' : 'bg-transparent border border-transparent'}`}>
             
-            <div className="flex items-center gap-2 cursor-pointer group" onClick={handleLogoClick}>
+            <a href="/" className="flex items-center gap-2 cursor-pointer group" onClick={handleLogoClick}>
               <div className="bg-indigo-600 rounded-lg p-1.5 shadow-indigo-500/20 shadow-lg group-hover:scale-110 transition-transform duration-200">
                 <Users size={20} className="text-white" />
               </div>
               <span className="text-base font-bold tracking-tight text-slate-900 font-display group-hover:text-indigo-600 transition-colors">
                 RentMy<span className="text-indigo-600">Group</span>
               </span>
-            </div>
+            </a>
 
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => handleNavToSection('how-it-works')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">How it Works</button>
@@ -101,14 +100,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 bottom-0 w-[85%] max-w-[320px] z-[120] bg-white shadow-2xl animate-slide-in-left md:hidden flex flex-col h-full border-r border-slate-100 overscroll-behavior-contain">
           <div className="p-6 flex items-center justify-between bg-slate-50/50 border-b border-slate-100">
-            <div className="flex items-center gap-2.5 cursor-pointer" onClick={handleLogoClick}>
+            <a href="/" className="flex items-center gap-2.5 cursor-pointer" onClick={handleLogoClick}>
               <div className="bg-indigo-600 rounded-xl p-2 shadow-lg shadow-indigo-600/20">
                 <Users size={24} className="text-white" />
               </div>
               <span className="text-xl font-bold tracking-tight text-slate-900 font-display">
                 RentMy<span className="text-indigo-600">Group</span>
               </span>
-            </div>
+            </a>
             <button onClick={() => setMobileMenuOpen(false)} className="p-3 -mr-2 text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full cursor-pointer">
               <X size={26} />
             </button>

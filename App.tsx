@@ -61,16 +61,20 @@ const App: React.FC = () => {
 
   // Ensure we always start at top on navigation
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPath]);
 
   const navigate = (path: string) => {
-    const cleanPath = path === '/' ? '/' : (path.startsWith('/') ? path : `/${path}`);
-    if (window.location.pathname !== cleanPath) {
-      window.history.pushState({}, '', cleanPath);
-      setCurrentPath(normalizePath(cleanPath));
-      window.dispatchEvent(new Event('app-navigate'));
-    }
+    const cleanPath = path || '/';
+    const normalized = normalizePath(cleanPath);
+    
+    // Always push state and update current path to ensure re-renders
+    window.history.pushState({}, '', normalized);
+    setCurrentPath(normalized);
+    window.dispatchEvent(new Event('app-navigate'));
+    
+    // Explicit scroll to top on path change
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openModal = (role: Role) => {
