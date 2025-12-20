@@ -16,8 +16,7 @@ import {
   TrendingUp,
   Landmark,
   X,
-  Share2,
-  ExternalLink
+  Share2
 } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
