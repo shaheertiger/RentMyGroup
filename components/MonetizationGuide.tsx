@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { 
   CheckCircle2, 
   ArrowRight, 
-  DollarSign, 
   ShieldCheck, 
   Trophy,
   Users,
@@ -18,10 +17,7 @@ import {
   Landmark,
   X,
   Share2,
-  ExternalLink,
-  Facebook,
-  Linkedin,
-  Twitter as TwitterIcon
+  ExternalLink
 } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
