@@ -247,96 +247,118 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
         </div>
       </section>
 
-      {/* Social Preview Visual Section - DASHBOARD STYLE */}
+      {/* Social Preview Visual Section - DASHBOARD STYLE REDESIGN */}
       <section className="py-32 bg-slate-50 relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-slate-400 font-medium text-lg">Preview Score</span>
-                <span className="text-5xl font-display font-black text-indigo-600 tracking-tighter">100</span>
-                <span className="text-slate-300 font-bold text-xl">/100</span>
+                <span className="text-slate-400 font-medium text-lg tracking-tight">Social Health Score</span>
+                <span className="text-6xl font-display font-black text-indigo-600 tracking-tighter">100</span>
+                <span className="text-slate-300 font-bold text-2xl">/100</span>
               </div>
-              <h2 className="text-4xl font-display font-black text-slate-900 tracking-tight">Social Preview Dashboard</h2>
+              <h2 className="text-4xl font-display font-black text-slate-900 tracking-tight">Viral Dashboard Preview</h2>
+              <p className="text-slate-500 font-medium mt-2">See how your community looks when shared globally.</p>
             </div>
-            <div className="flex p-1 bg-white rounded-2xl border border-slate-200 shadow-sm w-fit" role="tablist">
+            <div className="flex p-1.5 bg-white rounded-2xl border border-slate-200 shadow-sm w-fit" role="tablist">
               <button 
                 onClick={() => setPreviewPlatform('facebook')}
-                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${previewPlatform === 'facebook' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
+                className={`px-6 py-2.5 rounded-xl text-sm font-black transition-all ${previewPlatform === 'facebook' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-slate-400 hover:text-slate-600'}`}
               >Facebook</button>
               <button 
                 onClick={() => setPreviewPlatform('linkedin')}
-                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${previewPlatform === 'linkedin' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
+                className={`px-6 py-2.5 rounded-xl text-sm font-black transition-all ${previewPlatform === 'linkedin' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-slate-400 hover:text-slate-600'}`}
               >LinkedIn</button>
               <button 
                 onClick={() => setPreviewPlatform('twitter')}
-                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${previewPlatform === 'twitter' ? 'bg-indigo-50 text-indigo-600' : 'text-slate-400 hover:text-slate-600'}`}
-              >X (Twitter)</button>
+                className={`px-6 py-2.5 rounded-xl text-sm font-black transition-all ${previewPlatform === 'twitter' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-slate-400 hover:text-slate-600'}`}
+              >X / Twitter</button>
             </div>
           </div>
 
-          {/* Social Card Preview Tool UI */}
-          <div className="bg-white rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl relative">
-             <div className="p-8 md:p-12 border-b border-slate-100">
-                <div className="aspect-[1200/630] bg-slate-100 rounded-[2rem] relative overflow-hidden border border-slate-200 shadow-inner group cursor-pointer" onClick={handleShare}>
+          {/* New Higher-Fidelity Social Card UI */}
+          <div className="bg-white rounded-[3rem] border border-slate-200 overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] relative group">
+             {/* Browser Top Bar Decor */}
+             <div className="bg-slate-50 border-b border-slate-100 px-8 py-4 flex items-center justify-between">
+                <div className="flex gap-2">
+                   <div className="w-3 h-3 rounded-full bg-slate-200"></div>
+                   <div className="w-3 h-3 rounded-full bg-slate-200"></div>
+                   <div className="w-3 h-3 rounded-full bg-slate-200"></div>
+                </div>
+                <div className="bg-white px-10 py-1.5 rounded-lg border border-slate-200 text-[11px] font-bold text-slate-400">
+                   https://rentmygroup.com/blueprint-2026
+                </div>
+                <div className="w-3"></div>
+             </div>
+
+             <div className="p-8 md:p-14">
+                <div className="aspect-[1200/630] bg-slate-950 rounded-[2.5rem] relative overflow-hidden border border-slate-200 shadow-2xl group cursor-pointer" onClick={handleShare}>
+                   {/* This is the new premium image that will be shown in previews */}
                    <img 
-                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&h=630&q=80" 
-                      alt="OpenGraph Preview" 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&h=630&q=80" 
+                      alt="OpenGraph Premium Preview" 
+                      className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
                    />
-                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
-                         <Share2 size={32} />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-12 flex flex-col justify-end">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 rounded-full text-white text-[10px] font-black uppercase tracking-widest mb-6 w-fit shadow-xl shadow-indigo-600/40">
+                         <Sparkles size={14} fill="white" /> Strategy Guide
                       </div>
+                      <h3 className="text-4xl md:text-5xl font-display font-black text-white leading-tight tracking-tight max-w-2xl drop-shadow-lg">
+                         Monetizing <span className="text-indigo-400 underline decoration-indigo-400/30 underline-offset-8">Local Communities</span> <br /> the Right Way in 2026.
+                      </h3>
+                   </div>
+                   
+                   {/* Verification Badge Overlay */}
+                   <div className="absolute top-8 right-8 bg-white/10 backdrop-blur-xl px-4 py-2 rounded-2xl border border-white/20 flex items-center gap-3 text-white">
+                      <ShieldCheck className="text-indigo-400" size={18} />
+                      <span className="text-[11px] font-black uppercase tracking-widest">Verified OG Meta</span>
                    </div>
                 </div>
              </div>
              
-             <div className="p-8 md:p-12 bg-slate-50/50">
-                <div className="space-y-6">
-                   <div>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">DOMAIN</span>
-                      <div className="flex items-center gap-2 text-slate-900 font-bold text-lg">
-                        <ExternalLink size={16} className="text-indigo-600" /> rentmygroup.com
+             <div className="px-8 md:px-14 pb-14">
+                <div className="grid md:grid-cols-12 gap-10 items-center">
+                   <div className="md:col-span-8 space-y-6">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 border border-indigo-100">
+                           <TrendingUp size={18} />
+                        </div>
+                        <span className="text-[12px] font-black uppercase tracking-widest text-slate-400">Share Statistics</span>
                       </div>
-                   </div>
-                   <div>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">PAGE TITLE</span>
-                      <h3 className="text-2xl md:text-3xl font-display font-black text-slate-900 leading-tight tracking-tight">
-                         {previewPlatform === 'twitter' ? 'Monetize & Advertise in Local Groups' : 'RentMyGroup | Monetize & Advertise in Local Groups'}
+                      <h3 className="text-2xl md:text-3xl font-display font-black text-slate-900 leading-tight">
+                         Optimized for {previewPlatform === 'twitter' ? 'Viral Engagement' : 'Professional Authority'}
                       </h3>
-                   </div>
-                   <div>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">DESCRIPTION</span>
-                      <p className="text-slate-600 font-medium leading-relaxed">
-                         Discover the ultimate blueprint for monetizing Facebook groups in 2026. Learn 6 proven methods to earn passive income safely.
+                      <p className="text-slate-600 font-medium leading-relaxed max-w-xl">
+                         Your link preview is the first impression. We've engineered this specific OG:Image to trigger the highest curiosity gap on {previewPlatform === 'twitter' ? 'X (Twitter)' : previewPlatform === 'facebook' ? 'Facebook' : 'LinkedIn'}.
                       </p>
                    </div>
-                </div>
-                
-                <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-                   <Button onClick={handleShare} className="w-full sm:w-auto h-16 px-10 rounded-2xl gap-3 shadow-xl shadow-indigo-600/20">
-                      <Share2 size={20} /> Share Blueprint
-                   </Button>
-                   <button className="w-full sm:w-auto h-16 px-10 rounded-2xl bg-white border border-slate-200 text-slate-500 font-black text-sm uppercase tracking-widest hover:bg-slate-50 transition-colors">
-                      Save This Preview
-                   </button>
+                   <div className="md:col-span-4 flex flex-col gap-4">
+                      <Button onClick={handleShare} className="w-full h-18 text-base shadow-2xl shadow-indigo-600/30 font-black">
+                         <Share2 size={20} className="mr-2" /> Share Blueprint
+                      </Button>
+                      <div className="bg-slate-50 border border-slate-100 p-5 rounded-2xl flex items-center justify-between">
+                         <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest">Auto-Scale</span>
+                         <div className="w-10 h-6 bg-indigo-600 rounded-full flex items-center justify-end p-1">
+                            <div className="w-4 h-4 bg-white rounded-full"></div>
+                         </div>
+                      </div>
+                   </div>
                 </div>
              </div>
           </div>
 
-          <div className="mt-12 flex justify-center items-center gap-8">
-             <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">OG:IMAGE OK</span>
+          <div className="mt-16 flex flex-wrap justify-center items-center gap-12">
+             <div className="flex items-center gap-3">
+                <div className="w-4 h-4 rounded-full bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.4)]"></div>
+                <span className="text-xs font-black text-slate-500 uppercase tracking-widest">1200x630 Res OK</span>
              </div>
-             <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">TAGS SYNCED</span>
+             <div className="flex items-center gap-3">
+                <div className="w-4 h-4 rounded-full bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.4)]"></div>
+                <span className="text-xs font-black text-slate-500 uppercase tracking-widest">Dynamic Sync</span>
              </div>
-             <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">MOBILE READY</span>
+             <div className="flex items-center gap-3">
+                <div className="w-4 h-4 rounded-full bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.4)]"></div>
+                <span className="text-xs font-black text-slate-500 uppercase tracking-widest">Safe Area OK</span>
              </div>
           </div>
         </div>

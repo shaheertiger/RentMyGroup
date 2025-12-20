@@ -67,7 +67,8 @@ const App: React.FC = () => {
     const twitterImage = document.getElementById('twitter-image');
 
     const origin = window.location.origin;
-    const defaultImage = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&h=630&q=80";
+    // New curated professional scene representing high-scale community growth
+    const defaultImage = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&h=630&q=80";
 
     if (currentPath === GUIDE_PATH) {
       const title = "How to Make Money From Facebook Groups in 2026 (Without Killing Trust)";
