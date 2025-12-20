@@ -1,4 +1,3 @@
-
 import React, { useState, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -51,7 +50,7 @@ const App: React.FC = () => {
       </main>
 
       <Suspense fallback={null}>
-        <Footer />
+        <Footer onOpenModal={openModal} />
         <WaitlistModal 
           isOpen={modal.isOpen}
           role={modal.role}

@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
-import { Menu, X, Users, ArrowRight, ChevronRight, Briefcase } from 'lucide-react';
+import { Menu, X, Users, ArrowRight, ChevronRight, Briefcase, HelpCircle } from 'lucide-react';
 import { Button } from './Button';
 import { Role } from '../types';
 
@@ -38,6 +37,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
     }
   }, [mobileMenuOpen]);
 
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   const handleLinkClick = useCallback((role: Role) => {
     onOpenModal(role);
     setMobileMenuOpen(false);
@@ -59,6 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             </div>
 
             <div className="hidden md:flex items-center gap-8">
+              <button onClick={() => scrollToSection('how-it-works')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all">How it Works</button>
               <button onClick={() => onOpenModal('admin')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all">Group Admins</button>
               <button onClick={() => onOpenModal('advertiser')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all">Businesses</button>
             </div>
@@ -104,6 +112,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           <div className="flex-1 overflow-y-auto py-8 px-5 space-y-6 no-scrollbar">
             <section className="space-y-3">
               <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] px-1 mb-1">Solutions</div>
+              
+              <button 
+                onClick={() => scrollToSection('how-it-works')} 
+                className="w-full text-left p-4 rounded-2xl bg-white border border-slate-100 shadow-sm active:scale-[0.98] active:bg-slate-50 transition-all flex items-start gap-4"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100/50 flex items-center justify-center text-indigo-600 shrink-0">
+                   <HelpCircle size={20} />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-0.5">
+                    <span className="font-bold text-slate-900 text-[15px]">How it Works</span>
+                    <ChevronRight size={14} className="text-slate-300" />
+                  </div>
+                  <p className="text-[12px] text-slate-500 leading-tight">Learn about our 3-step process.</p>
+                </div>
+              </button>
+
               <button 
                 onClick={() => handleLinkClick('admin')} 
                 className="w-full text-left p-4 rounded-2xl bg-white border border-slate-100 shadow-sm active:scale-[0.98] active:bg-slate-50 transition-all flex items-start gap-4"

@@ -1,4 +1,3 @@
-
 import React, { memo } from 'react';
 import { 
   Search, 
@@ -19,10 +18,11 @@ import {
   ChevronLeft
 } from 'lucide-react';
 
-const PhoneFrame = ({ children, time = "9:41" }: { children: React.ReactNode, time?: string }) => (
-  <div className="relative mx-auto w-[280px] xs:w-[320px] sm:w-[350px] h-[580px] xs:h-[650px] md:h-[700px] bg-[#0A0A0A] rounded-[48px] xs:rounded-[56px] p-[10px] xs:p-[12px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5),0_15px_40px_-15px_rgba(0,0,0,0.3)] ring-1 ring-white/10 select-none overflow-hidden transition-all duration-700 border border-white/5 box-content will-change-transform">
-    <div className="relative h-full w-full bg-white rounded-[38px] xs:rounded-[44px] overflow-hidden flex flex-col font-sans isolate shadow-inner">
-      <div className="absolute top-0 left-0 right-0 h-10 md:h-12 z-[60] flex items-center justify-between px-6 xs:px-8 pointer-events-none text-black">
+const PhoneFrame = ({ children, time = "9:41" }: { children?: React.ReactNode, time?: string }) => (
+  <div className="relative mx-auto w-[280px] xs:w-[320px] sm:w-[350px] h-[580px] xs:h-[650px] md:h-[700px] bg-[#0A0A0A] rounded-[48px] xs:rounded-[56px] p-[8px] xs:p-[10px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5),0_15px_40px_-15px_rgba(0,0,0,0.3)] ring-1 ring-white/10 select-none overflow-hidden transition-all duration-700 border border-white/5 box-content will-change-transform">
+    <div className="relative h-full w-full bg-white rounded-[40px] xs:rounded-[46px] overflow-hidden flex flex-col font-sans isolate shadow-inner">
+      {/* Top Bar / Status */}
+      <div className="absolute top-0 left-0 right-0 h-10 md:h-12 z-[60] flex items-center justify-between px-8 pointer-events-none text-black">
         <span className="text-[12px] xs:text-[13px] md:text-[14px] font-bold tracking-tight">{time}</span>
         <div className="flex gap-1.5 items-center">
              <div className="flex gap-0.5 items-end h-2.5 xs:h-3">
@@ -36,8 +36,16 @@ const PhoneFrame = ({ children, time = "9:41" }: { children: React.ReactNode, ti
              </div>
         </div>
       </div>
-      <div className="absolute top-[6px] xs:top-[8px] md:top-[11px] left-1/2 -translate-x-1/2 w-[70px] xs:w-[85px] md:w-[110px] h-[22px] xs:h-[26px] md:h-[32px] bg-black rounded-full z-[80] pointer-events-none shadow-lg ring-1 ring-white/5"></div>
-      {children}
+      
+      {/* Dynamic Island / Notch */}
+      <div className="absolute top-[8px] md:top-[12px] left-1/2 -translate-x-1/2 w-[70px] xs:w-[85px] md:w-[100px] h-[22px] xs:h-[26px] md:h-[30px] bg-black rounded-full z-[80] pointer-events-none shadow-lg ring-1 ring-white/5"></div>
+      
+      {/* Main Content Area - Strictly Clipped */}
+      <div className="flex-1 flex flex-col overflow-hidden rounded-[40px] xs:rounded-[46px] bg-white">
+        {children}
+      </div>
+      
+      {/* Home Indicator */}
       <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-24 xs:w-28 h-1 bg-black/10 rounded-full z-50 pointer-events-none"></div>
     </div>
   </div>
@@ -64,7 +72,6 @@ export const MockupFacebookGroup = memo(() => (
                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" 
                alt="Group Header"
                loading="lazy"
-               decoding="async"
                className="absolute inset-0 w-full h-full object-cover"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -93,10 +100,8 @@ export const MockupFacebookGroup = memo(() => (
            <div className="flex items-center justify-between mb-3 xs:mb-4">
               <div className="flex gap-3">
                   <img 
-                    src="https://i.pravatar.cc/100?u=sarah" 
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80" 
                     alt="Sarah" 
-                    loading="lazy"
-                    decoding="async"
                     className="w-8 h-8 xs:w-10 xs:h-10 rounded-full bg-slate-200 border border-slate-100 object-cover" 
                   />
                   <div>
@@ -122,7 +127,7 @@ export const MockupFacebookGroup = memo(() => (
 
 export const MockupWhatsappGroup = memo(() => (
   <PhoneFrame>
-      <div className="h-[85px] xs:h-[95px] bg-white/90 backdrop-blur-xl z-40 sticky top-0 border-b border-black/5 flex flex-col justify-end pb-3 px-3">
+      <div className="h-[85px] xs:h-[95px] bg-white/95 backdrop-blur-xl z-40 sticky top-0 border-b border-black/5 flex flex-col justify-end pb-3 px-3">
            <div className="flex items-center justify-between w-full pt-4 xs:pt-0">
                <div className="flex items-center text-[#007AFF] gap-0 -ml-1">
                   <ChevronLeft size={28} />
