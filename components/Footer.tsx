@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Users, Facebook, Twitter, Instagram, Linkedin, ArrowRight, MousePointerClick } from 'lucide-react';
+import { Users, Facebook, Twitter, Instagram, Linkedin, ArrowRight, MousePointerClick, MapPin, Tag } from 'lucide-react';
 import { Role } from '../types';
 
 interface FooterProps {
@@ -60,8 +59,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
             </div>
           </div>
 
-          <div className="lg:col-span-3 lg:ml-auto">
-            <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Explore Platform</h4>
+          <div className="lg:col-span-2 lg:ml-auto">
+            <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Explore</h4>
             <ul className="space-y-4">
               <li>
                 <button onClick={() => onOpenModal?.('advertiser')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
@@ -76,12 +75,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavToSection('how-it-works')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
-                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  How it Works
-                </button>
-              </li>
-              <li>
                 <button onClick={() => onNavigate('/guide')} className="text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
                   <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   Monetization Guide
@@ -91,34 +84,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Support & Docs</h4>
-            <ul className="space-y-4">
-              <li>
-                <button onClick={() => handleNavToSection('faq')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
-                  Common Questions
-                </button>
+            <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Top Communities</h4>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-2 text-sm text-slate-500 font-medium group cursor-default">
+                <Tag size={12} className="text-indigo-400" /> 
+                <span className="group-hover:text-indigo-600 transition-colors">Real Estate & Housing</span>
               </li>
-              <li>
-                <button onClick={() => handleNavToSection('comparison')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
-                  Platform Comparison
-                </button>
+              <li className="flex items-center gap-2 text-sm text-slate-500 font-medium group cursor-default">
+                <Tag size={12} className="text-indigo-400" /> 
+                <span className="group-hover:text-indigo-600 transition-colors">Mom & Parent Groups</span>
               </li>
-              <li>
-                <button onClick={() => handleNavToSection('testimonials')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
-                  Success Stories
-                </button>
+              <li className="flex items-center gap-2 text-sm text-slate-500 font-medium group cursor-default">
+                <Tag size={12} className="text-indigo-400" /> 
+                <span className="group-hover:text-indigo-600 transition-colors">Crypto & Web3 Hubs</span>
               </li>
-              <li>
-                <a href="mailto:support@rentmygroup.com" className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">
-                  Contact Support
-                </a>
+              <li className="flex items-center gap-2 text-sm text-slate-500 font-medium group cursor-default">
+                <MapPin size={12} className="text-indigo-400" /> 
+                <span className="group-hover:text-indigo-600 transition-colors">Local Toronto/NYC/LA</span>
               </li>
             </ul>
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Social</h4>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-4 gap-3">
               {[
                 { icon: <Facebook size={18} />, label: 'FB' },
                 { icon: <Twitter size={18} />, label: 'X' },
@@ -134,6 +123,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
                   {social.icon}
                 </a>
               ))}
+            </div>
+            <div className="mt-8">
+              <a href="mailto:support@rentmygroup.com" className="text-sm font-bold text-slate-900 hover:text-indigo-600 transition-colors underline underline-offset-4">
+                support@rentmygroup.com
+              </a>
             </div>
           </div>
         </div>

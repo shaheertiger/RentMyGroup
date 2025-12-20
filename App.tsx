@@ -42,7 +42,6 @@ const App: React.FC = () => {
       setCurrentPath(normalizePath(window.location.pathname));
     };
     window.addEventListener('popstate', handleLocationChange);
-    // Custom event for internal navigation as a backup
     window.addEventListener('app-navigate', handleLocationChange);
     
     return () => {
@@ -50,6 +49,15 @@ const App: React.FC = () => {
       window.removeEventListener('app-navigate', handleLocationChange);
     };
   }, []);
+
+  // SEO management for non-guide pages
+  useEffect(() => {
+    if (currentPath === '/') {
+      document.title = "RentMyGroup | #1 Marketplace to Monetize & Advertise in Local Groups";
+      document.querySelector('meta[name="description"]')?.setAttribute('content', 'The first marketplace to rent cover photos and pin messages in local communities. Monetize your Facebook and WhatsApp groups safely in 2026.');
+      document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://rentmygroup.com/');
+    }
+  }, [currentPath]);
 
   // Ensure we always start at top on navigation
   useEffect(() => {
@@ -60,9 +68,7 @@ const App: React.FC = () => {
     const cleanPath = path === '/' ? '/' : (path.startsWith('/') ? path : `/${path}`);
     if (window.location.pathname !== cleanPath) {
       window.history.pushState({}, '', cleanPath);
-      // Update state immediately for smoother UI response
       setCurrentPath(normalizePath(cleanPath));
-      // Dispatch custom event for any other listeners
       window.dispatchEvent(new Event('app-navigate'));
     }
   };
@@ -75,7 +81,6 @@ const App: React.FC = () => {
     setModal(prev => ({ ...prev, isOpen: false }));
   };
 
-  // Check if we are on the guide page
   const isGuidePage = currentPath === '/guide';
 
   return (
