@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Calculator, ArrowRight, Sparkles, Trophy, CheckCircle2 } from 'lucide-react';
 import { Button } from './Button.tsx';
@@ -36,11 +35,11 @@ export const IncomeCalculator: React.FC<{ onOpenModal: (role: Role) => void }> =
               </p>
               
               <div className="flex flex-col gap-4 max-w-md mx-auto lg:mx-0">
-                <div className="flex items-center gap-3 text-slate-300 font-bold bg-white/5 p-4 rounded-2xl border border-white/5">
+                <div className="flex items-center gap-3 text-slate-300 font-bold bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-indigo-500/30 transition-colors">
                   <CheckCircle2 size={20} className="text-green-400 shrink-0" />
                   <span>Automated payouts via Stripe</span>
                 </div>
-                <div className="flex items-center gap-3 text-slate-300 font-bold bg-white/5 p-4 rounded-2xl border border-white/5">
+                <div className="flex items-center gap-3 text-slate-300 font-bold bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-indigo-500/30 transition-colors">
                   <CheckCircle2 size={20} className="text-green-400 shrink-0" />
                   <span>Choose only brands you trust</span>
                 </div>
@@ -50,17 +49,20 @@ export const IncomeCalculator: React.FC<{ onOpenModal: (role: Role) => void }> =
                 <Button 
                   onClick={() => onOpenModal('admin')} 
                   variant="none" 
-                  className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-50 px-10 h-16 md:h-20 text-lg md:text-xl shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all font-black rounded-2xl flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-50 px-10 h-16 md:h-20 text-lg md:text-xl shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all font-black rounded-2xl flex items-center justify-center gap-3 group"
                 >
-                   Join the Waitlist <ArrowRight size={22} strokeWidth={3} />
+                   Join the Waitlist <ArrowRight size={22} strokeWidth={3} className="group-hover:translate-x-2 transition-transform" />
                 </Button>
               </div>
            </div>
 
            {/* Right Calculator Card */}
-           <div className="glass-panel rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-14 border border-white/10 relative shadow-[0_30px_100px_rgba(0,0,0,0.5)] bg-slate-900/40 backdrop-blur-2xl">
-              <div className="flex items-center gap-4 mb-12">
-                <div className="p-4 bg-indigo-600 rounded-2xl shadow-lg shadow-indigo-600/30">
+           <div className="rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-14 border border-white/10 relative shadow-[0_30px_100px_rgba(0,0,0,0.5)] bg-slate-900/40 backdrop-blur-3xl overflow-hidden group">
+              {/* Inner Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-transparent pointer-events-none" />
+
+              <div className="flex items-center gap-4 mb-12 relative z-10">
+                <div className="p-4 bg-indigo-600 rounded-2xl shadow-lg shadow-indigo-600/30 group-hover:scale-110 transition-transform duration-500">
                   <Calculator size={28} className="text-white" />
                 </div>
                 <div>
@@ -69,11 +71,11 @@ export const IncomeCalculator: React.FC<{ onOpenModal: (role: Role) => void }> =
                 </div>
               </div>
 
-              <div className="space-y-12">
+              <div className="space-y-12 relative z-10">
                 <div className="space-y-6">
                   <div className="flex justify-between items-end">
                     <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">Active Members</span>
-                    <span className="text-3xl md:text-4xl font-display font-black text-white bg-white/5 px-4 py-1 rounded-xl border border-white/10">{members.toLocaleString()}</span>
+                    <span className="text-3xl md:text-4xl font-display font-black text-white bg-white/5 px-4 py-1 rounded-xl border border-white/10 shadow-inner">{members.toLocaleString()}</span>
                   </div>
                   
                   <div className="px-2">
@@ -89,17 +91,17 @@ export const IncomeCalculator: React.FC<{ onOpenModal: (role: Role) => void }> =
                   </div>
                   
                   <div className="flex justify-between text-[10px] text-slate-600 font-black uppercase tracking-widest px-1">
-                    <span>1,000</span>
-                    <span>50,000</span>
-                    <span>100,000</span>
+                    <span>1K</span>
+                    <span>50K</span>
+                    <span>100K</span>
                   </div>
                 </div>
 
-                <div className="bg-slate-950/80 rounded-[2rem] p-8 md:p-10 text-center border border-white/5 relative overflow-hidden group">
+                <div className="bg-slate-950/80 rounded-[2rem] p-8 md:p-10 text-center border border-white/5 relative overflow-hidden group/result">
                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 to-transparent opacity-50"></div>
-                    <Trophy className="mx-auto mb-4 text-indigo-400/60" size={32} />
+                    <Trophy className="mx-auto mb-4 text-indigo-400/60 group-hover/result:scale-125 transition-transform duration-500" size={32} />
                     <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.3em] mb-4">Estimated Yearly Revenue</p>
-                    <div className="text-5xl md:text-7xl font-display font-black text-white mb-2 tracking-tighter drop-shadow-2xl">
+                    <div className="text-5xl md:text-7xl font-display font-black text-white mb-2 tracking-tighter drop-shadow-2xl animate-fade-in" key={earnings}>
                         ${(earnings * 12).toLocaleString()}
                     </div>
                     <p className="text-indigo-400/80 text-xs font-bold mt-4 px-4 py-2 bg-indigo-400/5 rounded-full inline-block border border-indigo-400/10">

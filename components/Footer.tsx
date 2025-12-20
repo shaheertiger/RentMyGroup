@@ -10,19 +10,6 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
   const currentYear = new Date().getFullYear();
 
-  const handleNavToSection = (id: string) => {
-    if (window.location.pathname !== '/') {
-      onNavigate('/');
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="bg-slate-50 pt-24 pb-32 md:pb-16 border-t border-slate-200 overflow-hidden relative">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>

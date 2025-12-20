@@ -1,5 +1,4 @@
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -45,18 +44,43 @@ const GuideSection: React.FC<GuideSectionProps> = ({ title, children, icon, step
 );
 
 export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenModal }) => {
+  const breadcrumbJsonLd = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://rentmygroup.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Monetization Guide 2026",
+        "item": "https://rentmygroup.com/guide"
+      }
+    ]
+  }), []);
+
   useEffect(() => {
     const originalTitle = document.title;
     const originalDesc = document.querySelector('meta[name="description"]')?.getAttribute('content');
     
-    document.title = "How to Monetize Facebook Groups 2026: The Ultimate Guide | RMG";
-    document.querySelector('meta[name="description"]')?.setAttribute('content', 'Master Facebook group monetization in 2026. Learn how to secure sponsorships, rent cover photos, and earn passive income from WhatsApp communities.');
+    document.title = "How to Monetize Facebook Groups 2026: The Ultimate Guide | RentMyGroup";
+    document.querySelector('meta[name="description"]')?.setAttribute('content', 'Unlock sustainable passive income from your Facebook and WhatsApp groups. Our 2026 guide covers cover photo rentals, pinned messages, and community sponsorship strategies.');
     
     // Add canonical link for the guide
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
       canonical.setAttribute('href', 'https://rentmygroup.com/guide');
     }
+
+    // Add Breadcrumb JSON-LD
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(breadcrumbJsonLd);
+    document.head.appendChild(script);
 
     return () => { 
       document.title = originalTitle;
@@ -66,8 +90,9 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
       if (canonical) {
         canonical.setAttribute('href', 'https://rentmygroup.com/');
       }
+      document.head.removeChild(script);
     };
-  }, []);
+  }, [breadcrumbJsonLd]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -80,7 +105,7 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <nav className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 text-slate-400 text-[10px] font-black uppercase tracking-[0.25em] mb-12 animate-fade-in">
+            <nav className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 text-slate-400 text-[10px] font-black uppercase tracking-[0.25em] mb-12 animate-fade-in" aria-label="Breadcrumb">
               <a href="/" className="hover:text-white transition-colors">Home</a>
               <ChevronRight size={12} className="text-white/20" />
               <span className="text-indigo-400">2026 Strategy Guide</span>
@@ -97,11 +122,11 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
 
             <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
-                <ShieldCheck className="text-indigo-400" size={20} />
+                <ShieldCheck className="text-indigo-400" size={20} aria-hidden="true" />
                 <span className="text-sm font-bold tracking-tight">Verified Strategies</span>
               </div>
               <div className="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-2xl border border-white/10">
-                <Zap className="text-yellow-400" size={20} />
+                <Zap className="text-yellow-400" size={20} aria-hidden="true" />
                 <span className="text-sm font-bold tracking-tight">2026 Algorithm-Proof</span>
               </div>
             </div>
@@ -120,12 +145,12 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-12">
                 <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 relative overflow-hidden">
-                   <BarChart3 className="text-slate-200 absolute -bottom-4 -right-4" size={120} />
+                   <BarChart3 className="text-slate-200 absolute -bottom-4 -right-4" size={120} aria-hidden="true" />
                    <h3 className="font-black text-slate-900 text-xl mb-4">Engagement Decay</h3>
                    <p className="text-sm text-slate-500 font-medium">Standard posts only reach 2-5% of your members naturally. The algorithm penalizes external links and business promotion.</p>
                 </div>
                 <div className="p-10 rounded-[2.5rem] bg-indigo-50 border border-indigo-100 relative overflow-hidden">
-                   <Sparkles className="text-indigo-200 absolute -bottom-4 -right-4" size={120} />
+                   <Sparkles className="text-indigo-200 absolute -bottom-4 -right-4" size={120} aria-hidden="true" />
                    <h3 className="font-black text-indigo-900 text-xl mb-4">The Pinned Premium</h3>
                    <p className="text-sm text-indigo-600/70 font-medium">Pinned announcements and cover photos are "Native UI"—they are viewed every time a user visits your group to post or comment.</p>
                 </div>
@@ -139,7 +164,7 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
               <ul className="space-y-6 pt-4">
                 <li className="flex items-start gap-5">
                   <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0 mt-1 shadow-sm">
-                    <CheckCircle2 size={18} />
+                    <CheckCircle2 size={18} aria-hidden="true" />
                   </div>
                   <div className="flex-1">
                     <h3 className="block font-black text-slate-900 mb-1">Fixed-Rent Cover Photo Ads</h3>
@@ -148,7 +173,7 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
                 </li>
                 <li className="flex items-start gap-5">
                   <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0 mt-1 shadow-sm">
-                    <CheckCircle2 size={18} />
+                    <CheckCircle2 size={18} aria-hidden="true" />
                   </div>
                   <div className="flex-1">
                     <h3 className="block font-black text-slate-900 mb-1">Weekly Pinned Group Highlights</h3>
@@ -165,21 +190,21 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
               
               <div className="mt-12 bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-12 opacity-5">
-                   <DollarSign size={200} />
+                   <DollarSign size={200} aria-hidden="true" />
                 </div>
                 <div className="max-w-2xl relative z-10">
                    <h3 className="text-3xl font-display font-black mb-8 leading-tight">The RMG Advantage for Admins:</h3>
                    <div className="space-y-6">
                       <div className="flex items-center gap-4 text-slate-300">
-                        <Search className="text-indigo-400" size={24} />
+                        <Search className="text-indigo-400" size={24} aria-hidden="true" />
                         <span className="font-bold">We find brands specifically looking for your community niche.</span>
                       </div>
                       <div className="flex items-center gap-4 text-slate-300">
-                        <ImageIcon className="text-indigo-400" size={24} />
+                        <ImageIcon className="text-indigo-400" size={24} aria-hidden="true" />
                         <span className="font-bold">We provide high-conversion ad templates for your group.</span>
                       </div>
                       <div className="flex items-center gap-4 text-slate-300">
-                        <DollarSign className="text-indigo-400" size={24} />
+                        <DollarSign className="text-indigo-400" size={24} aria-hidden="true" />
                         <span className="font-bold">Secure payouts automated via Stripe to your bank account.</span>
                       </div>
                    </div>
@@ -189,7 +214,7 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
                         onClick={() => onOpenModal('admin')} 
                         className="w-full sm:w-auto h-20 px-12 text-xl bg-indigo-600 shadow-2xl shadow-indigo-500/30"
                       >
-                         Secure Your Group Spot <ArrowRight size={24} className="ml-2" />
+                         Secure Your Group Spot <ArrowRight size={24} className="ml-2" aria-hidden="true" />
                       </Button>
                       <p className="mt-6 text-slate-500 text-sm font-bold uppercase tracking-widest text-center sm:text-left">
                         Joining the network is 100% Free for Group Admins
@@ -202,7 +227,7 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
           </div>
           
           <section className="mt-32 pt-24 border-t border-slate-100 text-center">
-             <Trophy size={48} className="mx-auto text-yellow-400 mb-8" />
+             <Trophy size={48} className="mx-auto text-yellow-400 mb-8" aria-hidden="true" />
              <h2 className="text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight mb-6">Start Your Community Legacy.</h2>
              <p className="text-slate-500 text-xl font-medium max-w-xl mx-auto mb-12 leading-relaxed">
                 2026 is the year of the Private Community. Don't leave your monetization to chance. Join the network leading the change in <strong>Facebook group marketing.</strong>
