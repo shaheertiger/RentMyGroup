@@ -16,7 +16,9 @@ import {
   MousePointer2,
   TrendingUp,
   Landmark,
-  X
+  X,
+  Share2,
+  ExternalLink
 } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
@@ -57,6 +59,20 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
     window.scrollTo(0, 0);
   }, []);
 
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Facebook Group Monetization Blueprint 2026',
+        text: 'Learn how to earn passive income from your communities safely.',
+        url: window.location.href,
+      });
+    } else {
+      // Fallback
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied to clipboard!');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white pb-32">
       {/* Hero Section */}
@@ -65,7 +81,7 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[160px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <nav className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 text-slate-400 text-[10px] font-black uppercase tracking-[0.25em] mb-12" aria-label="Breadcrumb">
+          <nav className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-12" aria-label="Breadcrumb">
             <a href="/" className="hover:text-white transition-colors">Home</a>
             <ChevronRight size={12} className="text-white/20" />
             <span className="text-indigo-400 uppercase tracking-widest font-black">Admin Blueprint</span>
@@ -262,6 +278,60 @@ export const MonetizationGuide: React.FC<{ onOpenModal: (role: Role) => void }> 
           
           <div className="mt-12 text-center text-slate-500 text-sm font-bold uppercase tracking-widest italic">
             More sponsors ≠ more money. Better placement does.
+          </div>
+        </div>
+      </section>
+
+      {/* Social Preview Visual Section */}
+      <section className="py-32 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-indigo-600 font-black uppercase tracking-[0.3em] text-xs mb-4 block">Viral Preview</span>
+            <h2 className="text-4xl md:text-5xl font-display font-black text-slate-900 tracking-tight mb-6">How Your Friends Will See This</h2>
+            <p className="text-slate-500 font-medium">When you share this blueprint, it looks premium in their feed.</p>
+          </div>
+
+          {/* Simulated Social Card */}
+          <div className="bg-white rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl group cursor-pointer hover:scale-[1.02] transition-all duration-500" onClick={handleShare}>
+             <div className="aspect-[1200/630] bg-slate-950 relative overflow-hidden p-12 flex flex-col justify-end border-b border-slate-100">
+                <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 2px, transparent 0)', backgroundSize: '30px 30px' }}></div>
+                <div className="absolute top-12 right-12">
+                   <Users size={80} className="text-indigo-500/20" />
+                </div>
+                <div className="relative z-10 max-w-2xl">
+                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-600 rounded-full text-white text-[10px] font-black uppercase tracking-widest mb-6">
+                      <Sparkles size={12} fill="currentColor" /> Strategy Blueprint
+                   </div>
+                   <h3 className="text-4xl md:text-6xl font-display font-black text-white leading-[1.1] tracking-tight mb-6">
+                      How to Make Money From <br /> <span className="text-indigo-400">Facebook Groups</span> in 2026.
+                   </h3>
+                   <div className="flex items-center gap-4 text-slate-400 font-black text-sm uppercase tracking-widest">
+                      <span>By RentMyGroup</span>
+                      <span className="w-1.5 h-1.5 bg-slate-800 rounded-full"></span>
+                      <span>15 Min Read</span>
+                   </div>
+                </div>
+             </div>
+             <div className="p-8 flex items-center justify-between bg-white">
+                <div className="flex items-center gap-4">
+                   <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+                      <ExternalLink size={20} />
+                   </div>
+                   <div className="flex flex-col">
+                      <span className="font-black text-slate-900 text-lg tracking-tight">rentmygroup.com</span>
+                      <span className="text-slate-400 text-sm font-medium">The #1 Private Community Network</span>
+                   </div>
+                </div>
+                <div className="px-6 py-3 bg-indigo-600 text-white font-black text-sm rounded-2xl shadow-lg shadow-indigo-600/20">
+                   Open Guide
+                </div>
+             </div>
+          </div>
+
+          <div className="mt-12 flex justify-center">
+             <Button onClick={handleShare} className="h-16 px-10 rounded-2xl gap-3 shadow-xl">
+                <Share2 size={20} /> Share This Blueprint
+             </Button>
           </div>
         </div>
       </section>

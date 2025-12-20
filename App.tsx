@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
@@ -37,6 +36,8 @@ const App: React.FC = () => {
   const [modal, setModal] = useState<ModalState>({ isOpen: false, role: 'advertiser' });
   const [currentPath, setCurrentPath] = useState(normalizePath(window.location.pathname));
 
+  const GUIDE_PATH = '/how-to-make-money-from-facebook-groups-2026';
+
   // Sync state with browser history (back/forward buttons)
   useEffect(() => {
     const handleLocationChange = () => {
@@ -51,12 +52,43 @@ const App: React.FC = () => {
     };
   }, []);
 
-  // SEO management for non-guide pages
+  // Advanced SEO and Social Preview management for dynamic route changes
   useEffect(() => {
-    if (currentPath === '/') {
-      document.title = "RentMyGroup | #1 Marketplace to Monetize & Advertise in Local Groups";
-      document.querySelector('meta[name="description"]')?.setAttribute('content', 'The first marketplace to rent cover photos and pin messages in local communities. Monetize your Facebook and WhatsApp groups safely in 2026.');
-      document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://rentmygroup.com/');
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const canonicalLink = document.getElementById('canonical-link');
+    
+    // Social Preview Elements
+    const ogTitle = document.getElementById('og-title');
+    const ogDesc = document.getElementById('og-desc');
+    const twitterTitle = document.getElementById('twitter-title');
+    const twitterDesc = document.getElementById('twitter-desc');
+
+    if (currentPath === GUIDE_PATH) {
+      const title = "How to Make Money From Facebook Groups in 2026 (Without Killing Trust)";
+      const desc = "Discover the ultimate blueprint for monetizing Facebook groups in 2026. Learn 6 proven methods to earn passive income while maintaining community trust.";
+      
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', `https://rentmygroup.com${GUIDE_PATH}`);
+      
+      // Update Social Preview Tags
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
+    } else {
+      const title = "RentMyGroup | #1 Marketplace to Monetize & Advertise in Local Groups";
+      const desc = "RentMyGroup is the first marketplace for community monetization. Rent cover photos, pin messages, and earn passive income from Facebook and WhatsApp groups safely in 2026.";
+      
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', 'https://rentmygroup.com/');
+      
+      // Update Social Preview Tags
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
     }
   }, [currentPath]);
 
@@ -86,8 +118,6 @@ const App: React.FC = () => {
     setModal(prev => ({ ...prev, isOpen: false }));
   };
 
-  // SEO Friendly Guide Path
-  const GUIDE_PATH = '/how-to-make-money-from-facebook-groups-2026';
   const isGuidePage = currentPath === GUIDE_PATH;
 
   return (
