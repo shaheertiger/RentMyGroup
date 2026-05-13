@@ -57,9 +57,8 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
                   </span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
-                  Own Your <br />
-                  <TypewriterText words={['Local Group', 'Neighborhood', 'WhatsApp', 'Community']} />
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
+                  Rent Ad Space in Facebook, WhatsApp, and Online Communities
                 </h1>
               </div>
             </div>
