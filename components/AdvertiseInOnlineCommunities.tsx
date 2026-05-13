@@ -359,7 +359,7 @@ export const AdvertiseInOnlineCommunities: React.FC<{ onOpenModal: (role: Role) 
                 <div className="flex items-center gap-2 text-red-400 text-[11px] font-black uppercase tracking-widest">
                   <AlertTriangle size={12} /> Traditional Advertising
                 </div>
-                {['Interrupts users who didn't ask for your message', 'Algorithm decides reach — nothing is guaranteed', 'Competes in a noisy, expensive auction', 'Audience has no prior relationship with the content'].map((p, i) => (
+                {["Interrupts users who didn't ask for your message", 'Algorithm decides reach — nothing is guaranteed', 'Competes in a noisy, expensive auction', 'Audience has no prior relationship with the content'].map((p, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-sm font-medium text-red-300/80">
                     <X size={14} className="text-red-500 shrink-0" /> {p}
                   </div>
