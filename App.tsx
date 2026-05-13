@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
 import { Role, ModalState } from './types.ts';
+import { getBlogPost } from './blog/posts.ts';
 
 // Lazy loading views
 const SocialProof = lazy(() => import('./components/SocialProof.tsx').then(m => ({ default: m.SocialProof })));
@@ -24,6 +25,8 @@ const MonetizeFacebookGroup = lazy(() => import('./components/MonetizeFacebookGr
 const MonetizeWhatsAppGroup = lazy(() => import('./components/MonetizeWhatsAppGroup.tsx').then(m => ({ default: m.MonetizeWhatsAppGroup })));
 const GroupAdvertisingMarketplace = lazy(() => import('./components/GroupAdvertisingMarketplace.tsx').then(m => ({ default: m.GroupAdvertisingMarketplace })));
 const AdvertiseInOnlineCommunities = lazy(() => import('./components/AdvertiseInOnlineCommunities.tsx').then(m => ({ default: m.AdvertiseInOnlineCommunities })));
+const BlogIndex = lazy(() => import('./components/BlogIndex.tsx').then(m => ({ default: m.BlogIndex })));
+const BlogPost = lazy(() => import('./components/BlogPost.tsx').then(m => ({ default: m.BlogPost })));
 
 const SectionLoader = () => (
   <div className="min-h-[400px] w-full flex items-center justify-center">
@@ -188,6 +191,37 @@ const App: React.FC = () => {
       ogImage?.setAttribute('content', defaultImage);
       ogImageSecure?.setAttribute('content', defaultImage);
       twitterImage?.setAttribute('content', defaultImage);
+    } else if (isBlogIndex) {
+      const title = "Blog: Group Monetization & Community Advertising | Rent My Group";
+      const desc = "Strategies, pricing guides, and tools for Facebook and WhatsApp group owners. Learn how to earn from sponsorships and reach niche audiences through community advertising.";
+
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', `${origin}/blog`);
+
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
+    } else if (isBlogPost && blogSlug) {
+      const post = getBlogPost(blogSlug);
+      const title = post?.metaTitle ?? "Blog | Rent My Group";
+      const desc = post?.metaDescription ?? "Read the latest guides and strategies for group owners and advertisers on Rent My Group.";
+
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', `${origin}/blog/${blogSlug}`);
+
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
     } else {
       const title = "Rent Ad Space in Facebook & WhatsApp Groups | Rent My Group";
       const desc = "Rent My Group connects advertisers with Facebook, WhatsApp, Telegram, and online group owners. Buy or sell ad space in niche communities and reach active audiences.";
@@ -236,6 +270,9 @@ const App: React.FC = () => {
   const isMonetizeWaPage = currentPath === MONETIZE_WA_PATH;
   const isMarketplacePage = currentPath === MARKETPLACE_PATH;
   const isCommunitiesPage = currentPath === COMMUNITIES_PATH;
+  const isBlogIndex = currentPath === '/blog';
+  const isBlogPost = currentPath.startsWith('/blog/') && currentPath.length > 6;
+  const blogSlug = isBlogPost ? currentPath.replace('/blog/', '') : '';
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-indigo-500 selection:text-white relative">
@@ -276,6 +313,18 @@ const App: React.FC = () => {
           <div className="animate-fade-in">
             <Suspense fallback={<SectionLoader />}>
               <AdvertiseInOnlineCommunities onOpenModal={openModal} />
+            </Suspense>
+          </div>
+        ) : isBlogIndex ? (
+          <div className="animate-fade-in">
+            <Suspense fallback={<SectionLoader />}>
+              <BlogIndex onOpenModal={openModal} onNavigate={navigate} />
+            </Suspense>
+          </div>
+        ) : isBlogPost ? (
+          <div className="animate-fade-in">
+            <Suspense fallback={<SectionLoader />}>
+              <BlogPost slug={blogSlug} onOpenModal={openModal} onNavigate={navigate} />
             </Suspense>
           </div>
         ) : !isGuidePage ? (
