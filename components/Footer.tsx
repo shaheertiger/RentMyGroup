@@ -106,6 +106,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
                   WhatsApp Group Ads
                 </button>
               </li>
+              <li>
+                <button onClick={() => onNavigate('/monetize-facebook-group')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Monetize Facebook Group
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('/monetize-whatsapp-group')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Monetize WhatsApp Group
+                </button>
+              </li>
             </ul>
           </div>
 

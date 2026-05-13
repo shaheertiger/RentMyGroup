@@ -20,6 +20,8 @@ const FOMOToast = lazy(() => import('./components/FOMOToast.tsx').then(m => ({ d
 const StickyCTA = lazy(() => import('./components/StickyCTA.tsx').then(m => ({ default: m.StickyCTA })));
 const FacebookGroupAdvertising = lazy(() => import('./components/FacebookGroupAdvertising.tsx').then(m => ({ default: m.FacebookGroupAdvertising })));
 const WhatsAppGroupAdvertising = lazy(() => import('./components/WhatsAppGroupAdvertising.tsx').then(m => ({ default: m.WhatsAppGroupAdvertising })));
+const MonetizeFacebookGroup = lazy(() => import('./components/MonetizeFacebookGroup.tsx').then(m => ({ default: m.MonetizeFacebookGroup })));
+const MonetizeWhatsAppGroup = lazy(() => import('./components/MonetizeWhatsAppGroup.tsx').then(m => ({ default: m.MonetizeWhatsAppGroup })));
 
 const SectionLoader = () => (
   <div className="min-h-[400px] w-full flex items-center justify-center">
@@ -42,6 +44,8 @@ const App: React.FC = () => {
   const GUIDE_PATH = '/how-to-make-money-from-facebook-groups-2026';
   const FB_ADS_PATH = '/facebook-group-advertising';
   const WA_ADS_PATH = '/whatsapp-group-advertising';
+  const MONETIZE_FB_PATH = '/monetize-facebook-group';
+  const MONETIZE_WA_PATH = '/monetize-whatsapp-group';
 
   // Sync state with browser history (back/forward buttons)
   useEffect(() => {
@@ -120,6 +124,36 @@ const App: React.FC = () => {
       ogImage?.setAttribute('content', defaultImage);
       ogImageSecure?.setAttribute('content', defaultImage);
       twitterImage?.setAttribute('content', defaultImage);
+    } else if (currentPath === MONETIZE_FB_PATH) {
+      const title = "Monetize Your Facebook Group: Earn From Sponsorships | Rent My Group";
+      const desc = "Make money from your Facebook group by listing it on Rent My Group. Accept sponsored posts from relevant advertisers, set your own rates, and get paid within 7 days. Free to list.";
+
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', `${origin}${MONETIZE_FB_PATH}`);
+
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
+    } else if (currentPath === MONETIZE_WA_PATH) {
+      const title = "Monetize Your WhatsApp Group: Earn From Sponsorships | Rent My Group";
+      const desc = "Make money from your WhatsApp group by approving sponsored promotions from relevant advertisers. List for free on Rent My Group and earn passive income from your community.";
+
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', `${origin}${MONETIZE_WA_PATH}`);
+
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
     } else {
       const title = "Rent Ad Space in Facebook & WhatsApp Groups | Rent My Group";
       const desc = "Rent My Group connects advertisers with Facebook, WhatsApp, Telegram, and online group owners. Buy or sell ad space in niche communities and reach active audiences.";
@@ -164,6 +198,8 @@ const App: React.FC = () => {
   const isGuidePage = currentPath === GUIDE_PATH;
   const isFbAdsPage = currentPath === FB_ADS_PATH;
   const isWaAdsPage = currentPath === WA_ADS_PATH;
+  const isMonetizeFbPage = currentPath === MONETIZE_FB_PATH;
+  const isMonetizeWaPage = currentPath === MONETIZE_WA_PATH;
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-indigo-500 selection:text-white relative">
@@ -180,6 +216,18 @@ const App: React.FC = () => {
           <div className="animate-fade-in">
             <Suspense fallback={<SectionLoader />}>
               <WhatsAppGroupAdvertising onOpenModal={openModal} />
+            </Suspense>
+          </div>
+        ) : isMonetizeFbPage ? (
+          <div className="animate-fade-in">
+            <Suspense fallback={<SectionLoader />}>
+              <MonetizeFacebookGroup onOpenModal={openModal} />
+            </Suspense>
+          </div>
+        ) : isMonetizeWaPage ? (
+          <div className="animate-fade-in">
+            <Suspense fallback={<SectionLoader />}>
+              <MonetizeWhatsAppGroup onOpenModal={openModal} />
             </Suspense>
           </div>
         ) : !isGuidePage ? (
