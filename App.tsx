@@ -1,4 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
 import { Role, ModalState } from './types.ts';
@@ -171,6 +172,7 @@ const App: React.FC = () => {
         <FOMOToast />
         <StickyCTA onOpenModal={openModal} />
       </Suspense>
+      <Analytics />
     </div>
   );
 };
