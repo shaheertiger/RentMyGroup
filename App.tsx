@@ -22,6 +22,8 @@ const FacebookGroupAdvertising = lazy(() => import('./components/FacebookGroupAd
 const WhatsAppGroupAdvertising = lazy(() => import('./components/WhatsAppGroupAdvertising.tsx').then(m => ({ default: m.WhatsAppGroupAdvertising })));
 const MonetizeFacebookGroup = lazy(() => import('./components/MonetizeFacebookGroup.tsx').then(m => ({ default: m.MonetizeFacebookGroup })));
 const MonetizeWhatsAppGroup = lazy(() => import('./components/MonetizeWhatsAppGroup.tsx').then(m => ({ default: m.MonetizeWhatsAppGroup })));
+const GroupAdvertisingMarketplace = lazy(() => import('./components/GroupAdvertisingMarketplace.tsx').then(m => ({ default: m.GroupAdvertisingMarketplace })));
+const AdvertiseInOnlineCommunities = lazy(() => import('./components/AdvertiseInOnlineCommunities.tsx').then(m => ({ default: m.AdvertiseInOnlineCommunities })));
 
 const SectionLoader = () => (
   <div className="min-h-[400px] w-full flex items-center justify-center">
@@ -46,6 +48,8 @@ const App: React.FC = () => {
   const WA_ADS_PATH = '/whatsapp-group-advertising';
   const MONETIZE_FB_PATH = '/monetize-facebook-group';
   const MONETIZE_WA_PATH = '/monetize-whatsapp-group';
+  const MARKETPLACE_PATH = '/group-advertising-marketplace';
+  const COMMUNITIES_PATH = '/advertise-in-online-communities';
 
   // Sync state with browser history (back/forward buttons)
   useEffect(() => {
@@ -154,6 +158,36 @@ const App: React.FC = () => {
       ogImage?.setAttribute('content', defaultImage);
       ogImageSecure?.setAttribute('content', defaultImage);
       twitterImage?.setAttribute('content', defaultImage);
+    } else if (currentPath === MARKETPLACE_PATH) {
+      const title = "Group Advertising Marketplace: Buy & Sell Group Ad Space | Rent My Group";
+      const desc = "Rent My Group is the group advertising marketplace where advertisers buy niche community ad space and group owners sell sponsored posts. Facebook, WhatsApp, Telegram, and online groups.";
+
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', `${origin}${MARKETPLACE_PATH}`);
+
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
+    } else if (currentPath === COMMUNITIES_PATH) {
+      const title = "Advertise in Online Communities: Niche Community Advertising | Rent My Group";
+      const desc = "Reach people inside communities they already trust. Community advertising outperforms Facebook Ads, Google Ads, and influencer marketing with higher trust, guaranteed reach, and no algorithm dependency.";
+
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', `${origin}${COMMUNITIES_PATH}`);
+
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
     } else {
       const title = "Rent Ad Space in Facebook & WhatsApp Groups | Rent My Group";
       const desc = "Rent My Group connects advertisers with Facebook, WhatsApp, Telegram, and online group owners. Buy or sell ad space in niche communities and reach active audiences.";
@@ -200,6 +234,8 @@ const App: React.FC = () => {
   const isWaAdsPage = currentPath === WA_ADS_PATH;
   const isMonetizeFbPage = currentPath === MONETIZE_FB_PATH;
   const isMonetizeWaPage = currentPath === MONETIZE_WA_PATH;
+  const isMarketplacePage = currentPath === MARKETPLACE_PATH;
+  const isCommunitiesPage = currentPath === COMMUNITIES_PATH;
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-indigo-500 selection:text-white relative">
@@ -228,6 +264,18 @@ const App: React.FC = () => {
           <div className="animate-fade-in">
             <Suspense fallback={<SectionLoader />}>
               <MonetizeWhatsAppGroup onOpenModal={openModal} />
+            </Suspense>
+          </div>
+        ) : isMarketplacePage ? (
+          <div className="animate-fade-in">
+            <Suspense fallback={<SectionLoader />}>
+              <GroupAdvertisingMarketplace onOpenModal={openModal} />
+            </Suspense>
+          </div>
+        ) : isCommunitiesPage ? (
+          <div className="animate-fade-in">
+            <Suspense fallback={<SectionLoader />}>
+              <AdvertiseInOnlineCommunities onOpenModal={openModal} />
             </Suspense>
           </div>
         ) : !isGuidePage ? (
