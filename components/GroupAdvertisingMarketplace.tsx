@@ -5,7 +5,6 @@ import {
   Users,
   Zap,
   Star,
-  Sparkles,
   DollarSign,
   Search,
   MessageCircle,

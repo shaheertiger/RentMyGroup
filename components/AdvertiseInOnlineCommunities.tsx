@@ -5,7 +5,6 @@ import {
   ChevronDown,
   BarChart3,
   ShieldCheck,
-  Users,
   Zap,
   Star,
   Sparkles,
