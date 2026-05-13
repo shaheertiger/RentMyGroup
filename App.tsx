@@ -19,6 +19,7 @@ const WaitlistModal = lazy(() => import('./components/WaitlistModal.tsx').then(m
 const FOMOToast = lazy(() => import('./components/FOMOToast.tsx').then(m => ({ default: m.FOMOToast })));
 const StickyCTA = lazy(() => import('./components/StickyCTA.tsx').then(m => ({ default: m.StickyCTA })));
 const FacebookGroupAdvertising = lazy(() => import('./components/FacebookGroupAdvertising.tsx').then(m => ({ default: m.FacebookGroupAdvertising })));
+const WhatsAppGroupAdvertising = lazy(() => import('./components/WhatsAppGroupAdvertising.tsx').then(m => ({ default: m.WhatsAppGroupAdvertising })));
 
 const SectionLoader = () => (
   <div className="min-h-[400px] w-full flex items-center justify-center">
@@ -40,6 +41,7 @@ const App: React.FC = () => {
 
   const GUIDE_PATH = '/how-to-make-money-from-facebook-groups-2026';
   const FB_ADS_PATH = '/facebook-group-advertising';
+  const WA_ADS_PATH = '/whatsapp-group-advertising';
 
   // Sync state with browser history (back/forward buttons)
   useEffect(() => {
@@ -103,6 +105,21 @@ const App: React.FC = () => {
       ogImage?.setAttribute('content', defaultImage);
       ogImageSecure?.setAttribute('content', defaultImage);
       twitterImage?.setAttribute('content', defaultImage);
+    } else if (currentPath === WA_ADS_PATH) {
+      const title = "WhatsApp Group Advertising: Place Approved Promotions | Rent My Group";
+      const desc = "Rent My Group helps advertisers place approved promotions inside relevant WhatsApp groups through group owners and admins. Reach niche, high-engagement WhatsApp communities.";
+
+      document.title = title;
+      metaDesc?.setAttribute('content', desc);
+      canonicalLink?.setAttribute('href', `${origin}${WA_ADS_PATH}`);
+
+      ogTitle?.setAttribute('content', title);
+      ogDesc?.setAttribute('content', desc);
+      twitterTitle?.setAttribute('content', title);
+      twitterDesc?.setAttribute('content', desc);
+      ogImage?.setAttribute('content', defaultImage);
+      ogImageSecure?.setAttribute('content', defaultImage);
+      twitterImage?.setAttribute('content', defaultImage);
     } else {
       const title = "Rent Ad Space in Facebook & WhatsApp Groups | Rent My Group";
       const desc = "Rent My Group connects advertisers with Facebook, WhatsApp, Telegram, and online group owners. Buy or sell ad space in niche communities and reach active audiences.";
@@ -146,6 +163,7 @@ const App: React.FC = () => {
 
   const isGuidePage = currentPath === GUIDE_PATH;
   const isFbAdsPage = currentPath === FB_ADS_PATH;
+  const isWaAdsPage = currentPath === WA_ADS_PATH;
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-indigo-500 selection:text-white relative">
@@ -156,6 +174,12 @@ const App: React.FC = () => {
           <div className="animate-fade-in">
             <Suspense fallback={<SectionLoader />}>
               <FacebookGroupAdvertising onOpenModal={openModal} />
+            </Suspense>
+          </div>
+        ) : isWaAdsPage ? (
+          <div className="animate-fade-in">
+            <Suspense fallback={<SectionLoader />}>
+              <WhatsAppGroupAdvertising onOpenModal={openModal} />
             </Suspense>
           </div>
         ) : !isGuidePage ? (
