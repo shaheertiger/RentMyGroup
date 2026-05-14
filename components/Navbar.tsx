@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Users, ArrowRight, ChevronRight, HelpCircle } from 'lucide-react';
+import { Menu, X, Users, ArrowRight, ChevronRight, HelpCircle, BookOpen } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { Role } from '../types.ts';
 
@@ -62,6 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => handleNavToSection('how-it-works')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">How it Works</button>
               <button onClick={() => onOpenModal('admin')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all cursor-pointer">Group Admins</button>
+              <button onClick={() => { onNavigate('/blog'); setMobileMenuOpen(false); }} className={`text-sm font-semibold transition-all cursor-pointer ${currentPath === '/blog' || currentPath.startsWith('/blog/') ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-900'}`}>Blog</button>
               <button onClick={() => onOpenModal('advertiser')} className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-all text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full cursor-pointer">Businesses</button>
             </div>
 
@@ -118,8 +119,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
                 </div>
               </button>
 
-              <button 
-                onClick={() => { onOpenModal('admin'); setMobileMenuOpen(false); }} 
+              <button
+                onClick={() => { onOpenModal('admin'); setMobileMenuOpen(false); }}
                 className="w-full text-left p-4 rounded-2xl bg-white border border-slate-100 shadow-sm active:bg-slate-50 transition-all flex items-start gap-4 cursor-pointer"
               >
                 <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100/50 flex items-center justify-center text-indigo-600 shrink-0">
@@ -128,6 +129,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal, onNavigate, current
                 <div className="flex-1">
                   <span className="font-bold text-slate-900 text-[15px]">For Admins</span>
                   <p className="text-[12px] text-slate-500">Monetize your groups.</p>
+                </div>
+              </button>
+
+              <button
+                onClick={() => { onNavigate('/blog'); setMobileMenuOpen(false); }}
+                className="w-full text-left p-4 rounded-2xl bg-white border border-slate-100 shadow-sm active:bg-slate-50 transition-all flex items-start gap-4 cursor-pointer"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100/50 flex items-center justify-center text-indigo-600 shrink-0">
+                   <BookOpen size={20} />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-0.5">
+                    <span className="font-bold text-slate-900 text-[15px]">Blog</span>
+                    <ChevronRight size={14} className="text-slate-300" />
+                  </div>
+                  <p className="text-[12px] text-slate-500">Guides for group owners.</p>
                 </div>
               </button>
             </section>

@@ -77,6 +77,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
             <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Explore</h4>
             <ul className="space-y-4">
               <li>
+                <button onClick={() => onNavigate('/blog')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Blog
+                </button>
+              </li>
+              <li>
                 <button onClick={() => onOpenModal?.('advertiser')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
                   <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   For Advertisers
@@ -92,6 +98,42 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
                 <button onClick={() => onNavigate(GUIDE_PATH)} className="text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
                   <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   Monetization Guide
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('/facebook-group-advertising')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Facebook Group Ads
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('/whatsapp-group-advertising')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  WhatsApp Group Ads
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('/monetize-facebook-group')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Monetize Facebook Group
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('/monetize-whatsapp-group')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Monetize WhatsApp Group
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('/group-advertising-marketplace')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Group Ad Marketplace
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('/advertise-in-online-communities')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                  <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  Advertise in Communities
                 </button>
               </li>
             </ul>

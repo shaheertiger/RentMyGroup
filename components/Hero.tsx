@@ -1,36 +1,9 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, ShieldCheck, Zap, Globe, Sparkles } from 'lucide-react';
 import { Button } from './Button.tsx';
 import { MockupFacebookGroup, MockupWhatsappGroup } from './ProfileMockup.tsx';
 import { Role } from '../types.ts';
 
-const TypewriterText = memo(({ words }: { words: string[] }) => {
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
-
-  useEffect(() => {
-    if (subIndex === words[index].length + 1 && !reverse) {
-      const timeout = setTimeout(() => setReverse(true), 2000);
-      return () => clearTimeout(timeout);
-    }
-    if (subIndex === 0 && reverse) {
-      setReverse(false);
-      setIndex((prev) => (prev + 1) % words.length);
-      return;
-    }
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, reverse ? 40 : 100);
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse, words]);
-
-  return (
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600 inline-block min-w-[200px] py-2">
-      {words[index].substring(0, subIndex)}<span className="text-indigo-600 animate-pulse" aria-hidden="true">|</span>
-    </span>
-  );
-});
 
 export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenModal }) => {
   const [platform, setPlatform] = useState<'whatsapp' | 'facebook'>('whatsapp');
@@ -57,9 +30,8 @@ export const Hero: React.FC<{ onOpenModal: (role: Role) => void }> = ({ onOpenMo
                   </span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
-                  Own Your <br />
-                  <TypewriterText words={['Local Group', 'Neighborhood', 'WhatsApp', 'Community']} />
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
+                  Rent Ad Space in Facebook, WhatsApp, and Online Communities
                 </h1>
               </div>
             </div>
