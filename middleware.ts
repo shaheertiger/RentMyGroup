@@ -15,7 +15,8 @@ export const config = {
 const hasTwin = (p: string) =>
   p === '/' || p === '/blog' || p.startsWith('/blog/') ||
   p === '/templates' || p.startsWith('/templates/') ||
-  p === '/guides' || p.startsWith('/guides/');
+  p === '/guides' || p.startsWith('/guides/') ||
+  p === '/how-to' || p.startsWith('/how-to/');
 
 /** q-value of the best match for `type` in an Accept header (0 if not acceptable). */
 function quality(accept: string, type: string): number {

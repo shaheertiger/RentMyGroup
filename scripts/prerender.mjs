@@ -83,6 +83,7 @@ write('index.md', [
   '',
   `- [Free group templates](${ORIGIN}/templates): descriptions, rules, and welcome messages for Facebook and WhatsApp groups`,
   `- [Guides](${ORIGIN}/guides): promoting, monetizing, and advertising in groups`,
+  `- [How-to guides](${ORIGIN}/how-to): step-by-step help for Facebook, WhatsApp, Telegram, and Discord groups`,
   `- [Blog](${ORIGIN}/blog)`,
   '',
 ].join('\n'));
@@ -106,7 +107,7 @@ for (const p of pages) {
   if (!bySection.has(p.section)) bySection.set(p.section, []);
   bySection.get(p.section).push(p);
 }
-const SECTION_ORDER = ['Guides', 'Templates', 'Blog', 'Niche templates'];
+const SECTION_ORDER = ['Guides', 'How-to', 'Templates', 'Blog', 'Niche templates'];
 
 write('llms.txt', [
   '# Rent My Group',

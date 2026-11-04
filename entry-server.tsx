@@ -92,7 +92,7 @@ export function render(path: string): RenderedPage | null {
     description: page.metaDescription,
     jsonLd: pseoJsonLd(page),
     lastmod: page.updated,
-    section: page.family === 'guides' ? 'Guides' : path.split('/').length > 3 ? 'Niche templates' : 'Templates',
+    section: page.family === 'guides' ? 'Guides' : page.family === 'how-to' ? 'How-to' : path.split('/').length > 3 ? 'Niche templates' : 'Templates',
     html: shell(path, <PseoPage path={path} onOpenModal={noop} onNavigate={noop} />),
     markdown: pseoToMarkdown(page),
   };

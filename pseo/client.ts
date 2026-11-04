@@ -4,7 +4,8 @@
 import type { ComponentType } from 'react';
 
 export const isPseoPath = (p: string) =>
-  p === '/templates' || p.startsWith('/templates/') || p === '/guides' || p.startsWith('/guides/');
+  p === '/templates' || p.startsWith('/templates/') || p === '/guides' || p.startsWith('/guides/') ||
+  p === '/how-to' || p.startsWith('/how-to/');
 
 export const loadPseoPage = () => import('../components/pseo/PseoPage.tsx');
 

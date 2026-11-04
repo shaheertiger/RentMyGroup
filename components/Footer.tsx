@@ -82,6 +82,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenModal, onNavigate }) => {
                   Blog
                 </button>
               </li>
+              {[['/templates', 'Group Templates'], ['/how-to', 'How-To Guides'], ['/guides', 'Guides']].map(([href, label]) => (
+                <li key={href}>
+                  <a href={href} onClick={(e) => { e.preventDefault(); onNavigate(href); }} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
+                    <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    {label}
+                  </a>
+                </li>
+              ))}
               <li>
                 <button onClick={() => onOpenModal?.('advertiser')} className="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-2 group text-left">
                   <MousePointerClick size={14} className="shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />

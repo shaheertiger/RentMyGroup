@@ -275,7 +275,7 @@ const guidesIndex: PseoPageData = {
   blocks: [
     { type: 'links', heading: 'For group owners', links: [promoteFacebookGroup, makeMoneyQuestion].map((g) => ({ label: g.h1, path: g.path, desc: g.metaDescription })) },
     { type: 'links', heading: 'For advertisers', links: [advertiseInFacebookGroups, advertiseInWhatsAppGroups, postInFacebookGroups].map((g) => ({ label: g.h1, path: g.path, desc: g.metaDescription })) },
-    { type: 'links', heading: 'Free templates', links: [{ label: 'Group descriptions, rules, and welcome messages', path: '/templates' }] },
+    { type: 'links', heading: 'Free resources', links: [{ label: 'Group descriptions, rules, and welcome messages', path: '/templates' }, { label: 'Step-by-step group how-to guides', path: '/how-to' }] },
   ],
   faq: [],
   related: [{ label: 'Blog', path: '/blog' }],

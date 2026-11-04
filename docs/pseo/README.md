@@ -13,6 +13,21 @@ Source plan: `rentmygroup-pseo-plan.xlsx` (Semrush US, 2026-11-04, 609 planned r
 | Ideas pages | 2 | `/templates/facebook-group-post-ideas`, `/templates/whatsapp-group-ideas` |
 | Guides (owner/advertiser cluster) | 6 | `/guides`, `/guides/*` |
 
+## Wave 2: how-to (built)
+
+| Family | Pages | Where |
+|---|---|---|
+| How-to index + platform hubs | 5 | `/how-to`, `/how-to/{facebook,whatsapp,telegram,discord}` |
+| Task pages | 51 | `/how-to/{platform}/{task}`: the 47 planned URLs plus `whatsapp/read-receipts`, `whatsapp/icon`, `facebook/cover-photo`, `facebook/profile-privacy` (from misfiled template/advertiser rows) |
+
+Content lives in `pseo/howto.ts` (hand-written steps, not generated). Each planned URL is a keyword *cell*, so pages answer the whole cluster (e.g. `facebook/link` covers copying a link and joining via link). Facts checked in Nov 2026:
+- Facebook private→public switching rolled out from Nov 2025 (about.fb.com/news/2025/11/facebook-update-group-admins-flexibility-protecting-member-privacy/).
+- Facebook delete = remove every member, then leave last; no member limit; ~6,000 groups-joined cap (secondary sources); no published description limit, so we do not state one.
+- WhatsApp: 1,024 members, 100-char names, 2,048-char descriptions, 3 pinned messages; group read receipts always sent.
+- Telegram groups: 200,000 members. Discord group DMs: 10 people.
+
+Re-check these every few months; UI labels drift. Each page carries a "last checked" note driven by `PSEO_UPDATED` in `pseo/types.ts`.
+
 The plan listed 449 template rows and 39 owner-advertiser rows as separate URLs. Most were near-duplicate phrasings ("welcome to facebook group", "welcome post facebook group", …) or off-intent (group DP/icon images, "can groups see my profile"). Following the plan's own notes, they are clustered into the pages above instead of one thin page per keyword. Monetization keywords map to the existing blog post instead of creating a 4th competing page.
 
 ## Code
@@ -31,6 +46,5 @@ The plan listed 449 template rows and 39 owner-advertiser rows as separate URLs.
 
 ## Next waves
 
-- **Wave 2, admin how-to** (`/how-to/{platform}/{task}`, 515k volume): the biggest prize. It needs accurate step-by-step instructions per platform, so write it with care. Add it as a new family in `pseo/routes.ts`.
 - **Wave 2, directory** (`/groups/...`): blocked until the marketplace has real group listings. Empty listing pages would be thin content.
 - **Wave 3, group names**: low product fit.

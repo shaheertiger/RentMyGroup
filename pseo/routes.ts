@@ -2,18 +2,19 @@ import { PseoPageData, PseoBlock, SITE_ORIGIN } from './types.ts';
 import { getTemplatePage, templatePaths } from './templates.ts';
 import { ideasPages } from './ideas.ts';
 import { guidePages } from './guides.ts';
+import { getHowToPage, howToPaths } from './howto.ts';
 
 const staticPages = new Map<string, PseoPageData>([...ideasPages, ...guidePages].map((p) => [p.path, p]));
 
 /** Path prefixes owned by the pSEO system (used by App.tsx without loading this module). */
-export const PSEO_PREFIXES = ['/templates', '/guides'];
+export const PSEO_PREFIXES = ['/templates', '/guides', '/how-to'];
 
 export function getPseoPage(path: string): PseoPageData | null {
-  return staticPages.get(path) ?? getTemplatePage(path);
+  return staticPages.get(path) ?? getTemplatePage(path) ?? getHowToPage(path);
 }
 
 export function allPseoPaths(): string[] {
-  return [...templatePaths(), ...staticPages.keys()];
+  return [...templatePaths(), ...staticPages.keys(), ...howToPaths()];
 }
 
 // ─── Structured data ─────────────────────────────────────────────────────────
@@ -28,7 +29,7 @@ export function pseoJsonLd(page: PseoPageData): object {
       })),
     },
     {
-      '@type': page.family === 'guides' ? 'Article' : 'WebPage',
+      '@type': page.family === 'templates' ? 'WebPage' : 'Article',
       '@id': `${url}#page`,
       url,
       headline: page.h1,

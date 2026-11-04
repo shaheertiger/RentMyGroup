@@ -27,7 +27,7 @@ export interface PseoFaq {
 
 export interface PseoPageData {
   path: string;
-  family: 'templates' | 'guides';
+  family: 'templates' | 'guides' | 'how-to';
   eyebrow: string;
   h1: string;
   metaTitle: string;

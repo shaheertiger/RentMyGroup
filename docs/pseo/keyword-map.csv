@@ -5,10 +5,10 @@ owner-advertiser,/guides/best-facebook-groups-to-advertise,best facebook groups 
 templates,/templates/whatsapp-group-description,whatsapp group description,210,21,1,built,/templates/whatsapp-group-description,
 owner-advertiser,/guides/how-to-promote-a-facebook-group,how to promote a facebook group,170,25,1,built,/guides/how-to-promote-a-facebook-group,
 owner-advertiser,/guides/how-to-promote-facebook-group,how to promote facebook group,140,21,1,built,/guides/how-to-promote-a-facebook-group,
-owner-advertiser,/guides/how-to-check-who-read-message-in-whatsapp-group,how to check who read message in whatsapp group,140,28,1,deferred-wave2,/how-to/whatsapp/read-receipts,Misfiled admin how-to
+owner-advertiser,/guides/how-to-check-who-read-message-in-whatsapp-group,how to check who read message in whatsapp group,140,28,1,built,/how-to/whatsapp/read-receipts,Misfiled admin how-to
 templates,/templates/welcome-facebook-group-post,welcome facebook group post,140,30,1,built,/templates/facebook-group-welcome-message,
 templates,/templates/facebook-group-description,facebook group description,140,28,1,built,/templates/facebook-group-description,
-owner-advertiser,/guides/how-to-check-who-read-the-message-in-whatsapp-group,how to check who read the message in whatsapp group,110,28,1,deferred-wave2,/how-to/whatsapp/read-receipts,Misfiled admin how-to
+owner-advertiser,/guides/how-to-check-who-read-the-message-in-whatsapp-group,how to check who read the message in whatsapp group,110,28,1,built,/how-to/whatsapp/read-receipts,Misfiled admin how-to
 owner-advertiser,/guides/can-you-advertise-a-facebook-group,can you advertise a facebook group,110,22,1,built,/guides/how-to-promote-a-facebook-group,
 owner-advertiser,/guides/how-to-monetize-a-facebook-group,how to monetize a facebook group,110,29,1,existing,/blog/how-to-make-money-from-a-facebook-group,Existing page already targets this; avoid a 4th competing page
 owner-advertiser,/guides/facebook-group-promotion-tools,facebook group promotion tools,110,47,1,built,/guides/how-to-promote-a-facebook-group,
@@ -66,17 +66,17 @@ templates,/templates/welcome-post-facebook-group,welcome post facebook group,20,
 templates,/templates/welcome-message-facebook-group,welcome message facebook group,20,,1,built,/templates/facebook-group-welcome-message,
 templates,/templates/welcome-message-to-facebook-group,welcome message to facebook group,20,,1,built,/templates/facebook-group-welcome-message,
 templates,/templates/welcome-facebook-group,welcome facebook group,20,,1,built,/templates/facebook-group-welcome-message,
-templates,/templates/change-facebook-group-profile-picture,change facebook group profile picture,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-facebook-group-icon,change facebook group icon,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-profile-picture-facebook,change group profile picture facebook,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-description-facebook,change group description facebook,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-icon-facebook,change group icon facebook,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-facebook-profile-to-group,change facebook profile to group,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-facebook-group-description,change facebook group description,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/change-facebook-group-profile-picture,change facebook group profile picture,20,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-facebook-group-icon,change facebook group icon,20,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-profile-picture-facebook,change group profile picture facebook,20,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-description-facebook,change group description facebook,20,,1,built,/how-to/facebook/description,How-to intent
+templates,/templates/change-group-icon-facebook,change group icon facebook,20,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-facebook-profile-to-group,change facebook profile to group,20,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/change-facebook-group-description,change facebook group description,20,,1,built,/how-to/facebook/description,How-to intent
 templates,/templates/new-member-intro-facebook-group-template,new member intro facebook group template,20,,1,built,/templates/facebook-group-welcome-message,
 templates,/templates/sample-facebook-group-description,sample facebook group description,20,,1,built,/templates/facebook-group-description,
 templates,/templates/scentsy-facebook-group-description,scentsy facebook group description,20,,1,built,/templates/facebook-group-description,
-templates,/templates/facebook-group-welcome-post-not-showing,facebook group welcome post not showing,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/facebook-group-welcome-post-not-showing,facebook group welcome post not showing,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template) (no page yet)"
 templates,/templates/facebook-group-welcome-post,facebook group welcome post,20,,1,built,/templates/facebook-group-welcome-message,
 templates,/templates/facebook-group-welcome-message-examples,facebook group welcome message examples,20,,1,built,/templates/facebook-group-welcome-message,
 templates,/templates/facebook-group-welcome-message,facebook group welcome message,20,,1,built,/templates/facebook-group-welcome-message,
@@ -88,16 +88,16 @@ templates,/templates/facebook-group-profile-picture,facebook group profile pictu
 templates,/templates/facebook-group-template,facebook group template,20,,1,built,/templates/facebook-group-description,
 templates,/templates/facebook-group-theme-day-ideas,facebook group theme day ideas,20,,1,built,/templates/facebook-group-post-ideas,
 templates,/templates/facebook-group-profile-pic,facebook group profile pic,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/facebook-group-post-image-size,facebook group post image size,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/facebook-group-post-image-size,facebook group post image size,20,,1,built,/how-to/facebook/cover-photo,How-to intent
 templates,/templates/facebook-group-post-ideas,facebook group post ideas,20,,1,built,/templates/facebook-group-post-ideas,
 templates,/templates/facebook-group-question-ideas,facebook group question ideas,20,,1,built,/templates/facebook-group-post-ideas,
 templates,/templates/good-facebook-group-ideas,good facebook group ideas,20,,1,built,/templates/facebook-group-post-ideas,
 templates,/templates/find-my-facebook-id-get-profile-user-page-group-id,find my facebook id get profile user page group id,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/facebook-show-groups-on-profile,facebook show groups on profile,20,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/facebook-profile-groups,facebook profile groups,20,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/edit-description-facebook-group,edit description facebook group,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/edit-facebook-group-description,edit facebook group description,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/edit-group-description-facebook,edit group description facebook,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/facebook-show-groups-on-profile,facebook show groups on profile,20,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/facebook-profile-groups,facebook profile groups,20,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/edit-description-facebook-group,edit description facebook group,20,,1,built,/how-to/facebook/description,How-to intent
+templates,/templates/edit-facebook-group-description,edit facebook group description,20,,1,built,/how-to/facebook/description,How-to intent
+templates,/templates/edit-group-description-facebook,edit group description facebook,20,,1,built,/how-to/facebook/description,How-to intent
 templates,/templates/facebook-group-content-ideas,facebook group content ideas,20,,1,built,/templates/facebook-group-post-ideas,
 templates,/templates/facebook-group-competition-ideas,facebook group competition ideas,20,,1,built,/templates/facebook-group-post-ideas,
 templates,/templates/facebook-group-description-template,facebook group description template,20,,1,built,/templates/facebook-group-description,
@@ -117,7 +117,7 @@ templates,/templates/facebook-group-games-ideas,facebook group games ideas,20,,1
 templates,/templates/facebook-group-game-ideas,facebook group game ideas,20,,1,built,/templates/facebook-group-post-ideas,
 templates,/templates/facebook-group-icons-meaning,facebook group icons meaning,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/facebook-group-icon-png,facebook group icon png,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/facebook-group-icon-missing,facebook group icon missing,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/facebook-group-icon-missing,facebook group icon missing,20,,1,built,/how-to/facebook/cover-photo,How-to intent
 templates,/templates/facebook-group-image-size,facebook group image size,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/facebook-group-image-dimensions,facebook group image dimensions,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/facebook-group-image,facebook group image,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
@@ -125,7 +125,7 @@ templates,/templates/facebook-group-header-image,facebook group header image,20,
 templates,/templates/facebook-group-header-template,facebook group header template,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/facebook-group-header-image-size,facebook group header image size,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/facebook-family-group-description-example,facebook family group description example,20,,1,built,/templates/facebook-group-description/family,Niche page
-templates,/templates/facebook-edit-group-description,facebook edit group description,20,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/facebook-edit-group-description,facebook edit group description,20,,1,built,/how-to/facebook/description,How-to intent
 templates,/templates/facebook-group-bio,facebook group bio,20,,1,built,/templates/facebook-group-description,
 templates,/templates/facebook-group-automatic-welcome-message,facebook group automatic welcome message,20,,1,built,/templates/facebook-group-welcome-message,
 templates,/templates/facebook-group-background-image-size,facebook group background image size,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
@@ -142,7 +142,7 @@ templates,/templates/what-is-whatsapp-group-icon,what is whatsapp group icon,20,
 templates,/templates/whatsapp-clock-symbol-on-group-icon,whatsapp clock symbol on group icon,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/whatsapp-dp-group,whatsapp dp group,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/whatsapp-dp-family-group-icon,whatsapp dp family group icon,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/whatsapp-change-group-icon,whatsapp change group icon,20,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
+templates,/templates/whatsapp-change-group-icon,whatsapp change group icon,20,,1,built,/how-to/whatsapp/icon,How-to intent
 templates,/templates/welcome-in-whatsapp-group,welcome in whatsapp group,20,,1,built,/templates/whatsapp-group-welcome-message,
 templates,/templates/welcome-message-in-whatsapp-group,welcome message in whatsapp group,20,,1,built,/templates/whatsapp-group-welcome-message,
 templates,/templates/welcome-to-the-whatsapp-group-message,welcome to the whatsapp group message,20,,1,built,/templates/whatsapp-group-welcome-message,
@@ -207,8 +207,8 @@ templates,/templates/whatsapp-icon-group,whatsapp icon group,20,,1,dropped,,"Vis
 templates,/templates/best-whatsapp-group-description,best whatsapp group description,20,,1,built,/templates/whatsapp-group-description,
 templates,/templates/automated-welcome-message-facebook-group,automated welcome message facebook group,20,,1,built,/templates/facebook-group-welcome-message,
 templates,/templates/best-facebook-group-description,best facebook group description,20,,1,built,/templates/facebook-group-description,
-templates,/templates/can-facebook-groups-see-my-profile,can facebook groups see my profile,20,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-groups-see-your-facebook-profile,can groups see your facebook profile,20,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
+templates,/templates/can-facebook-groups-see-my-profile,can facebook groups see my profile,20,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-groups-see-your-facebook-profile,can groups see your facebook profile,20,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
 templates,/templates/whatsapp-stylish-group-dp,whatsapp stylish group dp,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/group-description-whatsapp,group description whatsapp,20,,1,built,/templates/whatsapp-group-description,
 templates,/templates/group-description-in-whatsapp,group description in whatsapp,20,,1,built,/templates/whatsapp-group-description,
@@ -226,10 +226,10 @@ templates,/templates/class-whatsapp-group-dp,class whatsapp group dp,20,,1,dropp
 templates,/templates/class-whatsapp-group-description,class whatsapp group description,20,,1,built,/templates/whatsapp-group-description/class,Niche page
 templates,/templates/commerce-whatsapp-group-dp,commerce whatsapp group dp,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/cousins-whatsapp-group-dp,cousins whatsapp group dp,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/can-whatsapp-group-see-my-profile-picture,can whatsapp group see my profile picture,20,,1,deferred-wave2,/how-to/whatsapp/privacy,Privacy how-to intent
-templates,/templates/change-group-icon-whatsapp,change group icon whatsapp,20,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-icon-in-whatsapp,change group icon in whatsapp,20,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-whatsapp-group-icon,change whatsapp group icon,20,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
+templates,/templates/can-whatsapp-group-see-my-profile-picture,can whatsapp group see my profile picture,20,,1,built,/how-to/whatsapp/icon,How-to intent
+templates,/templates/change-group-icon-whatsapp,change group icon whatsapp,20,,1,built,/how-to/whatsapp/icon,How-to intent
+templates,/templates/change-group-icon-in-whatsapp,change group icon in whatsapp,20,,1,built,/how-to/whatsapp/icon,How-to intent
+templates,/templates/change-whatsapp-group-icon,change whatsapp group icon,20,,1,built,/how-to/whatsapp/icon,How-to intent
 templates,/templates/family-whatsapp-group-description-quotes,family whatsapp group description quotes,20,,1,dropped,,Quotes content: off-topic
 templates,/templates/family-group-whatsapp-icon,family group whatsapp icon,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/family-group-whatsapp-dp,family group whatsapp dp,20,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
@@ -248,9 +248,9 @@ templates,/templates/facebook-group-description-samples,facebook group descripti
 templates,/templates/facebook-group-templates,facebook group templates,10,,1,built,/templates/facebook-group-description,
 templates,/templates/facebook-groups-icon,facebook groups icon,10,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/group-description-facebook-sample,group description facebook sample,10,,1,built,/templates/facebook-group-description,
-templates,/templates/share-post-to-facebook-group-from-page-or-profile,share post to facebook group from page or profile,10,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/share-post-to-facebook-group-from-page-or-profile,share post to facebook group from page or profile,10,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template) (no page yet)"
 templates,/templates/9th-class-whatsapp-group-dp,9th class whatsapp group dp,10,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/change-group-image-whatsapp,change group image whatsapp,10,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
+templates,/templates/change-group-image-whatsapp,change group image whatsapp,10,,1,built,/how-to/whatsapp/icon,How-to intent
 templates,/templates/class-9-whatsapp-group-dp,class 9 whatsapp group dp,10,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/description-d-un-groupe-whatsapp,description d'un groupe whatsapp,10,,1,deferred,,Non-English query: needs a localized page
 templates,/templates/leaving-whatsapp-group-quotes,leaving whatsapp group quotes,10,,1,dropped,,Quotes content: off-topic
@@ -262,7 +262,7 @@ templates,/templates/welcome-to-whatsapp-group-images,welcome to whatsapp group 
 templates,/templates/welcome-message-to-new-member-in-whatsapp-group,welcome message to new member in whatsapp group,10,,1,built,/templates/whatsapp-group-welcome-message,
 templates,/templates/welcome-new-member-in-whatsapp-group,welcome new member in whatsapp group,10,,1,built,/templates/whatsapp-group-welcome-message,
 templates,/templates/whatsapp-faq-group-description-characters,whatsapp faq group description characters,10,,1,built,/templates/whatsapp-group-description,
-templates,/templates/whatsapp-group-images-not-showing-in-gallery,whatsapp group images not showing in gallery,10,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
+templates,/templates/whatsapp-group-images-not-showing-in-gallery,whatsapp group images not showing in gallery,10,,1,built,/how-to/whatsapp/icon,How-to intent
 templates,/templates/whatsapp-group-dp-images,whatsapp group dp images,10,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/whatsapp-group-icon-image-size,whatsapp group icon image size,10,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/whatsapp-group-monthly-theme-ideas,whatsapp group monthly theme ideas,10,,1,built,/templates/whatsapp-group-ideas,
@@ -274,14 +274,14 @@ templates,/templates/aedp-facebook-groups,aedp facebook groups,0,,1,dropped,,"Of
 templates,/templates/all-facebook-group-icons,all facebook group icons,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/alumni-facebook-group-description,alumni facebook group description,0,,1,built,/templates/facebook-group-description/alumni,Niche page
 templates,/templates/animated-facebook-messenger-group-icon,animated facebook messenger group icon,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/are-your-facebook-groups-and-profile-linked,are your facebook groups and profile linked,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/auto-post-image-to-facebook-group-from-dropbox,auto post image to facebook group from dropbox,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/auto-post-image-to-facebook-groups,auto post image to facebook groups,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/are-your-facebook-groups-and-profile-linked,are your facebook groups and profile linked,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/auto-post-image-to-facebook-group-from-dropbox,auto post image to facebook group from dropbox,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/auto-post-image-to-facebook-groups,auto post image to facebook groups,0,,1,built,/how-to/facebook/cover-photo,How-to intent
 templates,/templates/awesome-facebook-group-descriptions,awesome facebook group descriptions,0,,1,built,/templates/facebook-group-description,
 templates,/templates/badge-icon-in-facebook-group,badge icon in facebook group,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/best-facebook-group-header-images,best facebook group header images,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/best-facebook-group-ideas,best facebook group ideas,0,,1,built,/templates/facebook-group-post-ideas,
-templates,/templates/best-facebook-group-post-image-size,best facebook group post image size,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/best-facebook-group-post-image-size,best facebook group post image size,0,,1,built,/how-to/facebook/cover-photo,How-to intent
 templates,/templates/best-group-description-facebook,best group description facebook,0,,1,built,/templates/facebook-group-description,
 templates,/templates/best-size-mobile-and-desktop-facebook-group-image,best size mobile and desktop facebook group image,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/beth-obrien-facebook-genesis-biotechnology-group,beth obrien facebook genesis biotechnology group,0,,1,built,/templates/facebook-group-description,
@@ -291,71 +291,71 @@ templates,/templates/bioshock-infinite-facebook-group-fake-mod,bioshock infinite
 templates,/templates/bio-311c-group-sata-facebook,bio 311c group sata facebook,0,,1,built,/templates/facebook-group-description,
 templates,/templates/blue-facebook-welcome-group-covers,blue facebook welcome group covers,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/book-club-facebook-group-description,book club facebook group description,0,,1,built,/templates/facebook-group-description/book-club,Niche page
-templates,/templates/broadcast-facebook-live-from-profile-or-from-group,broadcast facebook live from profile or from group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/broadcast-facebook-live-from-profile-or-from-group,broadcast facebook live from profile or from group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template) (no page yet)"
 templates,/templates/can-a-facebook-group-have-a-profile-picture,can a facebook group have a profile picture,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/can-a-facebook-group-see-my-profile,can a facebook group see my profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-facebook-group-users-view-my-profile,can facebook group users view my profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-facebook-group-see-my-profile,can facebook group see my profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-facebook-groups-see-your-profile,can facebook groups see your profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
+templates,/templates/can-a-facebook-group-see-my-profile,can a facebook group see my profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-facebook-group-users-view-my-profile,can facebook group users view my profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-facebook-group-see-my-profile,can facebook group see my profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-facebook-groups-see-your-profile,can facebook groups see your profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
 templates,/templates/can-facebook-groups-have-profile-pictures,can facebook groups have profile pictures,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/can-facebook-groups-view-your-profile,can facebook groups view your profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-groups-see-my-profile-on-facebook,can groups see my profile on facebook,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-groups-see-your-facebook-images,can groups see your facebook images,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-groups-on-facebook-see-my-profile,can groups on facebook see my profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-i-convert-my-facebook-profile-to-group,can i convert my facebook profile to group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/can-facebook-groups-view-your-profile,can facebook groups view your profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-groups-see-my-profile-on-facebook,can groups see my profile on facebook,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-groups-see-your-facebook-images,can groups see your facebook images,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/can-groups-on-facebook-see-my-profile,can groups on facebook see my profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-i-convert-my-facebook-profile-to-group,can i convert my facebook profile to group,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
 templates,/templates/can-i-put-a-group-description-on-a-facebook-group,can i put a group description on a facebook group,0,,1,built,/templates/facebook-group-description,
-templates,/templates/can-i-scrape-member-profiles-from-a-facebook-group,can i scrape member profiles from a facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/can-people-in-facebook-groups-see-you-profile,can people in facebook groups see you profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-people-in-facebook-groups-see-your-profile,can people in facebook groups see your profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-people-in-groups-on-facebook-see-your-facebook-profile,can people in groups on facebook see your facebook profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-people-in-my-facebook-group-view-my-profile,can people in my facebook group view my profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-people-in-facebook-group-see-my-profile,can people in facebook group see my profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-people-see-groups-i-run-on-my-facebook-profile,can people see groups i run on my facebook profile,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-people-from-groups-see-my-profile-facebook,can people from groups see my profile facebook,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
-templates,/templates/can-t-change-facebook-group-profile-picture,can t change facebook group profile picture,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/can-you-change-a-facebook-group-icon,can you change a facebook group icon,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/can-you-embed-to-a-facebook-group-description,can you embed to a facebook group description,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/can-you-post-copyrighted-images-on-facebook-group,can you post copyrighted images on facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/can-you-use-copyrighted-images-on-facebook-group-cover,can you use copyrighted images on facebook group cover,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/can-t-change-group-icon-facebook,can't change group icon facebook,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/can-t-change-facebook-group-icon,can't change facebook group icon,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/can-t-share-an-image-from-facebook-group,can't share an image from facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/cannot-update-group-profile-picture-facebook,cannot update group profile picture facebook,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/can-i-scrape-member-profiles-from-a-facebook-group,can i scrape member profiles from a facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template) (no page yet)"
+templates,/templates/can-people-in-facebook-groups-see-you-profile,can people in facebook groups see you profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-people-in-facebook-groups-see-your-profile,can people in facebook groups see your profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-people-in-groups-on-facebook-see-your-facebook-profile,can people in groups on facebook see your facebook profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-people-in-my-facebook-group-view-my-profile,can people in my facebook group view my profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-people-in-facebook-group-see-my-profile,can people in facebook group see my profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-people-see-groups-i-run-on-my-facebook-profile,can people see groups i run on my facebook profile,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-people-from-groups-see-my-profile-facebook,can people from groups see my profile facebook,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
+templates,/templates/can-t-change-facebook-group-profile-picture,can t change facebook group profile picture,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/can-you-change-a-facebook-group-icon,can you change a facebook group icon,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/can-you-embed-to-a-facebook-group-description,can you embed to a facebook group description,0,,1,built,/how-to/facebook/description,How-to intent
+templates,/templates/can-you-post-copyrighted-images-on-facebook-group,can you post copyrighted images on facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/can-you-use-copyrighted-images-on-facebook-group-cover,can you use copyrighted images on facebook group cover,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/can-t-change-group-icon-facebook,can't change group icon facebook,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/can-t-change-facebook-group-icon,can't change facebook group icon,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/can-t-share-an-image-from-facebook-group,can't share an image from facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/cannot-update-group-profile-picture-facebook,cannot update group profile picture facebook,0,,1,built,/how-to/facebook/cover-photo,How-to intent
 templates,/templates/canva-facebook-group-cover-template-size,canva facebook group cover template size,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/cbp-facebook-group-images,cbp facebook group images,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/change-a-group-icon-in-facebook,change a group icon in facebook,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-facebook-group-icon-2020,change facebook group icon 2020,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-facebook-group-icon-2021,change facebook group icon 2021,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-facebook-group-icon-iphone,change facebook group icon iphone,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-a-shortcut-icon-in-facebook-group,change a shortcut icon in facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-icon-facebook-2019,change group icon facebook 2019,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-icon-on-facebook-group,change icon on facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-font-size-on-facebook-group-description,change font size on facebook group description,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-icon-in-facebook-group,change icon in facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-icon-of-facebook-group,change icon of facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-icon-facebook-2020,change group icon facebook 2020,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-icon-facebook-mobile,change group icon facebook mobile,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-icon-to-picture-on-facebook,change group icon to picture on facebook,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-icon-to-plant-facebook-2019,change group icon to plant facebook 2019,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-profile-pic-facebook-group,change profile pic facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-profile-picture-facebook-group,change profile picture facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-profile-picture-in-facebook-group,change profile picture in facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-profile-picture-in-group-facebook,change profile picture in group facebook,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-profile-picture-in-group-facebook-chat,change profile picture in group facebook chat,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-profile-picture-on-facebook-group,change profile picture on facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-icon-facebook-group,change icon facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-profile-image-facebook,change group profile image facebook,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-shortcut-icon-facebook,change group shortcut icon facebook,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/change-a-group-icon-in-facebook,change a group icon in facebook,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-facebook-group-icon-2020,change facebook group icon 2020,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-facebook-group-icon-2021,change facebook group icon 2021,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-facebook-group-icon-iphone,change facebook group icon iphone,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-a-shortcut-icon-in-facebook-group,change a shortcut icon in facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-icon-facebook-2019,change group icon facebook 2019,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-icon-on-facebook-group,change icon on facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-font-size-on-facebook-group-description,change font size on facebook group description,0,,1,built,/how-to/facebook/description,How-to intent
+templates,/templates/change-icon-in-facebook-group,change icon in facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-icon-of-facebook-group,change icon of facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-icon-facebook-2020,change group icon facebook 2020,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-icon-facebook-mobile,change group icon facebook mobile,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-icon-to-picture-on-facebook,change group icon to picture on facebook,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-icon-to-plant-facebook-2019,change group icon to plant facebook 2019,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-profile-pic-facebook-group,change profile pic facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-profile-picture-facebook-group,change profile picture facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-profile-picture-in-facebook-group,change profile picture in facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-profile-picture-in-group-facebook,change profile picture in group facebook,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-profile-picture-in-group-facebook-chat,change profile picture in group facebook chat,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-profile-picture-on-facebook-group,change profile picture on facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-icon-facebook-group,change icon facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-profile-image-facebook,change group profile image facebook,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/change-group-shortcut-icon-facebook,change group shortcut icon facebook,0,,1,built,/how-to/facebook/cover-photo,How-to intent
 templates,/templates/changer-favicon-groupe-facebook,changer favicon groupe facebook,0,,1,deferred,,Non-English query: needs a localized page
 templates,/templates/changer-l-icone-groupe-facebook,changer l'icone groupe facebook,0,,1,deferred,,Non-English query: needs a localized page
-templates,/templates/change-your-facebook-group-icon,change your facebook group icon,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/changing-the-header-image-in-a-facebook-group,changing the header image in a facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/changing-icon-of-facebook-group,changing icon of facebook group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/changing-group-icons-facebook,changing group icons facebook,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
-templates,/templates/chnage-facebook-profile-to-group-page,chnage facebook profile to group page,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/change-your-facebook-group-icon,change your facebook group icon,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/changing-the-header-image-in-a-facebook-group,changing the header image in a facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/changing-icon-of-facebook-group,changing icon of facebook group,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/changing-group-icons-facebook,changing group icons facebook,0,,1,built,/how-to/facebook/cover-photo,How-to intent
+templates,/templates/chnage-facebook-profile-to-group-page,chnage facebook profile to group page,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
 templates,/templates/choosing-facebook-group-icon,choosing facebook group icon,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/closed-captioning-quality-club-facebook-group,closed captioning quality club facebook group,0,,1,dropped,,"Off-topic or navigational (brand, unrelated entity)"
-templates,/templates/closed-groups-dont-show-on-profile-facebook,closed groups dont show on profile facebook,0,,1,deferred-wave2,/how-to/facebook/privacy,Privacy how-to intent
+templates,/templates/closed-groups-dont-show-on-profile-facebook,closed groups dont show on profile facebook,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
 templates,/templates/coffee-icon-facebook-group,coffee icon facebook group,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/coffee-icon-facebook-groups,coffee icon facebook groups,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/coffee-cup-icon-facebook-group,coffee cup icon facebook group,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
@@ -363,7 +363,7 @@ templates,/templates/coffee-cup-icon-in-facebook-group,coffee cup icon in facebo
 templates,/templates/collage-of-all-facebook-group-profile-pics,collage of all facebook group profile pics,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/comment-changer-l-icone-d-un-groupe-sur-facebook,comment changer l'icone d'un groupe sur facebook,0,,1,deferred,,Non-English query: needs a localized page
 templates,/templates/conversation-starter-facebook-icon-groups,conversation starter facebook icon groups,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/convert-facebook-profile-to-group,convert facebook profile to group,0,,1,deferred-wave2,/how-to/facebook/...,"Admin how-to intent (task, not template)"
+templates,/templates/convert-facebook-profile-to-group,convert facebook profile to group,0,,1,built,/how-to/facebook/profile-privacy,Privacy how-to intent
 templates,/templates/12th-class-whatsapp-group-dp,12th class whatsapp group dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/3-idiots-whatsapp-group-dp,3 idiots whatsapp group dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/a-group-profile-picture-on-whatsapp,a group profile picture on whatsapp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
@@ -400,13 +400,13 @@ templates,/templates/biology-whatsapp-group,biology whatsapp group,0,,1,built,/t
 templates,/templates/boys-whatsapp-group-dp,boys whatsapp group dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/brother-and-sister-whatsapp-group-images,brother and sister whatsapp group images,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/burial-whatsapp-group-description,burial whatsapp group description,0,,1,built,/templates/whatsapp-group-description,
-templates,/templates/can-new-person-in-whatsapp-group-see-previous-images,can new person in whatsapp group see previous images,0,,1,deferred-wave2,/how-to/whatsapp/privacy,Privacy how-to intent
-templates,/templates/cant-set-group-icon-on-whatsapp,cant set group icon on whatsapp,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-icon-on-whatsapp,change group icon on whatsapp,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-group-profile-picture-whatsapp,change group profile picture whatsapp,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-icon-of-a-group-on-whatsapp,change icon of a group on whatsapp,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-whatsapp-group-wallpaper,change whatsapp group wallpaper,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
-templates,/templates/change-profile-picture-whatsapp-group,change profile picture whatsapp group,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
+templates,/templates/can-new-person-in-whatsapp-group-see-previous-images,can new person in whatsapp group see previous images,0,,1,built,/how-to/whatsapp/icon,How-to intent
+templates,/templates/cant-set-group-icon-on-whatsapp,cant set group icon on whatsapp,0,,1,built,/how-to/whatsapp/icon,How-to intent
+templates,/templates/change-group-icon-on-whatsapp,change group icon on whatsapp,0,,1,built,/how-to/whatsapp/icon,How-to intent
+templates,/templates/change-group-profile-picture-whatsapp,change group profile picture whatsapp,0,,1,built,/how-to/whatsapp/icon,How-to intent
+templates,/templates/change-icon-of-a-group-on-whatsapp,change icon of a group on whatsapp,0,,1,built,/how-to/whatsapp/icon,How-to intent
+templates,/templates/change-whatsapp-group-wallpaper,change whatsapp group wallpaper,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template) (no page yet)"
+templates,/templates/change-profile-picture-whatsapp-group,change profile picture whatsapp group,0,,1,built,/how-to/whatsapp/icon,How-to intent
 templates,/templates/chemistry-whatsapp-group-dp,chemistry whatsapp group dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/civil-engineering-whatsapp-group-dp,civil engineering whatsapp group dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/civil-engineering-whatsapp-group-icon,civil engineering whatsapp group icon,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
@@ -438,7 +438,7 @@ templates,/templates/electrical-engineering-whatsapp-group-icon,electrical engin
 templates,/templates/exemple-description-groupe-whatsapp,exemple description groupe whatsapp,0,,1,deferred,,Non-English query: needs a localized page
 templates,/templates/exemple-de-description-d-un-groupe-whatsapp,exemple de description d un groupe whatsapp,0,,1,deferred,,Non-English query: needs a localized page
 templates,/templates/exemple-de-description-dun-groupe-whatsapp,exemple de description dun groupe whatsapp,0,,1,deferred,,Non-English query: needs a localized page
-templates,/templates/failed-to-update-group-icon-whatsapp,failed to update group icon whatsapp,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
+templates,/templates/failed-to-update-group-icon-whatsapp,failed to update group icon whatsapp,0,,1,built,/how-to/whatsapp/icon,How-to intent
 templates,/templates/fake-whatsapp-group-chat-template,fake whatsapp group chat template,0,,1,built,/templates/whatsapp-group-description,
 templates,/templates/family-group-my-family-whatsapp-dp,family group my family whatsapp dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/family-group-icon-whatsapp,family group icon whatsapp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
@@ -457,7 +457,7 @@ templates,/templates/funeral-whatsapp-group-description,funeral whatsapp group d
 templates,/templates/funeral-whatsapp-group-description-sample,funeral whatsapp group description sample,0,,1,built,/templates/whatsapp-group-description,
 templates,/templates/funny-group-description-whatsapp,funny group description whatsapp,0,,1,built,/templates/whatsapp-group-description,
 templates,/templates/funny-images-to-send-in-whatsapp-group,funny images to send in whatsapp group,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-templates,/templates/funny-images-to-share-on-whatsapp-group,funny images to share on whatsapp group,0,,1,deferred-wave2,/how-to/whatsapp/...,"Admin how-to intent (task, not template)"
+templates,/templates/funny-images-to-share-on-whatsapp-group,funny images to share on whatsapp group,0,,1,built,/how-to/whatsapp/icon,How-to intent
 templates,/templates/funny-images-whatsapp-group,funny images whatsapp group,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/funny-whatsapp-group-description-in-hindi,funny whatsapp group description in hindi,0,,1,deferred,,Non-English query: needs a localized page
 templates,/templates/funny-whatsapp-group-chat-dp,funny whatsapp group chat dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
@@ -487,64 +487,64 @@ templates,/templates/happy-birthday-whatsapp-group-icon,happy birthday whatsapp 
 templates,/templates/happy-family-whatsapp-group-dp,happy family whatsapp group dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/happy-family-whatsapp-group-icon,happy family whatsapp group icon,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
 templates,/templates/high-school-whatsapp-group-dp,high school whatsapp group dp,0,,1,dropped,,"Visual assets (DP/icon/cover images): needs an image tool, no product fit"
-admin-howto,/how-to/facebook/create,how do you create group on facebook,74250,48,2,deferred-wave2,/how-to/facebook/create,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/delete,how to delete a facebook group,67680,30,2,deferred-wave2,/how-to/facebook/delete,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/link,link whatsapp group,53500,31,2,deferred-wave2,/how-to/whatsapp/link,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/leave,how to exit a group in facebook,37540,30,2,deferred-wave2,/how-to/facebook/leave,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/add-members,how to add someone in whatsapp group chat,31370,33,2,deferred-wave2,/how-to/whatsapp/add-members,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/create,how can i create whatsapp group,26340,39,2,deferred-wave2,/how-to/whatsapp/create,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/add-members,how to add an admin to a facebook group,21820,31,2,deferred-wave2,/how-to/facebook/add-members,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/delete,how to delete whatsapp group,20720,32,2,deferred-wave2,/how-to/whatsapp/delete,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/anonymous,how to comment anonymously on facebook group,19220,31,2,deferred-wave2,/how-to/facebook/anonymous,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/link,how do i join a group in facebook,17830,48,2,deferred-wave2,/how-to/facebook/link,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/find-search,how to find my groups on fb,17320,38,2,deferred-wave2,/how-to/facebook/find-search,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/leave,how to leave a whatsapp group,13380,35,2,deferred-wave2,/how-to/whatsapp/leave,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/telegram/find-search,telegram group search,12910,31,2,deferred-wave2,/how-to/telegram/find-search,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/telegram/link,telegram group link,11710,34,2,deferred-wave2,/how-to/telegram/link,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/private-public,how to find private groups on facebook,11240,46,2,deferred-wave2,/how-to/facebook/private-public,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/report-block,how to block a group on facebook,10450,30,2,deferred-wave2,/how-to/facebook/report-block,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/admin,facebook group rules from the admins,8370,28,2,deferred-wave2,/how-to/facebook/admin,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/mute,mute group on whatsapp,6220,30,2,deferred-wave2,/how-to/whatsapp/mute,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/limit,whatsapp group limit,5670,32,2,deferred-wave2,/how-to/whatsapp/limit,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/find-search,how can i find whatsapp groups,5490,43,2,deferred-wave2,/how-to/whatsapp/find-search,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/report-block,whatsapp group report,4570,35,2,deferred-wave2,/how-to/whatsapp/report-block,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/facebook/create,how do you create group on facebook,74250,48,2,built,/how-to/facebook/create,
+admin-howto,/how-to/facebook/delete,how to delete a facebook group,67680,30,2,built,/how-to/facebook/delete,
+admin-howto,/how-to/whatsapp/link,link whatsapp group,53500,31,2,built,/how-to/whatsapp/link,
+admin-howto,/how-to/facebook/leave,how to exit a group in facebook,37540,30,2,built,/how-to/facebook/leave,
+admin-howto,/how-to/whatsapp/add-members,how to add someone in whatsapp group chat,31370,33,2,built,/how-to/whatsapp/add-members,
+admin-howto,/how-to/whatsapp/create,how can i create whatsapp group,26340,39,2,built,/how-to/whatsapp/create,
+admin-howto,/how-to/facebook/add-members,how to add an admin to a facebook group,21820,31,2,built,/how-to/facebook/add-members,
+admin-howto,/how-to/whatsapp/delete,how to delete whatsapp group,20720,32,2,built,/how-to/whatsapp/delete,
+admin-howto,/how-to/facebook/anonymous,how to comment anonymously on facebook group,19220,31,2,built,/how-to/facebook/anonymous,
+admin-howto,/how-to/facebook/link,how do i join a group in facebook,17830,48,2,built,/how-to/facebook/link,
+admin-howto,/how-to/facebook/find-search,how to find my groups on fb,17320,38,2,built,/how-to/facebook/find-search,
+admin-howto,/how-to/whatsapp/leave,how to leave a whatsapp group,13380,35,2,built,/how-to/whatsapp/leave,
+admin-howto,/how-to/telegram/find-search,telegram group search,12910,31,2,built,/how-to/telegram/find-search,
+admin-howto,/how-to/telegram/link,telegram group link,11710,34,2,built,/how-to/telegram/link,
+admin-howto,/how-to/facebook/private-public,how to find private groups on facebook,11240,46,2,built,/how-to/facebook/private-public,
+admin-howto,/how-to/facebook/report-block,how to block a group on facebook,10450,30,2,built,/how-to/facebook/report-block,
+admin-howto,/how-to/facebook/admin,facebook group rules from the admins,8370,28,2,built,/how-to/facebook/admin,
+admin-howto,/how-to/whatsapp/mute,mute group on whatsapp,6220,30,2,built,/how-to/whatsapp/mute,
+admin-howto,/how-to/whatsapp/limit,whatsapp group limit,5670,32,2,built,/how-to/whatsapp/limit,
+admin-howto,/how-to/whatsapp/find-search,how can i find whatsapp groups,5490,43,2,built,/how-to/whatsapp/find-search,
+admin-howto,/how-to/whatsapp/report-block,whatsapp group report,4570,35,2,built,/how-to/whatsapp/report-block,
 directory,/groups/whatsapp/chat-for-whatsapp,chat for whatsapp,3600,69,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/whatsapp-groups-for-jobs-abroad-in-hyderabad,whatsapp groups for jobs abroad in hyderabad,3600,32,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/whatsapp/admin,admin removed me from whatsapp group,3510,27,2,deferred-wave2,/how-to/whatsapp/admin,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/rules,facebook group rules,3180,23,2,deferred-wave2,/how-to/facebook/rules,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/remove-member,whatsapp group remove member,3020,30,2,deferred-wave2,/how-to/whatsapp/remove-member,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/mute,how to unmute a fb group,3010,27,2,deferred-wave2,/how-to/facebook/mute,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/discord/leave,discord bot to auto leave group chats,2710,23,2,deferred-wave2,/how-to/discord/leave,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/archive,how do i archive a facebook group,2670,30,2,deferred-wave2,/how-to/facebook/archive,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/rules,whatsapp group chat rules and regulations,2190,28,2,deferred-wave2,/how-to/whatsapp/rules,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/telegram/private-public,banned from public groups telegram,1900,25,2,deferred-wave2,/how-to/telegram/private-public,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/whatsapp/admin,admin removed me from whatsapp group,3510,27,2,built,/how-to/whatsapp/admin,
+admin-howto,/how-to/facebook/rules,facebook group rules,3180,23,2,built,/how-to/facebook/rules,
+admin-howto,/how-to/whatsapp/remove-member,whatsapp group remove member,3020,30,2,built,/how-to/whatsapp/remove-member,
+admin-howto,/how-to/facebook/mute,how to unmute a fb group,3010,27,2,built,/how-to/facebook/mute,
+admin-howto,/how-to/discord/leave,discord bot to auto leave group chats,2710,23,2,built,/how-to/discord/leave,
+admin-howto,/how-to/facebook/archive,how do i archive a facebook group,2670,30,2,built,/how-to/facebook/archive,
+admin-howto,/how-to/whatsapp/rules,whatsapp group chat rules and regulations,2190,28,2,built,/how-to/whatsapp/rules,
+admin-howto,/how-to/telegram/private-public,banned from public groups telegram,1900,25,2,built,/how-to/telegram/private-public,
 directory,/groups/telegram/telegram-group-link,telegram group link,1900,66,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/facebook/pin,what does it mean to pin a group on facebook,1830,27,2,deferred-wave2,/how-to/facebook/pin,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/facebook/pin,what does it mean to pin a group on facebook,1830,27,2,built,/how-to/facebook/pin,
 directory,/groups/telegram/link-of-telegram-group,link of telegram group,1600,44,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/telegram/group-link-for-telegram,group link for telegram,1600,34,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/facebook/remove-member,how to remove someone from a facebook group,1550,28,2,deferred-wave2,/how-to/facebook/remove-member,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/archive,how do i unarchive a group on whatsapp,1520,27,2,deferred-wave2,/how-to/whatsapp/archive,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/discord/create,how to make a group chat on discord,1520,30,2,deferred-wave2,/how-to/discord/create,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/name-change,how to rename a facebook group,1380,29,2,deferred-wave2,/how-to/facebook/name-change,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/facebook/limit,chrcter limit facebook group s,1300,28,2,deferred-wave2,/how-to/facebook/limit,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/facebook/remove-member,how to remove someone from a facebook group,1550,28,2,built,/how-to/facebook/remove-member,
+admin-howto,/how-to/whatsapp/archive,how do i unarchive a group on whatsapp,1520,27,2,built,/how-to/whatsapp/archive,
+admin-howto,/how-to/discord/create,how to make a group chat on discord,1520,30,2,built,/how-to/discord/create,
+admin-howto,/how-to/facebook/name-change,how to rename a facebook group,1380,29,2,built,/how-to/facebook/name-change,
+admin-howto,/how-to/facebook/limit,chrcter limit facebook group s,1300,28,2,built,/how-to/facebook/limit,
 directory,/groups/whatsapp/whatsapp-for-groups,whatsapp for groups,1300,65,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/telegram/telegram-group-links,telegram group links,1300,37,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/link-whatsapp-group,link whatsapp group,1300,59,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/whatsapp-group-links,whatsapp group links,1000,59,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/link-wa-group,link wa group,1000,42,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/whatsapp/private-public,private whatsapp group link,990,55,2,deferred-wave2,/how-to/whatsapp/private-public,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/pin,how do you pin a message on whatsapp group chat,990,,2,deferred-wave2,/how-to/whatsapp/pin,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/export,import export whatsapp group,900,,2,deferred-wave2,/how-to/whatsapp/export,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/whatsapp/private-public,private whatsapp group link,990,55,2,built,/how-to/whatsapp/private-public,
+admin-howto,/how-to/whatsapp/pin,how do you pin a message on whatsapp group chat,990,,2,built,/how-to/whatsapp/pin,
+admin-howto,/how-to/whatsapp/export,import export whatsapp group,900,,2,built,/how-to/whatsapp/export,
 directory,/groups/whatsapp/whatsapp-group-link,whatsapp group link,880,70,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/facebook-groups-for-roommates,facebook groups for roommates,880,45,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/pet-owner-facebook-group-demographics-engagement-statistics,pet owner facebook group demographics engagement statistics,880,23,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/telegram/admin,telegram bot group management admin tools github,720,,2,deferred-wave2,/how-to/telegram/admin,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/telegram/rules,telegram group rules,590,26,2,deferred-wave2,/how-to/telegram/rules,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/telegram/admin,telegram bot group management admin tools github,720,,2,built,/how-to/telegram/admin,
+admin-howto,/how-to/telegram/rules,telegram group rules,590,26,2,built,/how-to/telegram/rules,
 directory,/groups/facebook/description-for-group-on-facebook,description for group on facebook,590,31,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/facebook-group-marketing,facebook group marketing,590,26,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/facebook-marketing-groups,facebook marketing groups,590,43,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/facebook/description,facebook group description character limit,500,23,2,deferred-wave2,/how-to/facebook/description,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/discord/link,discord groups to join,480,52,2,deferred-wave2,/how-to/discord/link,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/facebook/description,facebook group description character limit,500,23,2,built,/how-to/facebook/description,
+admin-howto,/how-to/discord/link,discord groups to join,480,52,2,built,/how-to/discord/link,
 directory,/groups/discord/discord-groups-to-join,discord groups to join,480,52,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/group-description-for-whatsapp,group description for whatsapp,480,25,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/largest-public-facebook-marketing-groups-2026-list,largest public facebook marketing groups 2026 list,480,3,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
@@ -562,7 +562,7 @@ directory,/groups/telegram/telegram-link-sharing-groups,telegram link sharing gr
 directory,/groups/telegram/telegram-x-group-link,telegram x group link,390,39,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/telegram/telegram-groups-links,telegram groups links,390,77,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/whatsapp-groups-links,whatsapp groups links,390,43,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/telegram/limit,no limit telegram groups,320,21,2,deferred-wave2,/how-to/telegram/limit,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/telegram/limit,no limit telegram groups,320,21,2,built,/how-to/telegram/limit,
 directory,/groups/facebook/facebook-mom-groups,facebook mom groups,320,35,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/facebook-buy-nothing-group,facebook buy nothing group,320,49,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/facebook-chat-for-groups,facebook chat for groups,320,31,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
@@ -578,7 +578,7 @@ directory,/groups/whatsapp/this-whatsapp-group-is-created-for,this whatsapp grou
 directory,/groups/facebook/auto-approval-facebook-group-list-usa,auto approval facebook group list usa,260,,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/whatsapp-community-vs-group,whatsapp community vs group,260,29,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/facebook-groups-for-free-stuff,facebook groups for free stuff,260,33,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/whatsapp/description,whatsapp group description character limit official faq,220,25,2,deferred-wave2,/how-to/whatsapp/description,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/whatsapp/description,whatsapp group description character limit official faq,220,25,2,built,/how-to/whatsapp/description,
 directory,/groups/whatsapp/groups-on-whatsapp-to-join,groups on whatsapp to join,210,64,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/whatsapp-for-group-chat,whatsapp for group chat,210,42,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/whatsapp-group-joiner,whatsapp group joiner,210,33,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
@@ -590,9 +590,9 @@ directory,/groups/whatsapp/some-description-for-whatsapp-group,some description 
 directory,/groups/facebook/buy-nothing-group-facebook,buy nothing group facebook,210,48,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/facebook-for-groups,facebook for groups,210,60,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/buy-nothing-facebook-group,buy nothing facebook group,210,47,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-admin-howto,/how-to/facebook/export,facebook group member list export,200,,2,deferred-wave2,/how-to/facebook/export,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/name-change,how to change nickname in whatsapp group,190,21,2,deferred-wave2,/how-to/whatsapp/name-change,Wave 2: needs accurate per-platform steps; infra ready
-admin-howto,/how-to/whatsapp/anonymous,how to send anonymous message on whatsapp group,170,,2,deferred-wave2,/how-to/whatsapp/anonymous,Wave 2: needs accurate per-platform steps; infra ready
+admin-howto,/how-to/facebook/export,facebook group member list export,200,,2,built,/how-to/facebook/export,
+admin-howto,/how-to/whatsapp/name-change,how to change nickname in whatsapp group,190,21,2,built,/how-to/whatsapp/name-change,
+admin-howto,/how-to/whatsapp/anonymous,how to send anonymous message on whatsapp group,170,,2,built,/how-to/whatsapp/anonymous,
 group-names,/names/imessage/funny,funny group chat names,17210,23,3,deferred-wave3,/names/imessage/funny,Wave 3: weak product fit per plan
 group-names,/names/imessage/general,group chat names,10970,30,3,deferred-wave3,/names/imessage/general,Wave 3: weak product fit per plan
 group-names,/names/imessage/cool,great names for group chats,10920,34,3,deferred-wave3,/names/imessage/cool,Wave 3: weak product fit per plan

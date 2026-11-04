@@ -446,7 +446,7 @@ function buildTemplatesIndex(): PseoPageData {
       { q: 'Are these group templates free?', a: 'Yes. Every template is free to copy, edit, and use in your group.' },
       { q: 'Do the templates work for Telegram or Discord groups too?', a: 'The WhatsApp templates work well for Telegram, and the Facebook rules templates adapt easily for Discord server rules. Adjust platform-specific features like pinned messages.' },
     ],
-    related: [{ label: 'Guides for group owners and advertisers', path: '/guides' }],
+    related: [{ label: 'Guides for group owners and advertisers', path: '/guides' }, { label: 'Group how-to guides', path: '/how-to' }],
     updated: PSEO_UPDATED,
   };
 }
