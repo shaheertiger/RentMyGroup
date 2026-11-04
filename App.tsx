@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
 import { Role, ModalState } from './types.ts';
 import { getBlogPost } from './blog/posts.ts';
+import { isPseoPath, loadPseoPage, getPreloadedPseoPage } from './pseo/client.ts';
 
 // Lazy loading views
 const SocialProof = lazy(() => import('./components/SocialProof.tsx').then(m => ({ default: m.SocialProof })));
@@ -27,6 +28,7 @@ const GroupAdvertisingMarketplace = lazy(() => import('./components/GroupAdverti
 const AdvertiseInOnlineCommunities = lazy(() => import('./components/AdvertiseInOnlineCommunities.tsx').then(m => ({ default: m.AdvertiseInOnlineCommunities })));
 const BlogIndex = lazy(() => import('./components/BlogIndex.tsx').then(m => ({ default: m.BlogIndex })));
 const BlogPost = lazy(() => import('./components/BlogPost.tsx').then(m => ({ default: m.BlogPost })));
+const LazyPseoPage = lazy(() => loadPseoPage().then(m => ({ default: m.PseoPage })));
 
 const SectionLoader = () => (
   <div className="min-h-[400px] w-full flex items-center justify-center">
@@ -70,6 +72,8 @@ const App: React.FC = () => {
 
   // Advanced SEO and Social Preview management for dynamic route changes
   useEffect(() => {
+    // pSEO pages manage their own meta tags (components/pseo/PseoPage.tsx)
+    if (isPseoPath(currentPath)) return;
     const metaDesc = document.querySelector('meta[name="description"]');
     const canonicalLink = document.getElementById('canonical-link');
     
@@ -273,13 +277,19 @@ const App: React.FC = () => {
   const isBlogIndex = currentPath === '/blog';
   const isBlogPost = currentPath.startsWith('/blog/') && currentPath.length > 6;
   const blogSlug = isBlogPost ? currentPath.replace('/blog/', '') : '';
+  const isPseoPage = isPseoPath(currentPath);
+  const PseoPage = getPreloadedPseoPage() ?? LazyPseoPage;
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-indigo-500 selection:text-white relative">
       <Navbar onOpenModal={openModal} onNavigate={navigate} currentPath={currentPath} />
       
       <main className="transition-opacity duration-300 relative z-0">
-        {isFbAdsPage ? (
+        {isPseoPage ? (
+          <Suspense fallback={<SectionLoader />}>
+            <PseoPage path={currentPath} onOpenModal={openModal} onNavigate={navigate} />
+          </Suspense>
+        ) : isFbAdsPage ? (
           <div className="animate-fade-in">
             <Suspense fallback={<SectionLoader />}>
               <FacebookGroupAdvertising onOpenModal={openModal} />
