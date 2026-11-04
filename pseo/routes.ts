@@ -53,7 +53,7 @@ export function pseoJsonLd(page: PseoPageData): object {
 const abs = (path: string) => `${SITE_ORIGIN}${path}`;
 const cell = (s: string) => s.replace(/\|/g, '\\|').replace(/\n/g, ' ');
 
-function blockToMarkdown(b: PseoBlock): string {
+function blockToMarkdown(b: PseoBlock, path: string): string {
   switch (b.type) {
     case 'h2': return `## ${b.content}`;
     case 'h3': return `### ${b.content}`;
@@ -75,7 +75,7 @@ function blockToMarkdown(b: PseoBlock): string {
         ...b.links.map((l) => `- [${l.label}](${abs(l.path)})${l.desc ? `: ${l.desc}` : ''}`),
       ].join('\n');
     case 'cta':
-      return `**${b.headline}** ${b.body} [${b.buttonText}](${abs(b.role === 'admin' ? '/monetize-facebook-group' : '/group-advertising-marketplace')})`;
+      return `**${b.headline}** ${b.body} [${b.buttonText}](${abs(b.role === 'advertiser' ? '/group-advertising-marketplace' : path.includes('whatsapp') ? '/monetize-whatsapp-group' : '/monetize-facebook-group')})`;
   }
 }
 
@@ -92,7 +92,7 @@ export function pseoToMarkdown(page: PseoPageData): string {
     '',
     page.intro,
     '',
-    ...page.blocks.flatMap((b) => [blockToMarkdown(b), '']),
+    ...page.blocks.flatMap((b) => [blockToMarkdown(b, page.path), '']),
   ];
   if (page.faq.length) {
     parts.push('## Frequently asked questions', '');
