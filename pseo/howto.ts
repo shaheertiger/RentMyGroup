@@ -18,10 +18,12 @@ interface HowTo {
   desc: string;
   answer: string; // short direct answer, used as the intro (snippet target)
   steps: [string, string[]][]; // [section heading, ordered steps]
+  table?: { heading: string; headers: string[]; rows: string[][] }; // comparison, rendered before the steps
   notes?: string[];
   callout?: string;
   faq: [string, string][];
   links?: PseoLink[];
+  updated?: string; // defaults to PSEO_UPDATED
 }
 
 export const HOWTO_PLATFORM_LABEL: Record<HowToPlatform, string> = {
@@ -752,6 +754,54 @@ const guides: HowTo[] = [
     links: [{ label: 'How to create a WhatsApp group', path: T('whatsapp', 'create') }],
   },
 
+  {
+    platform: 'whatsapp', slug: 'community-vs-group',
+    h1: 'WhatsApp Community vs Group: Differences and Which to Use',
+    metaTitle: 'WhatsApp Community vs Group: Key Differences (2026)',
+    desc: 'The difference between a WhatsApp Community and a WhatsApp group, which one to use, and how to create a community and add your existing groups to it.',
+    answer: 'A WhatsApp group is one chat where members talk to each other (up to 1,024 people). A WhatsApp Community links several related groups under one name, with an announcements group that admins use to message everyone at once. Use a group for one conversation. Use a community when you run several groups for the same school, building, business, or club.',
+    table: {
+      heading: 'WhatsApp Community vs group at a glance',
+      headers: ['', 'Group', 'Community'],
+      rows: [
+        ['What it is', 'One chat', 'Up to 100 linked groups plus an announcements group'],
+        ['Who can post', 'Everyone, unless admins restrict it', 'Only admins in announcements; members chat inside the groups they join'],
+        ['Size', 'Up to 1,024 members', 'Reaches members of every linked group through announcements'],
+        ['Phone numbers', 'Visible to other members', 'Hidden from the wider community; visible to admins and people in the same group'],
+        ['Joining', 'Invite link, QR code, or added by an admin', 'Community link; members can browse and ask to join its groups'],
+        ['Best for', 'Family, friends, one class, one team', 'Schools, housing societies, companies, clubs with sub-groups'],
+      ],
+    },
+    steps: [
+      ['Create a WhatsApp Community', [
+        'Open WhatsApp and go to the Communities tab (or tap New chat, then New community).',
+        'Tap "Start your community" or "New community".',
+        'Enter a name, a description, and a photo. The description works like a group description, so say who the community is for.',
+        'Add existing groups you admin, or create new groups inside the community.',
+        'Tap Create. WhatsApp sets up the announcements group automatically.',
+      ]],
+      ['Add an existing group to a community', [
+        'Open the community and go to its settings or the list of groups.',
+        'Tap "Add existing groups" (or Manage groups).',
+        'Pick the groups you admin and confirm. Their chats and members stay as they are.',
+      ]],
+    ],
+    notes: [
+      'A community does not replace your groups. Each group keeps its own chat, admins, and settings.',
+      'Use the announcements group for news everyone needs, and keep conversation in the topic groups.',
+      'WhatsApp\'s Help Center says communities can\'t currently be created in the WhatsApp Business app. Use the regular WhatsApp app.',
+      'A broadcast list is different again: it sends your message to each contact individually, and only people who saved your number receive it.',
+    ],
+    faq: [
+      ['What is the difference between a WhatsApp group and a community?', 'A group is a single chat. A community is a collection of related groups with one announcements group, so admins can organize several groups and reach all their members at once.'],
+      ['Should I make a WhatsApp group or a community?', 'Start with a group if you have one topic and one set of people. Create a community when you already run, or plan to run, several groups for the same organization.'],
+      ['Can community members see my phone number?', 'Not the whole community. Your number is visible to community admins and to people in the same groups as you, but hidden from other members in the announcements group.'],
+      ['Can I turn my WhatsApp group into a community?', 'Not directly, but you can create a community and add your existing group to it. The group keeps its chat history and members.'],
+      ['How many groups can a WhatsApp Community have?', 'Currently up to 100 groups plus the announcements group. WhatsApp has raised these limits before, so check the app if you are near the cap.'],
+    ],
+    links: [{ label: 'WhatsApp group limits', path: T('whatsapp', 'limit') }, { label: 'How to create a WhatsApp group', path: T('whatsapp', 'create') }, { label: 'WhatsApp group description templates', path: hubPath('whatsapp', 'description') }],
+    updated: '2026-11-19',
+  },
   // ─── Telegram ──────────────────────────────────────────────────────────────
   {
     platform: 'telegram', slug: 'find-search',
@@ -887,10 +937,68 @@ const guides: HowTo[] = [
       ['Create an invite link', ['Right-click the server icon (desktop) or tap the server name (mobile).', 'Choose "Invite People".', 'Copy the link or tap "Edit invite link" to change expiry and max uses.']],
       ['Find servers to join', ['Click the compass icon (Discover) in the server list.', 'Search by topic or browse categories.', 'Open a server and click Join.']],
     ],
+    notes: [
+      'Invite links look like discord.gg/AbC123 or discord.com/invite/AbC123. Both work the same way.',
+      'New invites expire after 7 days by default. Set "Expire after" to Never for a link you can post on a website or social profile.',
+      'You need the Create Invite permission to make a link. If "Invite People" is missing, ask a server admin.',
+      'See and revoke every active invite in Server Settings, then Invites. Revoking a link does not remove people who already joined.',
+      'A custom link like discord.gg/yourname is a vanity URL, a Level 3 boost perk. See the custom invite link guide below.',
+    ],
+    callout: 'Only click invite links from people and sites you trust. Fake "free Nitro" and giveaway invites are a common way to steal Discord accounts.',
     faq: [
       ['How do I make a Discord invite link that never expires?', 'In Invite People, click "Edit invite link", set "Expire after" to Never, and generate the link.'],
+      ['Why is my Discord invite link invalid?', 'The link expired (default is 7 days), reached its maximum number of uses, was revoked by an admin, or you are banned from the server. Ask for a new link.'],
+      ['Can I make a custom Discord invite link?', 'Yes, if the server has Level 3 boosts (14 boosts) or Partner or Verified status. That unlocks a vanity URL such as discord.gg/yourname. Otherwise, use a regular invite set to never expire.'],
+      ['How do I find my Discord server link?', 'Open the server, choose Invite People, and copy the link shown. Server admins can also see all existing links in Server Settings, then Invites.'],
     ],
-    links: [{ label: 'How to leave a Discord server', path: T('discord', 'leave') }],
+    links: [{ label: 'How to get a custom Discord invite link (vanity URL)', path: T('discord', 'custom-invite-link') }, { label: 'How to create a Discord server', path: T('discord', 'create') }, { label: 'How to leave a Discord server', path: T('discord', 'leave') }],
+    updated: '2026-11-19',
+  },
+  {
+    platform: 'discord', slug: 'custom-invite-link',
+    h1: 'How to Get a Custom Discord Invite Link (Vanity URL)',
+    metaTitle: 'Custom Discord Invite Link: Vanity URL and Permanent Invites (2026)',
+    desc: 'How to get a custom Discord invite link like discord.gg/yourname, what it costs in server boosts, and how to make a permanent invite link without boosts.',
+    answer: 'A custom Discord invite link (a vanity URL like discord.gg/yourname) is a Level 3 server perk: the server needs 14 active boosts, or Partner or Verified status. Without that, the closest option is a regular invite set to never expire with no use limit, which keeps working until you revoke it.',
+    table: {
+      heading: 'Vanity URL vs permanent invite',
+      headers: ['', 'Vanity URL', 'Permanent invite'],
+      rows: [
+        ['Looks like', 'discord.gg/yourname', 'discord.gg/AbC123x (random)'],
+        ['Requirement', 'Level 3 boosts (14 boosts), or Partner or Verified', 'Create Invite permission'],
+        ['Cost', 'Paid boosts from members or the owner', 'Free'],
+        ['Expires', 'Never, while the server keeps Level 3', 'Never, if set to Never'],
+        ['Easy to remember', 'Yes', 'No'],
+      ],
+    },
+    steps: [
+      ['Set a vanity URL (Level 3 servers)', [
+        'Open the server menu and go to Server Settings.',
+        'Look for "Vanity URL" (sometimes shown as Custom Invite Link). It only appears once the server has Level 3 or Partner or Verified status.',
+        'Type the name you want, using letters, numbers, and dashes. It has to be unique across Discord.',
+        'Save. Share discord.gg/yourname anywhere.',
+      ]],
+      ['Make a permanent invite (any server)', [
+        'Right-click the server icon (desktop) or tap the server name (mobile), then choose "Invite People".',
+        'Click "Edit invite link".',
+        'Set "Expire after" to Never and "Max number of uses" to No limit.',
+        'Click "Generate a New Link", then copy it.',
+      ]],
+    ],
+    notes: [
+      'If boosts drop below Level 3, the vanity URL stops working until the server gets back to Level 3. Keep a permanent invite as a backup.',
+      'Server boost levels: Level 1 at 2 boosts, Level 2 at 7 boosts, Level 3 at 14 boosts.',
+      'Point a short link or your own domain (for example yoursite.com/discord) at your permanent invite if you want something memorable without boosts. It is a redirect, not an official Discord vanity URL.',
+      'Turn on "Grant temporary membership" only for events: it removes people who leave without being given a role.',
+    ],
+    faq: [
+      ['How many boosts do you need for a custom Discord invite link?', '14 boosts, which unlocks server Level 3 and the vanity URL. Partner and Verified servers can also set one.'],
+      ['Can I get a custom Discord link for free?', 'Not an official one, unless your server is Partnered or Verified. The free alternative is a permanent invite, optionally behind your own short link or domain.'],
+      ['What happens to my vanity URL if I lose boosts?', 'It stops working while the server is below Level 3, and the name can be taken by another server in the meantime. Share a permanent invite as a fallback.'],
+      ['Can I change my Discord vanity URL?', 'Yes. Admins with Manage Server permission can change it in Server Settings while the server is Level 3. The old name stops working straight away.'],
+    ],
+    links: [{ label: 'Discord invite links: how to create one', path: T('discord', 'link') }, { label: 'How to create a Discord server', path: T('discord', 'create') }],
+    updated: '2026-11-19',
   },
 ];
 
@@ -903,10 +1011,11 @@ function buildHowTo(g: HowTo): PseoPageData {
   const P = HOWTO_PLATFORM_LABEL[g.platform];
   const path = T(g.platform, g.slug);
   const blocks: PseoBlock[] = [];
+  if (g.table) blocks.push({ type: 'h2', content: g.table.heading }, { type: 'table', headers: g.table.headers, rows: g.table.rows });
   for (const [heading, items] of g.steps) blocks.push({ type: 'h2', content: heading }, { type: 'ol', items });
   if (g.notes?.length) blocks.push({ type: 'h2', content: g.steps.length ? 'Good to know' : `${P} group limits at a glance` }, { type: 'ul', items: g.notes });
   if (g.callout) blocks.push({ type: 'callout', content: g.callout });
-  blocks.push({ type: 'callout', content: `${P} updates its apps often. If a menu label is slightly different on your phone, look for the closest match. Last checked ${new Date(PSEO_UPDATED + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}.` });
+  blocks.push({ type: 'callout', content: `${P} updates its apps often. If a menu label is slightly different on your phone, look for the closest match. Last checked ${new Date((g.updated ?? PSEO_UPDATED) + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}.` });
   if (g.links?.length) blocks.push({ type: 'links', heading: 'Useful next', links: g.links });
   if (g.platform === 'facebook' || g.platform === 'whatsapp') {
     blocks.push({
@@ -934,7 +1043,7 @@ function buildHowTo(g: HowTo): PseoPageData {
     blocks,
     faq: g.faq.map(([q, a]): PseoFaq => ({ q, a })),
     related: [...siblings.map((x) => ({ label: x.h1, path: T(x.platform, x.slug) })), { label: `All ${P} group guides`, path: `/how-to/${g.platform}` }],
-    updated: PSEO_UPDATED,
+    updated: g.updated ?? PSEO_UPDATED,
   };
 }
 

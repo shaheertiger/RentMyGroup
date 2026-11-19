@@ -2,9 +2,10 @@ import { PseoPageData, PseoBlock, SITE_ORIGIN } from './types.ts';
 import { getTemplatePage, templatePaths } from './templates.ts';
 import { ideasPages } from './ideas.ts';
 import { guidePages } from './guides.ts';
+import { extraPages } from './extras.ts';
 import { getHowToPage, howToPaths } from './howto.ts';
 
-const staticPages = new Map<string, PseoPageData>([...ideasPages, ...guidePages].map((p) => [p.path, p]));
+const staticPages = new Map<string, PseoPageData>([...ideasPages, ...guidePages, ...extraPages].map((p) => [p.path, p]));
 
 /** Path prefixes owned by the pSEO system (used by App.tsx without loading this module). */
 export const PSEO_PREFIXES = ['/templates', '/guides', '/how-to'];
