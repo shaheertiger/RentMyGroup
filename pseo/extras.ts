@@ -177,8 +177,8 @@ const groupDescription: PseoPageData = {
     { type: 'h2', content: 'Find a template for your exact group' },
     { type: 'p', content: 'Our platform-specific pages have four templates each for 50 kinds of groups, with topics and rules written for that niche.' },
     { type: 'links', links: [
-      { label: 'WhatsApp group description templates', path: hubPath('whatsapp', 'description'), desc: '50 niches' },
-      { label: 'Facebook group description templates', path: hubPath('facebook', 'description'), desc: '50 niches' },
+      { label: 'WhatsApp group description templates', path: hubPath('whatsapp', 'description'), desc: '50+ niches' },
+      { label: 'Facebook group description templates', path: hubPath('facebook', 'description'), desc: '50+ niches' },
       { label: 'Family WhatsApp group description', path: nichePath('whatsapp', 'description', 'family') },
       { label: 'Business WhatsApp group description', path: nichePath('whatsapp', 'description', 'small-business') },
       { label: 'Class WhatsApp group description', path: nichePath('whatsapp', 'description', 'class') },

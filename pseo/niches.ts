@@ -1,4 +1,4 @@
-// The 50 niches used by the templates family (plan note: "description, rules,
+// The niches used by the templates family (plan note: "description, rules,
 // welcome message × 50 niches × platform"). Each niche carries the specifics
 // that make its pages different from each other: what members talk about,
 // the rules that niche actually needs, and who sponsors groups like it.
@@ -108,6 +108,18 @@ export const niches: Niche[] = [
     ],
     welcomeAsk: 'share your graduation year and what you are up to now',
     sponsors: ['career and recruiting platforms', 'continuing education programs', 'event and reunion venues'],
+  },
+  {
+    slug: 'classmates', name: 'Classmates and Batchmates', category: 'Local & Community', emoji: '🎒', members: 'old classmates',
+    purpose: 'reconnect, share memories, and plan reunions',
+    topics: ['reunion plans', 'old school photos', 'life updates and celebrations', 'news about teachers and the school'],
+    rules: [
+      ['Batch members only', 'Add only people from our class or batch. Check with an admin before adding a spouse or a friend from another year.'],
+      ['Old photos with care', 'Throwback photos are welcome, but delete one if the person in it asks.'],
+      ['No forwards or politics', 'Keep it about us: news, memories, and plans, not forwarded messages or political debates.'],
+    ],
+    welcomeAsk: 'tell us where life has taken you since school and share one favorite school memory',
+    sponsors: ['event venues and caterers', 'photo printing services', 'travel companies for reunion trips'],
   },
   {
     slug: 'volunteers', name: 'Volunteers', category: 'Local & Community', emoji: '🤝', members: 'volunteers',
@@ -442,6 +454,18 @@ export const niches: Niche[] = [
 
   // ── Business & Careers ─────────────────────────────────────────────────────
   {
+    slug: 'colleagues', name: 'Office Colleagues', category: 'Business & Careers', emoji: '💼', members: 'colleagues',
+    purpose: 'share team updates, celebrate wins, and plan office events',
+    topics: ['team announcements', 'birthdays and work anniversaries', 'office events and lunches', 'shift and leave updates'],
+    rules: [
+      ['Keep it professional', 'This is a work group. Write as you would in the office, and keep personal debates out.'],
+      ['No confidential work details', 'Client names, internal numbers, and documents belong in official work tools, not WhatsApp.'],
+      ['Respect off hours', 'Avoid non-urgent messages after work hours and on weekends. Call for real emergencies.'],
+    ],
+    welcomeAsk: 'introduce yourself with your name, role, and team',
+    sponsors: ['corporate gifting companies', 'local lunch and catering services', 'office wellness providers'],
+  },
+  {
     slug: 'small-business', name: 'Small Business', category: 'Business & Careers', emoji: '🏪', members: 'small business owners',
     purpose: 'share advice, referrals, and support for running a small business',
     topics: ['marketing tips', 'tools and software', 'hiring and HR questions', 'wins and lessons'],
@@ -612,6 +636,30 @@ export const niches: Niche[] = [
     sponsors: ['developer tools', 'coding bootcamps', 'cloud hosting providers'],
   },
 
+  {
+    slug: 'school-parents', name: 'School Parents', category: 'Education & Learning', emoji: '🏫', members: 'parents',
+    purpose: 'stay on top of class updates, homework, and school events',
+    topics: ['homework and test dates', 'school events and holidays', 'uniform and supply lists', 'carpools and pickups'],
+    rules: [
+      ['School matters only', 'Keep messages about the class and the school. Take personal chats to private messages.'],
+      ['Raise concerns with the teacher directly', 'Problems with a child, a grade, or a teacher go to the teacher or school office, not the group.'],
+      ['No photos of other children', 'Do not share photos or names of other people\'s children without their parents\' permission.'],
+    ],
+    welcomeAsk: 'share your child\'s first name and class so other parents know who you are',
+    sponsors: ['tutoring and after-school classes', 'uniform and stationery shops', 'kids\' activity centers'],
+  },
+  {
+    slug: 'tuition', name: 'Tuition', category: 'Education & Learning', emoji: '✏️', members: 'students and parents',
+    purpose: 'get class timings, homework, notes, and test updates from the tutor',
+    topics: ['class timings and schedule changes', 'homework and worksheets', 'test dates and results', 'fee reminders'],
+    rules: [
+      ['Tutor posts, students read', 'The tutor shares notes and updates. Ask doubts in class or by private message unless the tutor opens a doubt session.'],
+      ['Fees are discussed privately', 'Fee questions and reminders go to the tutor directly, never in the group.'],
+      ['Do not share notes outside the group', 'Notes and worksheets are for enrolled students only.'],
+    ],
+    welcomeAsk: 'share your name, class, and the subject you need the most help with',
+    sponsors: ['stationery and book shops', 'education apps', 'exam prep publishers'],
+  },
   // ── Faith ──────────────────────────────────────────────────────────────────
   {
     slug: 'church', name: 'Church', category: 'Faith', emoji: '⛪', members: 'church members',
@@ -648,6 +696,30 @@ export const niches: Niche[] = [
     ],
     welcomeAsk: 'tell us your favorite verse or book of the Bible',
     sponsors: ['Christian publishers', 'Bible study apps', 'faith-based retreats'],
+  },
+  {
+    slug: 'youth-group', name: 'Youth Group', category: 'Faith', emoji: '🙌', members: 'young people',
+    purpose: 'plan meetups, share devotionals, and support each other in faith',
+    topics: ['weekly meeting reminders', 'devotionals and verses', 'outings and camps', 'prayer requests'],
+    rules: [
+      ['Leaders are in the group', 'Youth leaders and parent volunteers are members. Keep every message something you would say at church.'],
+      ['No private photos of others', 'Ask before posting a photo of someone, and never share photos from camps or trips outside the group.'],
+      ['Encourage, never mock', 'This is a safe place. Teasing about faith, looks, or questions is not allowed.'],
+    ],
+    welcomeAsk: 'tell us your name, your school or age, and one thing you are looking forward to this term',
+    sponsors: ['Christian camps and retreats', 'faith-based bookstores', 'local youth-friendly cafés'],
+  },
+  {
+    slug: 'prayer-group', name: 'Prayer Group', category: 'Faith', emoji: '🙏', members: 'prayer partners',
+    purpose: 'share prayer requests, pray together, and celebrate answered prayers',
+    topics: ['prayer requests', 'answered prayers and testimonies', 'daily verses', 'prayer meeting times'],
+    rules: [
+      ['Ask before sharing someone else\'s need', 'Only post a prayer request for another person if they have agreed to it.'],
+      ['Reply with prayer, not advice', 'Respond with "praying" or a short prayer. Offer advice privately, and only if asked.'],
+      ['What is shared here stays here', 'Prayer requests are confidential. No screenshots or forwarding.'],
+    ],
+    welcomeAsk: 'share your name and, if you would like, one thing we can pray for this week',
+    sponsors: ['Christian publishers', 'Bible and devotional apps', 'faith-based charities'],
   },
 ];
 

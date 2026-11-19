@@ -664,6 +664,59 @@ export const blogPosts: BlogPostData[] = [
       },
       {
         type: 'h2',
+        content: 'Sponsor Ideas by Type of Group',
+      },
+      {
+        type: 'table',
+        headers: ['Group type', 'Sponsors to approach first'],
+        rows: [
+          ['Local / neighborhood', 'Restaurants, cafés, plumbers, cleaners, real estate agents, gyms'],
+          ['Parents and moms', 'Tutoring centers, kids\' clothing, toy shops, family photographers'],
+          ['Church and faith', 'Christian bookstores, faith-based charities, family businesses run by members'],
+          ['Fitness and health', 'Supplement brands, local gyms, healthy meal delivery, sportswear'],
+          ['Students and education', 'Stationery shops, coaching centers, education apps, student banks'],
+          ['Business and careers', 'Accounting software, coworking spaces, recruiters, training providers'],
+          ['Hobbies (photography, gaming, crafts)', 'Gear and equipment shops, online courses, niche e-commerce brands'],
+        ],
+      },
+      {
+        type: 'h2',
+        content: 'Copy-Paste Sponsor Pitch Templates',
+      },
+      {
+        type: 'h3',
+        content: 'Short Facebook or Instagram DM',
+      },
+      {
+        type: 'callout',
+        content: "Hi [Name]! I run [Group Name], a Facebook group of [X] [members, e.g. parents in Austin]. Your [product / service] comes up in our group a lot, so I thought you might like to reach them directly. I offer a sponsored post for $[rate], written in my voice and approved by you first. Want me to send our stats?",
+      },
+      {
+        type: 'h3',
+        content: 'Email pitch',
+      },
+      {
+        type: 'callout',
+        content: "Subject: Reaching [X] [members] in [Group Name]\n\nHi [Name],\n\nI run [Group Name], a Facebook group of [X] members who [what members do]. Each week we get about [X] posts and [X] comments, and members regularly ask about [topic related to the sponsor].\n\nI'd like to offer [Business] a sponsored post: one announcement written with you, pinned for [X] days, for $[rate]. You approve the wording before it goes live, and I'll send you the reach and comment numbers afterwards.\n\nOur media kit is attached. Would a post in [month] work for you?\n\nThanks,\n[Your name]",
+      },
+      {
+        type: 'h3',
+        content: 'Follow-up after one week',
+      },
+      {
+        type: 'callout',
+        content: "Hi [Name], just following up on my note about a sponsored post in [Group Name]. We have a slot open on [date]. Happy to start with a single post so you can see the results before committing to more. Let me know!",
+      },
+      {
+        type: 'h3',
+        content: 'After the campaign (to win a repeat booking)',
+      },
+      {
+        type: 'callout',
+        content: "Hi [Name], thanks for sponsoring [Group Name]! Your post reached [X] members and got [X] comments and [X] link clicks. A few members asked [question]. Would you like to book a monthly slot? Repeat sponsors get [discount / bonus pinned day].",
+      },
+      {
+        type: 'h2',
         content: 'Why a Marketplace Removes All of This Friction',
       },
       {
@@ -677,6 +730,136 @@ export const blogPosts: BlogPostData[] = [
         body: 'List your Facebook group on Rent My Group. Sponsors come to you. Free to list.',
         buttonText: 'List My Group and Get Found by Sponsors',
         href: '/monetize-facebook-group',
+      },
+    ],
+  },
+
+  {
+    slug: 'how-to-get-sponsors-for-whatsapp-group',
+    title: 'How to Get Sponsors for Your WhatsApp Group',
+    metaTitle: 'How to Get Sponsors for Your WhatsApp Group (+ Pitch Messages) | Rent My Group',
+    metaDescription: 'How to find sponsors for a WhatsApp group: which businesses to approach, copy-paste pitch messages, what to charge, and how to show results without spamming members.',
+    category: 'For Group Owners',
+    readTime: '8 min read',
+    publishDate: 'November 2026',
+    excerpt: "Most WhatsApp group sponsors are local businesses that already want your members as customers. Here is how to find them, what to send them, and how to keep them coming back.",
+    sections: [
+      {
+        type: 'p',
+        content: "A WhatsApp group does not need thousands of members to attract a sponsor. A 200-person parents' group, a 500-person church group, or a 1,000-person local jobs group is exactly the audience a nearby business wants. This guide covers who to approach, what to say (with messages you can copy), what to charge, and how to prove the sponsorship worked.",
+      },
+      {
+        type: 'h2',
+        content: 'What Sponsors Get From a WhatsApp Group',
+      },
+      {
+        type: 'ul',
+        items: [
+          "Direct delivery: a message in a group lands on every member's phone. There is no feed algorithm deciding who sees it.",
+          "Trust: members joined because they know you or the community. A recommendation from the admin carries more weight than an ad.",
+          "A defined audience: a group for [city] parents or [industry] professionals is easier to sell than a large general audience.",
+          "Proof: in a group, long-press your message and tap Info to see who it was delivered to and who read it. Screenshot that for the sponsor.",
+        ],
+      },
+      {
+        type: 'h2',
+        content: 'Who to Approach First',
+      },
+      {
+        type: 'table',
+        headers: ['Your group', 'Sponsors who want it'],
+        rows: [
+          ['School parents / tuition', 'Tutors, coaching centers, uniform and stationery shops, kids\' activity classes'],
+          ['Church, mosque, or faith group', 'Bookstores, caterers, event venues, businesses owned by members'],
+          ['Local / neighborhood / society', 'Restaurants, grocers, salons, plumbers, electricians, real estate agents'],
+          ['Jobs and careers', 'Recruiters, training institutes, CV writers, coworking spaces'],
+          ['Students / college batch', 'Coaching and test prep, laptops and phones, food delivery, student accommodation'],
+          ['Buy and sell', 'Movers, repair shops, delivery services, secondhand stores'],
+          ['Fitness, health, or cooking', 'Gyms, supplement and healthy food brands, home chefs, nutritionists'],
+        ],
+      },
+      {
+        type: 'p',
+        content: "The quickest first sponsor is usually a business your members already mention. If people in the group keep asking for a good tutor, plumber, or caterer, that business is already getting customers from your group without paying for it.",
+      },
+      {
+        type: 'h2',
+        content: 'What to Offer',
+      },
+      {
+        type: 'ol',
+        items: [
+          "One admin post: you write a short, friendly message about the business in your own voice. Simple to sell and simple to deliver.",
+          "Pinned message: the sponsor's message stays pinned for an agreed number of days, so new and returning members see it first.",
+          "Group description mention: a line such as \"Supported by [Business]\" in the description for a month. Low effort, steady visibility.",
+          "Monthly package: for example four weekly mentions plus one pinned post. Repeat sponsors are where the real income is.",
+        ],
+      },
+      {
+        type: 'h2',
+        content: 'Copy-Paste Pitch Messages',
+      },
+      {
+        type: 'h3',
+        content: 'To a local business on WhatsApp',
+      },
+      {
+        type: 'callout',
+        content: "Hello [Name] 👋 I'm [Your name], admin of [Group Name], a WhatsApp group of [X] [members, e.g. parents from [School]]. Members often ask about [their product / service]. Would you like to share an offer with the group? I post it myself and you approve the message first. One post is [price]. Happy to send screenshots of the group activity.",
+      },
+      {
+        type: 'h3',
+        content: 'To a brand by email',
+      },
+      {
+        type: 'callout',
+        content: "Subject: Sponsored post in a WhatsApp group of [X] [members]\n\nHi [Name],\n\nI run [Group Name], an active WhatsApp group of [X] [members] in [city / niche]. Members share [topics] every day, and [your product] fits what they ask about.\n\nI'd like to offer a sponsored message: written with you, posted by me as the admin, and pinned for [X] days. Price: [price]. After the post, I'll send you a screenshot of how many members it was delivered to and read by.\n\nWould [date] work?\n\nThanks,\n[Your name], [phone]",
+      },
+      {
+        type: 'h3',
+        content: 'Follow-up',
+      },
+      {
+        type: 'callout',
+        content: "Hi [Name], following up on my message about [Group Name]. I have a slot on [date]. If you'd like to try it first, I can do a single post at [price] and share the read receipts afterwards. 🙂",
+      },
+      {
+        type: 'h2',
+        content: 'How Much to Charge',
+      },
+      {
+        type: 'p',
+        content: "Price on how engaged and specific your group is, not just on member count. Start with a simple per-post price you are comfortable with, offer a small discount for monthly packages, and raise your price once sponsors start coming back. Our guide to pricing WhatsApp promotions walks through how to set your first rate.",
+      },
+      {
+        type: 'h2',
+        content: 'Keep Members on Your Side',
+      },
+      {
+        type: 'ul',
+        items: [
+          "Tell members up front, for example in the description: \"We share one sponsored offer a week to keep the group running.\"",
+          "Only accept sponsors you would recommend to a friend. One bad sponsor costs more trust than the money is worth.",
+          "Label sponsored messages clearly, such as \"Sponsored\" or \"Supported by\".",
+          "Keep a limit, for example one sponsored message a week, and stick to it.",
+          "Never share members' phone numbers with a sponsor. Send them the read count, not the member list.",
+        ],
+      },
+      {
+        type: 'h2',
+        content: 'Skip the Outreach',
+      },
+      {
+        type: 'p',
+        content: "Finding sponsors one message at a time works, but it is slow. On Rent My Group, advertisers looking for your kind of audience find your group and send you requests. You set your price, approve every message, and get paid without chasing anyone.",
+      },
+      {
+        type: 'cta',
+        role: 'admin',
+        headline: 'Let sponsors find your WhatsApp group',
+        body: 'List your group for free. You set the price and approve every sponsored message.',
+        buttonText: 'List My WhatsApp Group Free',
+        href: '/monetize-whatsapp-group',
       },
     ],
   },

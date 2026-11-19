@@ -45,7 +45,7 @@ const Section: React.FC<{ section: BlogSectionType; onOpenModal: (role: Role) =>
   if (section.type === 'callout') {
     return (
       <div className="my-8 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-2xl px-6 py-5">
-        <p className="text-indigo-800 font-semibold text-base leading-relaxed">{section.content}</p>
+        <p className="text-indigo-800 font-semibold text-base leading-relaxed whitespace-pre-line">{section.content}</p>
       </div>
     );
   }
