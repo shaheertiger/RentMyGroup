@@ -61,6 +61,24 @@ Upgraded generated pages via `pseo/overrides.ts` (hand-written title, intro, ext
 
 Facts checked Nov 2026 (secondary sources, re-check): WhatsApp Communities hold up to 100 groups plus announcements, and cannot be created in the WhatsApp Business app; Discord vanity URLs need Level 3 (14 boosts) or Partner/Verified; boost levels at 2/7/14. Messenger greeting and instant reply character limits vary by source, so the page does not state one.
 
+## Wave 4: double down on what ranks (built Nov 2026)
+
+Picked from Search Console (3 months to 2026-11-19, 35 clicks / 1,574 impressions). Wave 3 went after gaps; wave 4 deepens what already works. Clicks and impressions per day rose from about 0.2 / 2.4 (Aug to early Sep) to about 0.5 / 25 (last 60 days). 73% of clicks are mobile (average position 6.5 vs 30.9 on desktop), and most impressions come from India, the US, Pakistan, Nigeria, Kenya, Bangladesh and South Africa.
+
+What works: WhatsApp welcome-message and description niche pages rank at positions 2-8, and the church welcome message is the best template page (4 clicks, 133 impressions, position 4.3). The two Facebook monetization posts have the best CTR on the site (sponsors 25%, sell ad space 13%).
+
+| Change | Why |
+|---|---|
+| `pseo/overrides-wave4.ts`: hand-written extras on 10 ranking pages | WhatsApp welcome message for church (25+ messages with KJV verses, by ministry), family, travel, bible-study, islamic, teachers (+ welcoming parents), college-students; WhatsApp description for church, jobs (+ scam warning), teachers; WhatsApp rules for family. All rank at positions 2.5-7.6 except college-students (15.9) |
+| 6 new niches (36 pages) | `school-parents`, `tuition`, `classmates`, `colleagues`, `youth-group`, `prayer-group`: the faith, family and education niches that rank best, plus queries we already appear for ("tuition group description" pos 8.7, "welcome message for parents in whatsapp group") |
+| WhatsApp welcome hub | Title and a "most-used" links block pointing at the ranking niche pages |
+| Sponsor guide links on every niche page | Sends internal links from 336 template pages to the highest-CTR blog posts |
+| New post `/blog/how-to-get-sponsors-for-whatsapp-group` | WhatsApp twin of the 25% CTR Facebook sponsors post, with copy-paste pitch messages |
+| `/blog/how-to-get-sponsors-for-facebook-group` expanded | Sponsor ideas by group type and pitch / follow-up / renewal templates |
+| How-to title and FAQ rewrites | `facebook/profile-privacy` (pos 7.6, 53 impressions, 0 clicks; "can people see your groups on facebook"), `telegram/link` (pos 10), `telegram/private-public` (pos 6.6) |
+
+Re-check in 4-6 weeks: clicks and CTR on the overridden pages, and whether the new niche pages get indexed.
+
 ## Next waves
 
 - **Wave 2, directory** (`/groups/...`): blocked until the marketplace has real group listings. Empty listing pages would be thin content.

@@ -6,6 +6,7 @@
 //   whatsapp/description (hub)           pos 10, 1.9% CTR
 // Keys are `${platform}/${type}` for hubs and `${platform}/${type}/${niche}` for niche pages.
 import { PseoBlock, PseoFaq, PseoLink } from './types.ts';
+import { WAVE4_OVERRIDES } from './overrides-wave4.ts';
 
 export interface PageOverride {
   h1?: string;
@@ -26,7 +27,7 @@ const INTRO_PATH = '/templates/whatsapp-group-introduction-message';
 const GROUP_DESC_PATH = '/templates/group-description';
 const PAGE_WELCOME_PATH = '/templates/facebook-page-welcome-message';
 
-export const PAGE_OVERRIDES: Record<string, PageOverride> = {
+const WAVE3_OVERRIDES: Record<string, PageOverride> = {
   // ─── Hubs: cross-links to the wave 3 pages ─────────────────────────────────
   'whatsapp/description': {
     metaTitle: 'WhatsApp Group Description Examples: 200+ to Copy & Paste',
@@ -46,7 +47,18 @@ export const PAGE_OVERRIDES: Record<string, PageOverride> = {
     extraRelated: [{ label: 'What is a group description? (meaning + examples)', path: GROUP_DESC_PATH }],
   },
   'whatsapp/welcome-message': {
+    metaTitle: 'WhatsApp Group Welcome Message: Templates for Church, Family & 50+ Groups',
     extraBlocks: [
+      { type: 'links', heading: 'Most-used WhatsApp welcome messages', links: [
+        { label: 'Church group welcome messages (25+, with Bible verses)', path: '/templates/whatsapp-group-welcome-message/church' },
+        { label: 'Family group welcome messages', path: '/templates/whatsapp-group-welcome-message/family' },
+        { label: 'Teachers and parents group welcome messages', path: '/templates/whatsapp-group-welcome-message/teachers' },
+        { label: 'Islamic group welcome messages', path: '/templates/whatsapp-group-welcome-message/islamic' },
+        { label: 'Bible study group welcome messages', path: '/templates/whatsapp-group-welcome-message/bible-study' },
+        { label: 'Travel and trip group welcome messages', path: '/templates/whatsapp-group-welcome-message/travel' },
+        { label: 'Wedding group welcome messages', path: '/templates/whatsapp-group-welcome-message/wedding' },
+        { label: 'Alumni group welcome messages', path: '/templates/whatsapp-group-welcome-message/alumni' },
+      ] },
       { type: 'callout', content: 'Joined a group and want to introduce yourself instead? See our WhatsApp group introduction message samples, linked below.' },
       { type: 'links', links: [{ label: 'WhatsApp group introduction messages (25 samples)', path: INTRO_PATH, desc: 'Introduce yourself, as an admin, as a teacher, or as a business' }] },
     ],
@@ -155,3 +167,6 @@ export const PAGE_OVERRIDES: Record<string, PageOverride> = {
     updated: UPDATED,
   },
 };
+
+/** Wave 3 (gaps) and wave 4 (double down on ranking pages) combined; wave 4 keys are new pages. */
+export const PAGE_OVERRIDES: Record<string, PageOverride> = { ...WAVE3_OVERRIDES, ...WAVE4_OVERRIDES };

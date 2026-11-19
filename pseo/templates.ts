@@ -254,6 +254,18 @@ const HOW_TO_EDIT: Record<Platform, Record<TemplateType, string>> = {
   },
 };
 
+// The monetization posts with the best Search Console CTR, linked from every niche page.
+const SPONSOR_GUIDES: Record<Platform, PseoLink[]> = {
+  facebook: [
+    { label: 'How to get sponsors for your Facebook group', path: '/blog/how-to-get-sponsors-for-facebook-group', desc: 'Where to find them and what to send' },
+    { label: 'How to sell ad space in your Facebook group', path: '/blog/how-to-sell-ad-space-in-facebook-group' },
+  ],
+  whatsapp: [
+    { label: 'How to get sponsors for your WhatsApp group', path: '/blog/how-to-get-sponsors-for-whatsapp-group', desc: 'Pitch messages you can copy' },
+    { label: 'How to price promotions in a WhatsApp group', path: '/blog/how-to-price-promotions-in-whatsapp-group' },
+  ],
+};
+
 // ─── Page builders ───────────────────────────────────────────────────────────
 
 /** Apply a hand-written override (pseo/overrides.ts). Extra blocks go right after the templates. */
@@ -396,6 +408,7 @@ function buildNichePage(p: Platform, t: TemplateType, n: Niche): PseoPageData {
     },
     { type: 'h2', content: `Can a ${n.name.toLowerCase()} group make money?` },
     { type: 'p', content: `Yes. Engaged ${n.name.toLowerCase()} groups are exactly the audience that ${listJoin(n.sponsors)} want to reach. Instead of guessing with ads, they pay group owners to share approved, relevant offers with members.` },
+    { type: 'links', links: SPONSOR_GUIDES[p] },
     {
       type: 'cta', role: 'admin',
       headline: `Get paid by brands that want to reach your ${n.name.toLowerCase()} group`,

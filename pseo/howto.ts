@@ -235,7 +235,7 @@ const guides: HowTo[] = [
       ['How many rules can a Facebook group have?', 'Up to 10.'],
       ['Where do members see the group rules?', 'In the group\'s About section and when they request to join.'],
     ],
-    links: [{ label: 'Facebook group rules templates for 50 niches', path: hubPath('facebook', 'rules') }],
+    links: [{ label: 'Facebook group rules templates for 50+ niches', path: hubPath('facebook', 'rules') }],
   },
   {
     platform: 'facebook', slug: 'mute',
@@ -353,7 +353,7 @@ const guides: HowTo[] = [
     faq: [
       ['Where does the group description appear?', 'In the group\'s About section, and in search results and previews when people find the group.'],
     ],
-    links: [{ label: 'Facebook group description templates for 50 niches', path: hubPath('facebook', 'description') }],
+    links: [{ label: 'Facebook group description templates for 50+ niches', path: hubPath('facebook', 'description') }],
   },
   {
     platform: 'facebook', slug: 'export',
@@ -390,8 +390,8 @@ const guides: HowTo[] = [
   {
     platform: 'facebook', slug: 'profile-privacy',
     h1: 'Can Facebook Group Members See Your Profile?',
-    metaTitle: 'Can Facebook Group Members See Your Profile? (Privacy Explained)',
-    desc: 'What people in a Facebook group can see about you, whether groups show on your profile, and how to keep your profile private from group members.',
+    metaTitle: 'Can Facebook Group Members See Your Profile and Your Groups?',
+    desc: 'What Facebook group members can see on your profile, whether your friends can see which groups you are in, and how to hide your groups and posts.',
     answer: 'Group members can see your name, profile picture, and anything on your profile that your privacy settings make visible to them, just like anyone else on Facebook. Joining a group does not give members extra access to your profile. Admins see your answers to membership questions.',
     steps: [
       ['Limit what group members can see', ['Go to Settings & privacy → Settings → Privacy (or Privacy Center).', 'Set "Who can see your future posts" to Friends.', 'Use "Limit past posts" to restrict older public posts.', 'Open your profile → ••• → "View as" to check what non-friends see.']],
@@ -401,6 +401,8 @@ const guides: HowTo[] = [
     faq: [
       ['Can a Facebook group see my friends list?', 'Only if your friends list is visible to them under your privacy settings.'],
       ['Do my posts in a private group appear on my profile?', 'No. Posts in private groups are only visible to group members.'],
+      ['Can my Facebook friends see what groups I am in?', 'They can see public groups you belong to if the groups section of your profile is visible to them. Membership of private groups is not shown to people outside the group. Hide groups from your profile to keep your list private.'],
+      ['Do people get notified when I join a Facebook group?', 'Facebook can show a public group join in friends\' feeds or notifications. Joining a private group is not shared with people outside it.'],
     ],
     links: [{ label: 'How to post anonymously in a Facebook group', path: T('facebook', 'anonymous') }, { label: 'Private vs public Facebook groups', path: T('facebook', 'private-public') }],
   },
@@ -611,7 +613,7 @@ const guides: HowTo[] = [
     faq: [
       ['What are good WhatsApp group rules?', 'Be respectful, stay on topic, no chain forwards or spam, respect quiet hours, and no promotion without admin approval.'],
     ],
-    links: [{ label: 'WhatsApp group rules templates for 50 niches', path: hubPath('whatsapp', 'rules') }, { label: 'How to pin a message in WhatsApp', path: T('whatsapp', 'pin') }],
+    links: [{ label: 'WhatsApp group rules templates for 50+ niches', path: hubPath('whatsapp', 'rules') }, { label: 'How to pin a message in WhatsApp', path: T('whatsapp', 'pin') }],
   },
   {
     platform: 'whatsapp', slug: 'archive',
@@ -689,7 +691,7 @@ const guides: HowTo[] = [
     faq: [
       ['What is the WhatsApp group description character limit?', 'Up to 2,048 characters.'],
     ],
-    links: [{ label: 'WhatsApp group description templates for 50 niches', path: hubPath('whatsapp', 'description') }],
+    links: [{ label: 'WhatsApp group description templates for 50+ niches', path: hubPath('whatsapp', 'description') }],
   },
   {
     platform: 'whatsapp', slug: 'name-change',
@@ -822,7 +824,7 @@ const guides: HowTo[] = [
   {
     platform: 'telegram', slug: 'link',
     h1: 'Telegram Group Link: How to Create and Share an Invite Link',
-    metaTitle: 'How to Create a Telegram Group Invite Link',
+    metaTitle: 'Telegram Group Link: How to Create, Share and Make It Public',
     desc: 'How to get a Telegram group invite link, create links with limits or approval, and set a public t.me link for your group.',
     answer: 'Open the group, tap the group name, then "Invite links" (or Add members → Invite via link). Copy or share the primary link, or create a new link with an expiry date, member limit, or join requests.',
     steps: [
@@ -838,7 +840,7 @@ const guides: HowTo[] = [
   {
     platform: 'telegram', slug: 'private-public',
     h1: 'How to Make a Telegram Group Public or Private',
-    metaTitle: 'How to Make a Telegram Group Public or Private',
+    metaTitle: 'How to Make a Telegram Group Public or Private (Step by Step)',
     desc: 'How to switch a Telegram group between public and private, what changes for members, and why you might be restricted from public groups.',
     answer: 'Open the group, tap the name, tap Edit → Group type, and choose Public (with a t.me username) or Private (invite links only). Public groups appear in search; private groups do not.',
     steps: [
