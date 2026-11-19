@@ -96,10 +96,17 @@
       ]
     }
   ],
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/((?!.*\\.md$).*)",
-      "destination": "/index.html"
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.rentmygroup.com"
+        }
+      ],
+      "destination": "https://rentmygroup.com/:path",
+      "permanent": true
     }
   ]
 }

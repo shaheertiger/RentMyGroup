@@ -23,11 +23,12 @@ const write = (rel, content) => {
   writeFileSync(file, content);
 };
 
-function toHtml(page) {
-  const url = `${ORIGIN}${page.path}`;
-  const t = esc(page.title);
-  const d = esc(page.description);
-  const html = template
+/** index.html with title, description, canonical and social URLs set for `path`. */
+function withMeta(path, title, description) {
+  const url = `${ORIGIN}${path}`;
+  const t = esc(title);
+  const d = esc(description);
+  return template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${t}</title>`)
     .replace(/(<meta name="description" content=")[^"]*(")/, `$1${d}$2`)
     .replace(/(<link rel="canonical" id="canonical-link" href=")[^"]*(")/, `$1${url}$2`)
@@ -36,7 +37,11 @@ function toHtml(page) {
     .replace(/(<meta property="og:title" id="og-title" content=")[^"]*(")/, `$1${t}$2`)
     .replace(/(<meta property="og:description" id="og-desc" content=")[^"]*(")/, `$1${d}$2`)
     .replace(/(<meta name="twitter:title" id="twitter-title" content=")[^"]*(")/, `$1${t}$2`)
-    .replace(/(<meta name="twitter:description" id="twitter-desc" content=")[^"]*(")/, `$1${d}$2`)
+    .replace(/(<meta name="twitter:description" id="twitter-desc" content=")[^"]*(")/, `$1${d}$2`);
+}
+
+function toHtml(page) {
+  const html = withMeta(page.path, page.title, page.description)
     .replace('<div id="root"></div>', `<div id="root">${page.html}</div>`);
   const extraHead = [
     `<link rel="alternate" type="text/markdown" href="${page.path}.md" />`,
@@ -69,6 +74,11 @@ const STATIC_PAGES = [
   { path: '/group-advertising-marketplace', title: 'Group Advertising Marketplace', desc: 'Buy and sell ad space in niche online communities.' },
   { path: '/advertise-in-online-communities', title: 'Advertise in Online Communities', desc: 'Why community advertising beats algorithm-driven ads.' },
 ];
+
+// Give each hand-written page its own HTML file (client-rendered body, correct
+// head). Without a file these URLs depended on the SPA rewrite in vercel.json,
+// which never matched under cleanUrls, so they returned 404 in production.
+for (const p of STATIC_PAGES.slice(1)) write(`${p.path}.html`, withMeta(p.path, p.title, p.desc));
 
 write('index.md', [
   '# Rent My Group',
