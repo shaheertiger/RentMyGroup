@@ -5,6 +5,7 @@ import { Hero } from './components/Hero.tsx';
 import { Role, ModalState } from './types.ts';
 import { getBlogPost } from './blog/posts.ts';
 import { isPseoPath, loadPseoPage, getPreloadedPseoPage } from './pseo/client.ts';
+import { SITE_ORIGIN } from './pseo/types.ts';
 
 // Lazy loading views
 const SocialProof = lazy(() => import('./components/SocialProof.tsx').then(m => ({ default: m.SocialProof })));
@@ -86,7 +87,8 @@ const App: React.FC = () => {
     const twitterDesc = document.getElementById('twitter-desc');
     const twitterImage = document.getElementById('twitter-image');
 
-    const origin = window.location.origin;
+    // Always the apex domain, so www/preview hosts never become canonical.
+    const origin = SITE_ORIGIN;
     // New curated professional scene representing high-scale community growth
     const defaultImage = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&h=630&q=80";
 

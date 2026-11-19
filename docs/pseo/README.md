@@ -41,7 +41,8 @@ The plan listed 449 template rows and 39 owner-advertiser rows as separate URLs.
 
 - Every prerendered page also gets `<path>.md`, the home page gets `/index.md`, and `/llms.txt` indexes them.
 - `middleware.ts` (Vercel Routing Middleware): `Accept: text/markdown` on a page URL returns the twin with `X-Markdown-Tokens`, `X-Robots-Tag: noindex`, `Vary: Accept`. HTML responses get `Link: <…md>; rel="alternate"; type="text/markdown"` and `Vary: Accept`.
-- `vercel.json` sets the headers on direct `.md` requests. Missing `.md` files return 404 instead of the SPA shell.
+- `vercel.json` sets the headers on direct `.md` requests and redirects `www` to the apex domain.
+- There is no SPA fallback rewrite: every route is a real file, and unknown URLs return a real 404. The hand-written pages in `STATIC_PAGES` (`scripts/prerender.mjs`) get an HTML file with their own title, description and canonical; their body is still client-rendered. A new hand-written route must be added to `STATIC_PAGES`, or it will 404 on direct load. (The old `/index.html` rewrite never matched under `cleanUrls`, which is why these pages 404'd in production.)
 - Check after deploy: `npx @dualmark/cli verify https://rentmygroup.com/templates`
 
 ## Next waves
