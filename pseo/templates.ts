@@ -4,6 +4,7 @@
 //   /templates/{platform}-group-{type}/{niche}   -> niche page
 import { niches, getNiche, NICHE_CATEGORIES, Niche } from './niches.ts';
 import { PseoBlock, PseoFaq, PseoLink, PseoPageData, PSEO_UPDATED } from './types.ts';
+import { PAGE_OVERRIDES } from './overrides.ts';
 
 export type Platform = 'facebook' | 'whatsapp';
 export type TemplateType = 'description' | 'rules' | 'welcome-message';
@@ -255,6 +256,25 @@ const HOW_TO_EDIT: Record<Platform, Record<TemplateType, string>> = {
 
 // ─── Page builders ───────────────────────────────────────────────────────────
 
+/** Apply a hand-written override (pseo/overrides.ts). Extra blocks go right after the templates. */
+function applyOverride(page: PseoPageData, key: string, templateCount: number): PseoPageData {
+  const o = PAGE_OVERRIDES[key];
+  if (!o) return page;
+  const at = 1 + templateCount; // h2 + copy blocks
+  const blocks = o.extraBlocks ? [...page.blocks.slice(0, at), ...o.extraBlocks, ...page.blocks.slice(at)] : page.blocks;
+  return {
+    ...page,
+    h1: o.h1 ?? page.h1,
+    metaTitle: o.metaTitle ?? page.metaTitle,
+    metaDescription: o.metaDescription ?? page.metaDescription,
+    intro: o.intro ?? page.intro,
+    blocks,
+    faq: [...page.faq, ...(o.extraFaq ?? [])],
+    related: [...(o.extraRelated ?? []), ...page.related],
+    updated: o.updated ?? page.updated,
+  };
+}
+
 const nicheLinks = (p: Platform, t: TemplateType, exclude?: string): PseoBlock[] =>
   NICHE_CATEGORIES.map((cat) => ({
     type: 'links' as const,
@@ -309,7 +329,7 @@ function buildHub(p: Platform, t: TemplateType): PseoPageData {
         ? { q: `How many rules should a ${P} group have?`, a: p === 'facebook' ? 'Between 5 and 10. Facebook lets you add up to 10 rules, and fewer rules that you actually enforce work better than a long list.' : 'Five to ten short rules in a pinned message, plus a three to five line summary in the group description.' }
         : { q: `When should I send a welcome message in a ${P} group?`, a: p === 'facebook' ? 'Once a week in a single post that tags all new members works for most groups. Very large groups can welcome daily.' : 'As soon as someone joins in small groups. In busy groups, send one welcome a day for everyone who joined.' },
   ];
-  return {
+  return applyOverride({
     path: hubPath(p, t),
     family: 'templates',
     eyebrow: `${P} Group Templates`,
@@ -330,7 +350,7 @@ function buildHub(p: Platform, t: TemplateType): PseoPageData {
       { label: p === 'facebook' ? 'Facebook group post ideas' : 'WhatsApp group ideas', path: IDEAS_PATHS[p] },
     ],
     updated: PSEO_UPDATED,
-  };
+  }, `${p}/${t}`, templates.length);
 }
 
 function buildNichePage(p: Platform, t: TemplateType, n: Niche): PseoPageData {
@@ -388,7 +408,7 @@ function buildNichePage(p: Platform, t: TemplateType, n: Niche): PseoPageData {
     { q: `How do I change the ${noun} of my ${P} group?`, a: HOW_TO_EDIT[p][t] },
     { q: `What should a ${n.name.toLowerCase()} group be about?`, a: `Most ${n.name.toLowerCase()} groups exist to help ${n.members} ${n.purpose}. Popular topics include ${listJoin(n.topics)}.` },
   ];
-  return {
+  return applyOverride({
     path: nichePath(p, t, n.slug),
     family: 'templates',
     eyebrow: `${n.emoji} ${n.name} · ${P} Group ${T}`,
@@ -409,7 +429,7 @@ function buildNichePage(p: Platform, t: TemplateType, n: Niche): PseoPageData {
       { label: `All ${P} group ${noun} templates`, path: hubPath(p, t) },
     ],
     updated: PSEO_UPDATED,
-  };
+  }, `${p}/${t}/${n.slug}`, templates.length);
 }
 
 function buildTemplatesIndex(): PseoPageData {
@@ -428,6 +448,14 @@ function buildTemplatesIndex(): PseoPageData {
     breadcrumbs: [{ label: 'Home', path: '/' }, { label: 'Templates', path: '/templates' }],
     blocks: [
       { type: 'links', heading: 'Templates by type', links },
+      {
+        type: 'links', heading: 'More group templates',
+        links: [
+          { label: 'WhatsApp group introduction messages', path: '/templates/whatsapp-group-introduction-message', desc: 'Introduce yourself, as an admin, a teacher, or a business' },
+          { label: 'What is a group description? (+ 30 examples)', path: '/templates/group-description', desc: 'Family, friends, class, business, and community groups' },
+          { label: 'Facebook Page welcome messages', path: '/templates/facebook-page-welcome-message', desc: 'Messenger greetings, instant replies, and follower welcomes' },
+        ],
+      },
       {
         type: 'links', heading: 'Ideas to keep your group active',
         links: [

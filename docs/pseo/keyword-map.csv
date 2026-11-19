@@ -576,7 +576,7 @@ directory,/groups/whatsapp/rules-for-whatsapp-group-chat,rules for whatsapp grou
 directory,/groups/facebook/garage-sale-groups-on-facebook,garage sale groups on facebook,260,33,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/whatsapp/this-whatsapp-group-is-created-for,this whatsapp group is created for,260,56,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 directory,/groups/facebook/auto-approval-facebook-group-list-usa,auto approval facebook group list usa,260,,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
-directory,/groups/whatsapp/whatsapp-community-vs-group,whatsapp community vs group,260,29,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
+directory,/groups/whatsapp/whatsapp-community-vs-group,whatsapp community vs group,260,29,2,built,/how-to/whatsapp/community-vs-group,Misfiled as directory; built as a how-to explainer in wave 3
 directory,/groups/facebook/facebook-groups-for-free-stuff,facebook groups for free stuff,260,33,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
 admin-howto,/how-to/whatsapp/description,whatsapp group description character limit official faq,220,25,2,built,/how-to/whatsapp/description,
 directory,/groups/whatsapp/groups-on-whatsapp-to-join,groups on whatsapp to join,210,64,2,deferred-wave2,,Directory: needs real marketplace inventory; publishing empty listing pages would be thin content
@@ -608,3 +608,14 @@ group-names,/names/imessage/friends,group chat names for girls,710,20,3,deferred
 group-names,/names/whatsapp/cool,unique business group names for whatsapp,440,,3,deferred-wave3,/names/whatsapp/cool,Wave 3: weak product fit per plan
 group-names,/names/imessage/work,work group chat names,390,18,3,deferred-wave3,/names/imessage/work,Wave 3: weak product fit per plan
 group-names,/names/facebook/cool,unique name for facebook group,290,,3,deferred-wave3,/names/facebook/cool,Wave 3: weak product fit per plan
+templates,/templates/whatsapp-group-introduction-message,whatsapp group introduction message,140,12,3,built,/templates/whatsapp-group-introduction-message,Wave 3 from Search Console: positions 57-89 with no page; 4400/mo in Semrush IN (KD 17)
+templates,/templates/whatsapp-group-introduction-message,introduction message for whatsapp group,90,9,3,built,/templates/whatsapp-group-introduction-message,Wave 3; 2900/mo IN
+templates,/templates/group-description,group description,590,17,3,built,/templates/group-description,Wave 3 from Search Console: positions 40-82; 1300/mo IN (KD 26)
+templates,/templates/group-description,what is group description,320,20,3,built,/templates/group-description,Wave 3; 390/mo IN
+templates,/templates/facebook-page-welcome-message,facebook messenger greeting examples,50,37,3,built,/templates/facebook-page-welcome-message,Wave 3 from Search Console: 29 impressions at position 93 on the group welcome hub (wrong intent)
+templates,/templates/facebook-page-welcome-message,welcome to my page message,20,0,3,built,/templates/facebook-page-welcome-message,Wave 3
+admin-howto,/how-to/whatsapp/community-vs-group,whatsapp community vs group,260,13,3,built,/how-to/whatsapp/community-vs-group,Previously deferred-wave2 under the directory family by mistake; it is an explainer
+admin-howto,/how-to/discord/custom-invite-link,custom discord invite link,170,33,3,built,/how-to/discord/custom-invite-link,Wave 3 from Search Console: discord/link at position 36 for custom/permanent/vanity queries
+admin-howto,/how-to/discord/custom-invite-link,discord vanity url,40,46,3,built,/how-to/discord/custom-invite-link,Wave 3
+templates,/templates/whatsapp-group-description/family,family group description for whatsapp,0,,3,built,/templates/whatsapp-group-description/family,Upgraded page (pseo/overrides.ts): position 6.8 with 0 clicks; 480/mo IN (KD 27)
+templates,/templates/whatsapp-group-description/small-business,whatsapp group description for business,210,29,3,built,/templates/whatsapp-group-description/small-business,Upgraded page (pseo/overrides.ts): position 40; 480/mo IN (KD 16); added customer-group templates

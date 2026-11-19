@@ -44,6 +44,22 @@ The plan listed 449 template rows and 39 owner-advertiser rows as separate URLs.
 - `vercel.json` sets the headers on direct `.md` requests. Missing `.md` files return 404 instead of the SPA shell.
 - Check after deploy: `npx @dualmark/cli verify https://rentmygroup.com/templates`
 
+## Wave 3: Search Console gaps (built Nov 2026)
+
+Picked from Search Console (28 days to 2026-11-17): queries where Google already showed the site at positions 40-90 without a matching page, checked against Semrush US and IN volumes (most impressions come from India).
+
+| Page | Why |
+|---|---|
+| `/templates/whatsapp-group-introduction-message` | "whatsapp group introduction message" 4,400/mo IN, KD 17; positions 57-89 with no page |
+| `/templates/group-description` | "group description" 1,300 IN + 590 US; "what is group description" 390 + 320 |
+| `/templates/facebook-page-welcome-message` | Messenger greeting / page welcome queries landing on the group welcome hub |
+| `/how-to/whatsapp/community-vs-group` | 260 US, KD 13 (was misfiled under the directory wave) |
+| `/how-to/discord/custom-invite-link` | custom / permanent / vanity invite queries; `/how-to/discord/link` was at position 36 |
+
+Upgraded generated pages via `pseo/overrides.ts` (hand-written title, intro, extra blocks, FAQ, related links on top of the generated page): WhatsApp family description (position 6.8, 0 clicks), WhatsApp small-business description (now also covers customer groups), and cross-links on the WhatsApp/Facebook description and welcome hubs. `/how-to/discord/link` and `/guides/how-to-promote-a-facebook-group` were expanded in place.
+
+Facts checked Nov 2026 (secondary sources, re-check): WhatsApp Communities hold up to 100 groups plus announcements, and cannot be created in the WhatsApp Business app; Discord vanity URLs need Level 3 (14 boosts) or Partner/Verified; boost levels at 2/7/14. Messenger greeting and instant reply character limits vary by source, so the page does not state one.
+
 ## Next waves
 
 - **Wave 2, directory** (`/groups/...`): blocked until the marketplace has real group listings. Empty listing pages would be thin content.
